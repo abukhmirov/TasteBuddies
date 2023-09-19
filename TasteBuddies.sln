@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteBuddies", "TasteBuddies\TasteBuddies.csproj", "{F411D859-6FF6-4962-802E-52EA80670AC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteBuddies.Tests", "TasteBuddies.Tests\TasteBuddies.Tests.csproj", "{B2BDF5CC-CC4A-4905-B829-482B9092BF3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F411D859-6FF6-4962-802E-52EA80670AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F411D859-6FF6-4962-802E-52EA80670AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F411D859-6FF6-4962-802E-52EA80670AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BDF5CC-CC4A-4905-B829-482B9092BF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BDF5CC-CC4A-4905-B829-482B9092BF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BDF5CC-CC4A-4905-B829-482B9092BF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BDF5CC-CC4A-4905-B829-482B9092BF3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
