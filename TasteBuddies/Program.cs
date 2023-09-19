@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TasteBuddies.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
