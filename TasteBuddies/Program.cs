@@ -1,7 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<TasteBuddiesContext>(
+    options =>
+        options
+            .UseNpgsql(
+                builder.Configuration["TASTEBUDDIES_DBCONNECTIONSTRING"]
+                    ?? throw new InvalidOperationException(
+                        "Connection string 'TasteBuddies' not found."
+                    )
+            )
+            .UseSnakeCaseNamingConvention()
+);
+
 
 var app = builder.Build();
 
