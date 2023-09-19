@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {}
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
         "projectName": "TasteBuddies",
-        "projectPath": "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
-        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
+        "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sethg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
