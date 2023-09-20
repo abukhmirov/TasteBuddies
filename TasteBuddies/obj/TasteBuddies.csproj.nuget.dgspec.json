@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
         "packagesPath": "C:\\Users\\bando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
+=======
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "projectName": "TasteBuddies",
+        "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
+>>>>>>> f22da5492ae9682ecd87b6a891858701cf77b9e2
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bando\\AppData\\Roaming\\NuGet\\NuGet.Config",

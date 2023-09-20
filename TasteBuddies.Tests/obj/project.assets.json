@@ -12159,11 +12159,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
       "projectName": "TasteBuddies.Tests",
       "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
       "packagesPath": "C:\\Users\\bando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "projectName": "TasteBuddies.Tests",
+      "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
+>>>>>>> f22da5492ae9682ecd87b6a891858701cf77b9e2
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bando\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12180,8 +12188,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
               "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
+=======
+            "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+              "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
+>>>>>>> f22da5492ae9682ecd87b6a891858701cf77b9e2
             }
           }
         }
