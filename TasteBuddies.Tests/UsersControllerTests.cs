@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.Http.Json;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
+using System.Security.Cryptography;
+using System.Text;
 using Xunit;
 
 namespace TasteBuddies.Tests
