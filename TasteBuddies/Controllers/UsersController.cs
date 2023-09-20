@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
 
@@ -19,31 +21,40 @@ namespace TasteBuddies.Controllers
             return View();
         }
 
-        [Route("/users/{id:int}/login")]
-        public IActionResult Login(User user)
+        [Route("/users/{userId:int}/login")]
+        public IActionResult Login(int userId)
         {
-
-
+            var user = _context.Users.Find(userId);
             return View(user);
         }
 
         [HttpPost]
-        [Route("/users/{id:int}/login")]
-        public IActionResult LoginAttemp(string password, int id)
+        [Route("/users/{userId:int}/login")]
+        public IActionResult CheckPassword(string password, int userId)
         {
-            var user = _context.Users.Find(id);
-
-            if (user.VerifyPassword(password))
+            var user = _context.Users.Find(userId);
+            if (user.Password == EncodePassword(password))
             {
-                var userActual = _context.Users.Where(e => e.UserName == user.UserName).Single();
-
-                return Redirect("/users/details/" + userActual.Id);
+                return Redirect($"/users/{user.Id}");
             }
+            else
+            {
+                return Redirect("/users");
+            }
+        }
 
-            return BadRequest("Invalid username or password.");
+        private string EncodePassword(string password)
+        {
+            HashAlgorithm sha = SHA256.Create();
 
-
-
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+            byte[] passwordDigested = sha.ComputeHash(passwordBytes);
+            StringBuilder passwordBuilder = new StringBuilder();
+            foreach (byte b in passwordDigested)
+            {
+                passwordBuilder.Append(b.ToString("x2"));
+            }
+            return passwordBuilder.ToString();
         }
     }
 }

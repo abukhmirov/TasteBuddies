@@ -1,18 +1,9 @@
 ﻿@model User
-<h1>Login</h1>
 
-
-<form id="login-user-form" method="post" action="/users/@Model.Id/login">
-
-
-
-    <label for="Password">Password:</label>
-    <input type="text" id="Password" name="Password">
-    <br>
-    <br>
-
-    <div class="submitbutton">
-        <button type="submit">Login</button>
-    </div>
-
+<form method="post" action="/users/@Model.Id/login">
+	<div class="form-group">
+		<label class="form-label" for="password">Password:</label>
+		<input class="form-control" type="text" id="password" name="password" />
+	</div><br />
+	<button class="btn btn-success" type="submit">Log In</button>
 </form>
