@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj": {}
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj": {
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
         "projectName": "TasteBuddies.Tests",
-        "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
-        "packagesPath": "C:\\Users\\skyla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
+        "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+        "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\skyla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sethg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
-                "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
+              "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+                "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
               }
             }
           }
@@ -129,21 +129,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+    "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
         "projectName": "TasteBuddies",
-        "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
-        "packagesPath": "C:\\Users\\skyla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
+        "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+        "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\skyla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sethg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -233,7 +233,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
