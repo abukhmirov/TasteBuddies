@@ -45,5 +45,37 @@ namespace TasteBuddies.Controllers
 
 
         }
+
+        // GET: /signup
+        [Route("/Users/Signup")]
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        // POST: 
+        [HttpPost]
+        [Route("/Users/")]
+        public IActionResult Create(User user)
+        {
+            User userModel = new User();
+            string digestedPassword = userModel.GetDigestedPassword(user.Password);
+            user.Password = digestedPassword;
+            _context.Add(user);
+            _context.SaveChanges();
+
+            return RedirectToAction("show", new { userId = user.Id });
+        }
+
+        [Route("/Users/{userId:int}")]
+        public IActionResult Show(int userId)
+        {
+            var user = _context.Users
+              .Where(u => u.Id == userId)
+              .Include(u => u.Posts)
+              .FirstOrDefault();
+
+            return View(user);
+        }
     }
 }
