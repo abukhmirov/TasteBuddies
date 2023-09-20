@@ -4465,7 +4465,7 @@
           "buildMultiTargeting/xunit.core.targets": {}
         }
       },
-      "xunit.extensibility.core/2.4.2": {
+      "xunit.extensibility.core/2.5.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -12055,13 +12055,14 @@
         "xunit.core.nuspec"
       ]
     },
-    "xunit.extensibility.core/2.4.2": {
-      "sha512": "W1BoXTIN1C6kpVSMw25huSet25ky6IAQUNovu3zGOGN/jWnbgSoTyCrlIhmXSg0tH5nEf8q7h3OjNHOjyu5PfA==",
+    "xunit.extensibility.core/2.5.1": {
+      "sha512": "XGPiWP7D/KIY/fzdmU9gx7eDt0QD0IAWOy54LI+ckLZCqFMupIFochC3dHRxykuAz+L0nYvz6PxDdR2UcgNmDw==",
       "type": "package",
-      "path": "xunit.extensibility.core/2.4.2",
+      "path": "xunit.extensibility.core/2.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "_content/README.md",
         "_content/logo-128-transparent.png",
         "lib/net452/xunit.core.dll",
         "lib/net452/xunit.core.dll.tdnet",
@@ -12070,7 +12071,7 @@
         "lib/net452/xunit.runner.utility.net452.dll",
         "lib/netstandard1.1/xunit.core.dll",
         "lib/netstandard1.1/xunit.core.xml",
-        "xunit.extensibility.core.2.4.2.nupkg.sha512",
+        "xunit.extensibility.core.2.5.1.nupkg.sha512",
         "xunit.extensibility.core.nuspec"
       ]
     },
@@ -12146,23 +12147,24 @@
       "TasteBuddies >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.4.2",
+      "xunit.extensibility.core >= 2.5.1",
       "xunit.runner.visualstudio >= 2.4.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bando\\.nuget\\packages\\": {}
+    "C:\\Users\\alexb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
       "projectName": "TasteBuddies.Tests",
-      "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
-      "packagesPath": "C:\\Users\\bando\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
+      "projectPath": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12176,8 +12178,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
-              "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
+            "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+              "projectPath": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
             }
           }
         }
@@ -12250,6 +12252,10 @@
             "target": "Package",
             "version": "[2.4.2, )"
           },
+          "xunit.extensibility.core": {
+            "target": "Package",
+            "version": "[2.5.1, )"
+          },
           "xunit.runner.visualstudio": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -12273,8 +12279,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.core 2.4.2 requires xunit.extensibility.core (= 2.4.2) but version xunit.extensibility.core 2.5.1 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: xunit.extensibility.execution 2.4.2 requires xunit.extensibility.core (= 2.4.2) but version xunit.extensibility.core 2.5.1 was resolved.",
+      "libraryId": "xunit.extensibility.core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

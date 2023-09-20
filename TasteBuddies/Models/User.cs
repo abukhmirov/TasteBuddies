@@ -25,6 +25,11 @@ namespace TasteBuddies.Models
 
         public string GetDigestedPassword(string password)
         {
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Password cannot be null or empty.");
+            }
+
             HashAlgorithm sha = SHA256.Create();
 
             string PasswordInput = password;
@@ -46,7 +51,7 @@ namespace TasteBuddies.Models
         public bool VerifyPassword(string password)
         {
             string inputHash = GetDigestedPassword(password).ToString();
-            return inputHash == Password.ToString();
+            return inputHash == Password;
         }
     }
 }
