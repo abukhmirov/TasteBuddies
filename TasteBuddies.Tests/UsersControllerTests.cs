@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Json;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
+using Xunit;
 
 namespace TasteBuddies.Tests
 {
@@ -28,10 +30,32 @@ namespace TasteBuddies.Tests
         }
 
         [Fact]
-        public async Task Test1()
+        public async Task LoginLogsInUser()
         {
             var client = _factory.CreateClient();
             var context = GetDbContext();
+
+            var user1 = new User { Name = "John", UserName = "Doe", Password = "1234" };
+
+            context.Users.Add(user1);
+            context.SaveChanges();
+
+            var loginData = new
+            {
+                password = user1.Password,
+                id = user1.Id
+            };
+
+            Assert.NotNull(loginData.password);
+            
+
+            var response = await client.PostAsJsonAsync("/users/1/login", loginData);
+            var html = await response.Content.ReadAsStringAsync();
+
+            response.EnsureSuccessStatusCode(); 
+            
+            
+
         }
     }
 }
