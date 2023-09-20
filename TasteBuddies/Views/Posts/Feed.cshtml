@@ -1,5 +1,10 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model User
+
+
+
+@foreach (var post in Model.Posts)
+{
+    <h6>@post.Title</h6>
+    <p>@Model.UserName</p>
+    <p>@post.Description</p>
 }
