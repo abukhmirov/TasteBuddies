@@ -11261,6 +11261,7 @@
       "EFCore.NamingConventions >= 7.0.2",
       "Microsoft.AspNetCore.Hosting >= 2.2.7",
       "Microsoft.AspNetCore.Mvc.Testing >= 6.0.22",
+      "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
@@ -11271,19 +11272,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sethg\\.nuget\\packages\\": {}
+    "C:\\Users\\bando\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+      "projectUniqueName": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
       "projectName": "TasteBuddies",
-      "projectPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
-      "packagesPath": "C:\\Users\\sethg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sethg\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
+      "projectPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+      "packagesPath": "C:\\Users\\bando\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bando\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sethg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bando\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11320,6 +11321,10 @@
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
             "version": "[6.0.22, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.11, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -11373,7 +11378,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

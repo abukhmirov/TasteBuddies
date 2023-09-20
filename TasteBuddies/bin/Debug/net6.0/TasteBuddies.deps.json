@@ -37,6 +37,7 @@
           "EFCore.NamingConventions": "7.0.2",
           "Microsoft.AspNetCore.Hosting": "2.2.7",
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.22",
+          "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.Design": "7.0.11",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
