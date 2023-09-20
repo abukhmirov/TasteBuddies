@@ -22,6 +22,21 @@ namespace TasteBuddies.Controllers
             var posts = _context.Posts.ToList();
             return View(posts);
         }
+        public IActionResult Feed()
+        {
+            return View();
+        }
+        public IActionResult Create(Post post)
+        {
+
+            _context.Posts.Add(post);
+            _context.SaveChanges();
+
+     
+
+            return RedirectToAction("Feed", new { id = post.Id });
+
+        }
 
     }
 }

@@ -1,0 +1,10 @@
+﻿@model User
+
+
+
+    @foreach (var post in Model.Posts)
+    {
+        <h6>@post.Title</h6>
+        <p>@Model.UserName</p>
+        <p>@post.Description</p>
+    }
