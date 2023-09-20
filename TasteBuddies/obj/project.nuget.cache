@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HzNoWlcPPhH3BH8hQ0mXMfBPaAghb10fnCwoaWYXZlTbitEJmJtM9OiDUx9/UAyF5REmXzaKuu4c0P8T9zdlmw==",
+  "dgSpecHash": "bPPQiC0g/T90BPzoit06ZTWtfpWaG/1u0xKGisXNWaMJoTATBneBBdBM0betIhmGG++RPUcYpXP0Bk7ALw//lg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj",
+  "projectFilePath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skyla\\.nuget\\packages\\efcore.namingconventions\\7.0.2\\efcore.namingconventions.7.0.2.nupkg.sha512",
     "C:\\Users\\skyla\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
