@@ -1,7 +1,14 @@
-﻿@model List<Post>
+﻿
 
-@foreach(var post in Model)
-{
-	<h5>@post.Title</h5>
-	<p>@post.Description</p>
-}
+<form method="post" action="/posts/create">
+	<div class="form-group">
+		<label for="Title">Title:</label>
+		<input type="text" id="Title" name="Title" />
+	</div>
+	<div class="form-group">
+		<label for="Description">Post Content:</label>
+		<input type="text" id="Description" name="Description" />
+	</div>
+
+	<button type="submit">CREATE</button>
+</form>

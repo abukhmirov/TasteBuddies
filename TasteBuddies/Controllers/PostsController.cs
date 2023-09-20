@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 
 namespace TasteBuddies.Controllers
 {
@@ -12,20 +17,26 @@ namespace TasteBuddies.Controllers
         {
             _context = context;
         }
-
         public IActionResult Index()
         {
-            var postList = _context.Posts.OrderBy(post => post.CreatedAt).ToList();
-            var last5Posts = new List<Post>();
-            if(postList.Count > 5)
-            {
-                last5Posts.AddRange(postList.TakeLast(5));
-            }
-            else
-            {
-                last5Posts = postList;
-            }
-            return View(last5Posts);
+            var posts = _context.Posts.ToList();
+            return View(posts);
         }
+        public IActionResult Feed()
+        {
+            return View();
+        }
+        public IActionResult Create(Post post)
+        {
+
+            _context.Posts.Add(post);
+            _context.SaveChanges();
+
+
+
+            return RedirectToAction("Feed", new { id = post.Id });
+
+        }
+
     }
 }
