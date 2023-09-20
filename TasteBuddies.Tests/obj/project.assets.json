@@ -12157,11 +12157,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
       "projectName": "TasteBuddies.Tests",
-      "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+      "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
       "packagesPath": "C:\\Users\\skyla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies.Tests\\obj\\",
+      "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\skyla\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12178,8 +12178,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj": {
-              "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj"
+            "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
+              "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj"
             }
           }
         }

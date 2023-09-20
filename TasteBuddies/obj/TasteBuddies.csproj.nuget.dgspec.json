@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj": {}
+    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj": {
+    "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj",
+        "projectUniqueName": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
         "projectName": "TasteBuddies",
-        "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\TasteBuddies.csproj",
+        "projectPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
         "packagesPath": "C:\\Users\\skyla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies\\obj\\",
+        "outputPath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\skyla\\AppData\\Roaming\\NuGet\\NuGet.Config",

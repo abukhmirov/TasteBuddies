@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Kkrjq0JxreHbLsFcgn5dxf/s5s7UgfidabboN4ImKf5hPkxPhDKEeSW3I6rl3SYD1D4/P1jl4lE1JOvOWk4tQ==",
+  "dgSpecHash": "fkewgfZz8tCnabPwB91MzGOeE+hunWNVZdVbkHBuX+T+e5Azh9K1/tjZ04f58imRg6Ypcgj4Q4sn1D5W+Rfyzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddiesTEAM\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+  "projectFilePath": "C:\\Users\\skyla\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skyla\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\skyla\\.nuget\\packages\\efcore.namingconventions\\7.0.2\\efcore.namingconventions.7.0.2.nupkg.sha512",
