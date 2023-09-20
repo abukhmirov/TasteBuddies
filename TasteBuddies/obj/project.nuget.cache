@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VoQUPB5JoTz9LGMalgGOY8cdFW/G5OPTLcnp5WNvwjL3CvGeupftW+lowd3sBEU4kWVkkbZVajP91dlS8Jd/EA==",
+  "dgSpecHash": "6ceAHP2HSH67E+hzULv15KI1xAJReDmR60MotanSgA+8YHbMt51NFqxZNohLhWo7RulUtSR7+WK82Sw2yMxowg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
+  "projectFilePath": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies\\TasteBuddies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexb\\.nuget\\packages\\efcore.namingconventions\\7.0.2\\efcore.namingconventions.7.0.2.nupkg.sha512",
     "C:\\Users\\alexb\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

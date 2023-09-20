@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CygF1Ekobr8ZW16lHxuSLQNVPBxgYR4XOAagwCpNup+n6aKI89es+5To+zfRmhVV94TgBssGsSENB8UhyB8nfA==",
+  "dgSpecHash": "XmJ1GFq/P2Tc8MkHOiR9J3pBf44OPUPwWivSv0mIGL8Vjw4YQN+DKNkFhd1svDT865xclxUAHTimOdPOTg9kFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexb\\Source\\Repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
+  "projectFilePath": "C:\\Users\\alexb\\source\\repos\\TasteBuddies\\TasteBuddies.Tests\\TasteBuddies.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexb\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\alexb\\.nuget\\packages\\efcore.namingconventions\\7.0.2\\efcore.namingconventions.7.0.2.nupkg.sha512",

@@ -1,4 +1,7 @@
-﻿namespace TasteBuddies.Models
+﻿using System.Security.Cryptography;
+using System.Text;
+
+namespace TasteBuddies.Models
 {
     public class User
     {
@@ -18,6 +21,32 @@
             Name = name;
             UserName = userName;
             Password = password;
+        }
+
+        public string GetDigestedPassword(string password)
+        {
+            HashAlgorithm sha = SHA256.Create();
+
+            string PasswordInput = password;
+
+            byte[] firstInputBytes = Encoding.ASCII.GetBytes(PasswordInput);
+            byte[] firstInputDigested = sha.ComputeHash(firstInputBytes);
+
+            StringBuilder firstInputBuilder = new StringBuilder();
+            foreach (byte b in firstInputDigested)
+            {
+                Console.Write(b + ", ");
+                firstInputBuilder.Append(b.ToString("x2"));
+            }
+
+            return firstInputBuilder.ToString();
+        }
+
+
+        public bool VerifyPassword(string password)
+        {
+            string inputHash = GetDigestedPassword(password).ToString();
+            return inputHash == Password.ToString();
         }
     }
 }
