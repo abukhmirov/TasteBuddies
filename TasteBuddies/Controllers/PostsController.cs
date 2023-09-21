@@ -17,15 +17,19 @@ namespace TasteBuddies.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             var posts = _context.Posts;
             return View(posts);
         }
+
         public IActionResult Feed()
         {
             return View();
         }
+
+
         [HttpPost]
         public IActionResult Create(Post post)
         {
