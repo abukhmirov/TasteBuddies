@@ -1,6 +1,10 @@
 @model User
 
-<form method="post" action="/users/@Model.Id/login">
+<form method="post" action="/users/login">
+	<div class="form-group">
+		<label class="form-label" for="username">Username:</label>
+		<input class="form-control" type="text" id="username" name="username" />
+	</div><br />
 	<div class="form-group">
 		<label class="form-label" for="password">Password:</label>
 		<input class="form-control" type="text" id="password" name="password" />

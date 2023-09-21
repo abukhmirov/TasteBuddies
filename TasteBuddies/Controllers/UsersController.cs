@@ -16,34 +16,37 @@ namespace TasteBuddies.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
-         [Route("/users/{userId:int}/login")]
-        public IActionResult Login(int userId)
-        {
-            var user = _context.Users.Find(userId);
-            return View(user);
+        [Route("/users/login")]
+        public IActionResult Login()
+        {  
+            return View();
         }
 
         [HttpPost]
-        [Route("/users/{userId:int}/login")]
-        public IActionResult CheckPassword(string password, int userId)
+        [Route("/users/login")]
+        public IActionResult CheckPassword(string password, string username)
         {
-            var user = _context.Users.Find(userId);
-            if (user.Password == EncodePassword(password))
+            var user = _context.Users
+                .Where(user => user.UserName == username 
+                && user.Password == EncodePassword(password))
+                .First();
+
+            if(user is null)
             {
-                return Redirect($"/users/{user.Id}");
+                return Redirect("/users/login");
             }
             else
             {
-                return Redirect("/users");
+                Response.Cookies.Append("CurrentUser", user.Id.ToString());
+                return Redirect($"/users/{user.Id}");
             }
         }
-
-      
 
         // GET: /signup
         [Route("/Users/Signup")]
@@ -63,6 +66,8 @@ namespace TasteBuddies.Controllers
             _context.Add(user);
             _context.SaveChanges();
 
+            Response.Cookies.Append("CurrentUser", user.Id.ToString());
+
             return RedirectToAction("show", new { userId = user.Id });
         }
 
@@ -77,7 +82,7 @@ namespace TasteBuddies.Controllers
             return View(user);
         }
 
-          private string EncodePassword(string password)
+        private string EncodePassword(string password)
         {
             HashAlgorithm sha = SHA256.Create();
 

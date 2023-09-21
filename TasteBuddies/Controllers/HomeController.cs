@@ -15,7 +15,14 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return Redirect($"/users/{Request.Cookies["CurrentUser"]}");
+            }
+            else
+            {
+				return View();
+			}
         }
 
         public IActionResult Privacy()
