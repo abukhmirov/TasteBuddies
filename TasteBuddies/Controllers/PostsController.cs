@@ -20,13 +20,27 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Index()
         {
-            var posts = _context.Posts.ToList();
-            return View(posts);
+            return View();
         }
 
         public IActionResult Feed()
         {
-            return View();
+            var postList = _context.Posts
+                .OrderBy(post => post.CreatedAt)
+                .Include(post => post.User)
+                .ToList();
+
+            var last5Posts = new List<Post>();
+
+            if (postList.Count > 5)
+            {
+                last5Posts.AddRange(postList.TakeLast(5));
+            }
+            else
+            {
+                last5Posts = postList;
+            }
+            return View(last5Posts);
         }
 
         public IActionResult Create(Post post)

@@ -33,7 +33,7 @@ namespace TasteBuddies.Tests
 		}
 
 		[Fact]
-		public async Task Index_ReturnsViewOf5MostRecentPosts()
+		public async Task Feed_ReturnsViewOf5MostRecentPosts()
 		{
 			var post1 = new Post { Title = "post1", Description = "test1", CreatedAt = DateTime.Now };
 			var post2 = new Post { Title = "post2", Description = "test2", CreatedAt = DateTime.Now };
@@ -60,7 +60,7 @@ namespace TasteBuddies.Tests
 			context.Users.Add(user2);
 			context.SaveChanges();
 
-			var response = await client.GetAsync("/posts");
+			var response = await client.GetAsync("/posts/feed");
 			var html = await response.Content.ReadAsStringAsync();
 
 			Assert.Contains("post2", html);
