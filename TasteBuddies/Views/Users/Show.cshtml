@@ -1,7 +1,33 @@
 ﻿@model TasteBuddies.Models.User
 
-<h1>User Details</h1>
+<h1>@Model.Name's User Details</h1>
+<br />
 
 <p>Name: @Model.Name</p>
 
 <p>Username: @Model.UserName</p>
+
+<a href="/users/@Model.Id/edit"><strong>Edit @Model.Name's Details</strong></a>
+<br />
+<a href="/users/@Model.Id/resetpassword"><strong>Reset @Model.Name's Password</strong></a>
+
+<br />
+<br />
+
+<h2>@Model.Name's Posts:</h2>
+@if (Model.Posts.Any() != false)
+{
+    foreach (var post in Model.Posts)
+    {
+        <div>
+            <h6> @post.Title</h6>
+            <p>
+                @post.CreatedAt.ToLocalTime().ToString(): @post.Description
+            </p>
+        </div>
+    }
+}
+else
+{
+    <p><strong>@Model.UserName has not created any posts yet.</strong></p>
+}
