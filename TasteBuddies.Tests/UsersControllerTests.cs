@@ -53,11 +53,11 @@ namespace TasteBuddies.Tests
 
             var content = new FormUrlEncodedContent(formData);
             var response = await client.PostAsync("/users/1/login", content);
-
+            string HTMLcontent = await response.Content.ReadAsStringAsync();
 
             // Assert
-            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
-            Assert.Equal("/users/1", response.Headers.Location?.OriginalString);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Contains("1234", HTMLcontent);
         }
 
         [Fact]
