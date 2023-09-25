@@ -35,57 +35,59 @@ namespace TasteBuddies.Tests
         [Fact]
         public async Task CheckPassword_ValidPassword_ReturnsRedirectToUserDetails()
         {
-            // Arrange
 
+
+            
             var context = GetDbContext();
             var client = _factory.CreateClient();
 
-            var user1 = new User { Id = 1, Name = "John", UserName = "Doe", Password = "1234" };
+            var user1 = new User { Id = 1, Name = "John", UserName = "Doe", Password = EncodePassword("1234") };
 
             context.Users.Add(user1);
             context.SaveChanges();
 
-
             var formData = new Dictionary<string, string>
-        {
-            { "password", "1234" }, 
-        };
+    {
+        { "password", "1234" },
+        { "username", "Doe" } 
+    };
 
             var content = new FormUrlEncodedContent(formData);
-            var response = await client.PostAsync("/users/1/login", content);
+            var response = await client.PostAsync("/users/login", content);
+
+            var html = await response.Content.ReadAsStringAsync();
 
 
-            // Assert
-            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
-            Assert.Equal("/users/1", response.Headers.Location?.OriginalString);
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Contains("Doe", html);
         }
 
         [Fact]
         public async Task CheckPassword_InvalidPassword_ReturnsRedirectToUsers()
         {
             // Arrange
-
             var context = GetDbContext();
             var client = _factory.CreateClient();
 
-            var user1 = new User {Id = 1, Name = "John", UserName = "Doe", Password = "1234" };
+            var user1 = new User { Id = 1, Name = "John", UserName = "Doe", Password = EncodePassword("1234") };
 
             context.Users.Add(user1);
             context.SaveChanges();
 
-
             var formData = new Dictionary<string, string>
-        {
-            { "password", "incorrect_password" }, // Use the incorrect password
-        };
+    {
+        { "password", "12345" },
+        { "username", "Doe" } 
+    };
 
             var content = new FormUrlEncodedContent(formData);
-            var response = await client.PostAsync("/users/1/login", content);
-
+            var response = await client.PostAsync("/users/login", content);
+            var html = await response.Content.ReadAsStringAsync();
 
             // Assert
-            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
-            Assert.Equal("/users", response.Headers.Location?.OriginalString);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.DoesNotContain("Doe", html);
         }
 
         

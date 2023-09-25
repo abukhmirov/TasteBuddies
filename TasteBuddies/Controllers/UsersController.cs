@@ -37,7 +37,7 @@ namespace TasteBuddies.Controllers
                 && user.Password == EncodePassword(password))
                 .First();
 
-            if(user is null)
+            if(user == null)
             {
                 return Redirect("/users/login");
             }
