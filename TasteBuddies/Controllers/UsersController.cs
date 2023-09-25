@@ -37,7 +37,7 @@ namespace TasteBuddies.Controllers
                 && user.Password == EncodePassword(password))
                 .First();
 
-            if(user is null)
+            if(user == null)
             {
                 return Redirect("/users/login");
             }
@@ -48,8 +48,35 @@ namespace TasteBuddies.Controllers
             }
         }
 
-        // GET: /signup
-        [Route("/Users/Signup")]
+
+        //[Route("/users/logout")]
+        //public IActionResult Logout()
+        //{
+        //    return View();
+        //}
+
+        [HttpPost]
+        [Route("/users/logout")]
+        public IActionResult LogoutUser()
+        {
+
+            var currentUserCookie = Request.Cookies["CurrentUser"];
+
+            if (!string.IsNullOrEmpty(currentUserCookie))
+            {
+                Response.Cookies.Delete("CurrentUser");
+                return Redirect("/users/login");
+            }
+            else
+            {
+
+                return Redirect($"/users/login");
+            }
+        }
+
+
+            // GET: /signup
+            [Route("/Users/Signup")]
         public IActionResult Signup()
         {
             return View();
