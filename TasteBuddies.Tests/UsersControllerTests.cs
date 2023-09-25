@@ -131,6 +131,7 @@ namespace TasteBuddies.Tests
             Assert.Equal("Skylar", savedUser.Name);
         }
 
+        //Needs work
         [Fact]
         public async Task Profile_ReturnsViewWithLoggedinUserDetails()
         {
@@ -150,6 +151,7 @@ namespace TasteBuddies.Tests
             Assert.DoesNotContain("sganz", html);
         }
 
+        //Needs work
         [Fact]
         public async Task Edit_ReturnsViewWithFormPrePopulated()
         {
@@ -168,8 +170,9 @@ namespace TasteBuddies.Tests
             Assert.Contains(user.UserName, html);
         }
 
+        //Needs work
         [Fact]
-        public async Task Update_SavesChangesToItem()
+        public async Task Update_SavesChangesToUser()
         {
             // Arrange
             var context = GetDbContext();
@@ -196,6 +199,7 @@ namespace TasteBuddies.Tests
             Assert.Contains("Skylar Sandler", html);
         }
 
+        //Needs work
         [Fact]
         public async Task ResetPassword_ReturnsViewwithForm()
         {
@@ -212,6 +216,11 @@ namespace TasteBuddies.Tests
             Assert.Contains("Reset Password", html);
         }
 
+        //Needs work
+        [Fact]
+        public async Task UpdatePassword_SavesChangesToPassword()
+        {
 
-    }
+
+        }
 }
