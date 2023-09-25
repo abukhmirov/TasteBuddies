@@ -1,10 +1,8 @@
-﻿@model User
+﻿@model List<Post>
 
-
-
-@foreach (var post in Model.Posts)
+@foreach (var post in Model)
 {
     <h6>@post.Title</h6>
-    <p>@Model.UserName</p>
+    <p>@post.User.UserName</p>
     <p>@post.Description</p>
 }

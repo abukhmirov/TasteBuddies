@@ -108,6 +108,49 @@ namespace TasteBuddies.Controllers
 
             return View(user);
         }
+        
+        [Route("/Users/{id:int}/edit")]
+        public IActionResult Edit(int id)
+        {
+            var user = _context.Users.Find(id);
+
+            return View(user);
+        }
+
+        [HttpPost]
+        [Route("/Users/update/{userId:int}")]
+        public IActionResult Update(int userId, User user)
+        {
+            user.Id = userId;
+            var existingUser = _context.Users.Find(userId);
+
+            existingUser.Name = user.Name;
+            existingUser.UserName = user.UserName;
+            _context.SaveChanges();
+
+            return RedirectToAction("show", new { userId = user.Id });
+        }
+
+        // Goes to view to reset password
+        [Route("/Users/{id:int}/resetpassword")]
+        public IActionResult ResetPassword(int id)
+        {
+            var user = _context.Users.Find(id);
+
+            return View(user);
+        }
+
+        // Updates password
+        [Route("/Users/updatepassword/{id}")]
+        public IActionResult UpdatePassword(int id, string newPassword)
+        {
+            var user = _context.Users.Find(id);
+            string digestedPassword = EncodePassword(newPassword);
+            user.Password = digestedPassword;
+            _context.SaveChanges();
+
+            return RedirectToAction("show", new { userId = user.Id });
+        }
 
         private string EncodePassword(string password)
         {
