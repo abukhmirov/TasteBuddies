@@ -55,9 +55,9 @@ namespace TasteBuddies.Controllers
         //    return View();
         //}
 
-        [HttpPost]
+        
         [Route("/users/logout")]
-        public IActionResult LogoutUser()
+        public IActionResult Logout()
         {
 
             var currentUserCookie = Request.Cookies["CurrentUser"];
