@@ -88,10 +88,8 @@ namespace TasteBuddies.Tests
             Assert.Equal("/users", response.Headers.Location?.OriginalString);
         }
 
-        
-
         [Fact]
-        public async Task New_ReturnsViewWithForm()
+        public async Task Signup_ReturnsViewWithForm()
         {
             var context = GetDbContext();
             var client = _factory.CreateClient();
@@ -133,18 +131,96 @@ namespace TasteBuddies.Tests
             Assert.Equal("Skylar", savedUser.Name);
         }
 
-        private string EncodePassword(string password)
+        //Needs work
+        [Fact]
+        public async Task Profile_ReturnsViewWithLoggedinUserDetails()
         {
-            HashAlgorithm sha = SHA256.Create();
+            var context = GetDbContext();
+            context.Users.Add(new User { Name = "Skylar", UserName = "ssandler", Password = "123" });
+            context.Users.Add(new User { Name = "Scott", UserName = "sganz", Password = "456" });
+            context.SaveChanges();
 
-            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
-            byte[] passwordDigested = sha.ComputeHash(passwordBytes);
-            StringBuilder passwordBuilder = new StringBuilder();
-            foreach (byte b in passwordDigested)
-            {
-                passwordBuilder.Append(b.ToString("x2"));
-            }
-            return passwordBuilder.ToString();
+            var client = _factory.CreateClient();
+            var response = await client.GetAsync("/Users/1");
+            var html = await response.Content.ReadAsStringAsync();
+
+            response.EnsureSuccessStatusCode();
+            Assert.Contains("Skylar", html);
+            Assert.Contains("ssandler", html);
+            Assert.Contains("Reset Skylar's Password", html);
+            Assert.DoesNotContain("sganz", html);
         }
-    }
+
+        //Needs work
+        [Fact]
+        public async Task Edit_ReturnsViewWithFormPrePopulated()
+        {
+            var context = GetDbContext();
+            var client = _factory.CreateClient();
+
+            User user = new User { Name = "Skylar", UserName = "ssandler", Password = "123" };
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            var response = await client.GetAsync($"/Users/{user.Id}/Edit");
+            var html = await response.Content.ReadAsStringAsync();
+
+            Assert.Contains("Edit User", html);
+            Assert.Contains(user.Name, html);
+            Assert.Contains(user.UserName, html);
+        }
+
+        //Needs work
+        [Fact]
+        public async Task Update_SavesChangesToUser()
+        {
+            // Arrange
+            var context = GetDbContext();
+            var client = _factory.CreateClient();
+
+            User user = new User { Name = "Skylar", UserName = "ssandler", Password = "123" };
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            var formData = new Dictionary<string, string>
+            {
+                { "Name", "Skylar Sandler" }
+            };
+
+            // Act
+            var response = await client.PostAsync(
+                $"/User/Profile",
+                new FormUrlEncodedContent(formData)
+            );
+            var html = await response.Content.ReadAsStringAsync();
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+            Assert.Contains("Skylar Sandler", html);
+        }
+
+        //Needs work
+        [Fact]
+        public async Task ResetPassword_ReturnsViewwithForm()
+        {
+            var context = GetDbContext();
+            var client = _factory.CreateClient();
+
+            User user = new User { Name = "Skylar", UserName = "ssandler", Password = "123" };
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            var response = await client.GetAsync($"/Users/{user.Id}/ResetPassword");
+            var html = await response.Content.ReadAsStringAsync();
+
+            Assert.Contains("Reset Password", html);
+        }
+
+        //Needs work
+        [Fact]
+        public async Task UpdatePassword_SavesChangesToPassword()
+        {
+
+
+        }
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
@@ -98,20 +99,40 @@ namespace TasteBuddies.Controllers
             return RedirectToAction("show", new { userId = user.Id });
         }
 
+        [Route("/Users/Profile")]
+        public IActionResult Profile(int userId)
+        {
+            string id = Request.Cookies["CurrentUser"].ToString();
+            int parseId = Int32.Parse(id); 
+            var user1 = _context.Users
+              .Where(u => u.Id == parseId)
+              .Include(u => u.Posts)
+              .FirstOrDefault();
+
+            return View(user1);
+        }
+
         [Route("/Users/{userId:int}")]
         public IActionResult Show(int userId)
         {
             var user = _context.Users
-              .Where(u => u.Id == userId)
-              .Include(u => u.Posts)
-              .FirstOrDefault();
+                .Where(u => u.Id == userId)
+                .Include(u => u.Posts)
+                .FirstOrDefault();
 
             return View(user);
         }
-        
-        [Route("/Users/{id:int}/edit")]
+
+        [Route("/Users/{id:int}/Edit")]
         public IActionResult Edit(int id)
         {
+            var currentUserId = Request.Cookies["CurrentUser"];
+
+            if (currentUserId != id.ToString())
+            {
+                return StatusCode(403);
+            }
+
             var user = _context.Users.Find(id);
 
             return View(user);
@@ -121,7 +142,13 @@ namespace TasteBuddies.Controllers
         [Route("/Users/update/{userId:int}")]
         public IActionResult Update(int userId, User user)
         {
-            user.Id = userId;
+            var currentUserId = Request.Cookies["CurrentUser"];
+
+            if (currentUserId != userId.ToString())
+            {
+                return StatusCode(403);
+            }
+
             var existingUser = _context.Users.Find(userId);
 
             existingUser.Name = user.Name;
@@ -132,9 +159,16 @@ namespace TasteBuddies.Controllers
         }
 
         // Goes to view to reset password
-        [Route("/Users/{id:int}/resetpassword")]
+        [Route("/Users/{id:int}/ResetPassword")]
         public IActionResult ResetPassword(int id)
         {
+            var currentUserId = Request.Cookies["CurrentUser"];
+
+            if (currentUserId != id.ToString())
+            {
+                return StatusCode(403);
+            }
+
             var user = _context.Users.Find(id);
 
             return View(user);

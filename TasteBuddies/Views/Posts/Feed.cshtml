@@ -2,7 +2,6 @@
 
 @foreach (var post in Model)
 {
-    <h6>@post.Title</h6>
-    <p>@post.User.UserName</p>
-    <p>@post.Description</p>
+    <h6><strong>@post.Title</strong></h6>
+    <p> <a href="/users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description</p>
 }
