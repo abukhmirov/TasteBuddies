@@ -2,7 +2,6 @@
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
