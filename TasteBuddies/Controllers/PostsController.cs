@@ -48,7 +48,11 @@ namespace TasteBuddies.Controllers
         [HttpPost]
         public IActionResult Create(Post post)
         {
-            var user = _context.Users.Where(u => u.Id == post.Id).Include(u => u.Posts).First();
+            string id = Request.Cookies["CurrentUser"].ToString();
+            int parseId = Int32.Parse(id);
+
+
+            var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
             post.CreatedAt = DateTime.Now.ToUniversalTime();
             _context.Posts.Add(post);
             user.Posts.Add(post);
@@ -56,14 +60,14 @@ namespace TasteBuddies.Controllers
 
 
 
-            return RedirectToAction("Feed","Users", new { id = post.Id });
+            return Redirect("/Posts/Feed");
 
         }
         [Route("/Users/{userId:int}/posts/{id:int}/edit")]
         public IActionResult Edit(int userId, int postId)
         {
             var post = _context.Posts.Find(postId);
-            var user = _context.Users.Find(userId);\
+            var user = _context.Users.Find(userId);
             post.User = user;
 
             return View(post);
