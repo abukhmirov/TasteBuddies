@@ -23,6 +23,8 @@
             <h6> @post.Title</h6>
             <p>
                 @post.CreatedAt.ToLocalTime().ToString(): @post.Description
+                <br />
+                <img src="@post.ImageURL" alt="Post Image" style="max-width: 300px; height: auto;">
             </p>
         </div>
     }

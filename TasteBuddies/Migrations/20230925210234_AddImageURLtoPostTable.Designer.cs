@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TasteBuddies.DataAccess;
@@ -11,9 +12,11 @@ using TasteBuddies.DataAccess;
 namespace TasteBuddies.Migrations
 {
     [DbContext(typeof(TasteBuddiesContext))]
-    partial class TasteBuddiesContextModelSnapshot : ModelSnapshot
+    [Migration("20230925210234_AddImageURLtoPostTable")]
+    partial class AddImageURLtoPostTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
