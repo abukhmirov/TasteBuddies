@@ -96,7 +96,7 @@ namespace TasteBuddies.Controllers
 
             Response.Cookies.Append("CurrentUser", user.Id.ToString());
 
-            return RedirectToAction("show", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
         [Route("/Users/Profile")]
