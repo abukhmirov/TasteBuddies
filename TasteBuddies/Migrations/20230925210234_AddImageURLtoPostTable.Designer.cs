@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TasteBuddies.DataAccess;
@@ -11,9 +12,11 @@ using TasteBuddies.DataAccess;
 namespace TasteBuddies.Migrations
 {
     [DbContext(typeof(TasteBuddiesContext))]
-    partial class TasteBuddiesContextModelSnapshot : ModelSnapshot
+    [Migration("20230925210234_AddImageURLtoPostTable")]
+    partial class AddImageURLtoPostTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,50 +24,6 @@ namespace TasteBuddies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("GroupUser", b =>
-                {
-                    b.Property<int>("GroupsId")
-                        .HasColumnType("integer")
-                        .HasColumnName("groups_id");
-
-                    b.Property<int>("UsersId")
-                        .HasColumnType("integer")
-                        .HasColumnName("users_id");
-
-                    b.HasKey("GroupsId", "UsersId")
-                        .HasName("pk_group_user");
-
-                    b.HasIndex("UsersId")
-                        .HasDatabaseName("ix_group_user_users_id");
-
-                    b.ToTable("group_user", (string)null);
-                });
-
-            modelBuilder.Entity("TasteBuddies.Models.Group", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.HasKey("Id")
-                        .HasName("pk_groups");
-
-                    b.ToTable("groups", (string)null);
-                });
 
             modelBuilder.Entity("TasteBuddies.Models.Post", b =>
                 {
@@ -135,23 +94,6 @@ namespace TasteBuddies.Migrations
                         .HasName("pk_users");
 
                     b.ToTable("users", (string)null);
-                });
-
-            modelBuilder.Entity("GroupUser", b =>
-                {
-                    b.HasOne("TasteBuddies.Models.Group", null)
-                        .WithMany()
-                        .HasForeignKey("GroupsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_group_user_groups_groups_id");
-
-                    b.HasOne("TasteBuddies.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_group_user_users_users_id");
                 });
 
             modelBuilder.Entity("TasteBuddies.Models.Post", b =>

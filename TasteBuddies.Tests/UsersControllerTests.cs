@@ -11,7 +11,7 @@ using Xunit;
 namespace TasteBuddies.Tests
 {
     [Collection("Controller Tests")]
-    public class UsersControllerTests : IClassFixture<WebApplicationFactory<Program>>   
+    public class UsersControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _factory;
 
@@ -48,7 +48,7 @@ namespace TasteBuddies.Tests
 
             var formData = new Dictionary<string, string>
         {
-            { "password", "1234" }, 
+            { "password", "1234" },
         };
 
             var content = new FormUrlEncodedContent(formData);
@@ -68,7 +68,7 @@ namespace TasteBuddies.Tests
             var context = GetDbContext();
             var client = _factory.CreateClient();
 
-            var user1 = new User {Id = 1, Name = "John", UserName = "Doe", Password = "1234" };
+            var user1 = new User { Id = 1, Name = "John", UserName = "Doe", Password = "1234" };
 
             context.Users.Add(user1);
             context.SaveChanges();
@@ -223,4 +223,5 @@ namespace TasteBuddies.Tests
 
 
         }
+    }
 }
