@@ -17,7 +17,7 @@ namespace TasteBuddies.Controllers
         {
             if (Request.Cookies.ContainsKey("CurrentUser"))
             {
-                return Redirect($"/users/{Request.Cookies["CurrentUser"]}");
+                return Redirect("/users/profile");
             }
             else
             {

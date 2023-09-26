@@ -10,7 +10,11 @@ namespace TasteBuddies.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public List<Post> Posts { get; set; } = new List<Post>();
+<<<<<<< HEAD
+       
+=======
         public List<Group>? Groups { get; set; }
+>>>>>>> fdedda190b44264a10fff3a2f48ca5321f005d37
 
         public User()
         {
