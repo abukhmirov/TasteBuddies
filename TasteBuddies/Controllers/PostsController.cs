@@ -64,21 +64,20 @@ namespace TasteBuddies.Controllers
         }
 
         [Route("/Users/{userId:int}/posts/{id:int}/edit")]
-        public IActionResult Edit(int userId, int postId)
+        public IActionResult Edit(int userId, int id)
         {
-            var post = _context.Posts.Find(postId);
+            var post = _context.Posts.Find(id);
             var user = _context.Users.Find(userId);
-            post.User = user;
 
             return View(post);
         }
 
         // PUT: /Users/:id
         [HttpPost]
-        [Route("/posts/{id:int}")]
-        public IActionResult Update(Post posts,int userId, int postId)
+        [Route("/Users/{userId:int}/posts/{id:int}/update")]
+        public IActionResult Update(Post posts, int id)
         {
-            posts.Id = postId;
+            posts.Id = id;
             posts.CreatedAt = DateTime.Now.ToUniversalTime();
             _context.Posts.Update(posts);
             _context.SaveChanges();
@@ -87,9 +86,10 @@ namespace TasteBuddies.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(int userId,int postId)
+        [Route("/Users/{userId:int}/posts/{id:int}/delete")]
+        public IActionResult Delete(int userId,int id)
         {
-            var posts = _context.Posts.Find(postId);
+            var posts = _context.Posts.Find(id);
             _context.Posts.Remove(posts);
             _context.SaveChanges();
             return RedirectToAction("Feed", new { id = posts.Id });

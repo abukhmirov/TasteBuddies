@@ -27,6 +27,11 @@
                 @post.CreatedAt.ToLocalTime().ToString(): @post.Description
                 <br />
                 <img src="@post.ImageURL" alt="Post Image" style="max-width: 300px; height: auto;">
+                <br/>
+                <a href="/Users/@post.User.Id/Posts/@post.Id/Edit">Edit Post</a>
+                <form action="/Users/@post.User.Id/posts/@post.Id/delete" method="post">
+                    <button type="submit" onclick="return confirm('Are You Sure You Want To Delete this Post?')">Delete Post</button>
+                </form>
             </p>
         </div>
     }
