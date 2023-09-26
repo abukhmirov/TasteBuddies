@@ -45,7 +45,7 @@ namespace TasteBuddies.Controllers
             else
             {
                 Response.Cookies.Append("CurrentUser", user.Id.ToString());
-                return Redirect($"/users/{user.Id}");
+                return Redirect($"/users/profile");
             }
         }
 
@@ -75,9 +75,8 @@ namespace TasteBuddies.Controllers
             }
         }
 
-
-            // GET: /signup
-            [Route("/Users/Signup")]
+        // GET: /signup
+        [Route("/Users/Signup")]
         public IActionResult Signup()
         {
             return View();
@@ -88,6 +87,14 @@ namespace TasteBuddies.Controllers
         [Route("/Users/")]
         public IActionResult Create(User user)
         {
+            var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
+                return View("SignUp");
+            }
+
             User userModel = new User();
             string digestedPassword = userModel.GetDigestedPassword(user.Password);
             user.Password = digestedPassword;
