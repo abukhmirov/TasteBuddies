@@ -10,6 +10,8 @@
 <a href="/users/@Model.Id/edit"><strong>Edit @Model.Name's Details</strong></a>
 <br />
 <a href="/users/@Model.Id/resetpassword"><strong>Reset @Model.Name's Password</strong></a>
+<br />
+<a href="/users/delete/@Model.Id" onclick="return confirm('Are you sure you want to delete your account?')"><strong>Delete Account</strong></a>
 
 <br />
 <br />
