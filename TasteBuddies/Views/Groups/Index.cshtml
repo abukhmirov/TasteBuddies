@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Group>
+
+
+
+
+
+<h4>Groups List</h4>
+
+@foreach (var group in Model)
+{
+    @group.Name
+    <br>
+    @group.Description
+    <form method="post" action="/user/@group.Id">
+        <button type="submit" class="join-button">Join</button>
+    </form>
+
+}
+
+<form method="get" action="/groups/new">
+    <button type="submit" class="add-user-button">Add Group</button>
+</form>
+

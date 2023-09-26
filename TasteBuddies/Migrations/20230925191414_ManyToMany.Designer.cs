@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TasteBuddies.DataAccess;
@@ -11,9 +12,11 @@ using TasteBuddies.DataAccess;
 namespace TasteBuddies.Migrations
 {
     [DbContext(typeof(TasteBuddiesContext))]
-    partial class TasteBuddiesContextModelSnapshot : ModelSnapshot
+    [Migration("20230925191414_ManyToMany")]
+    partial class ManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,19 +87,10 @@ namespace TasteBuddies.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("image_url");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("title");
-
-                    b.Property<int>("Upvotes")
-                        .HasColumnType("integer")
-                        .HasColumnName("upvotes");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer")

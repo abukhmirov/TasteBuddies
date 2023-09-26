@@ -2,7 +2,6 @@
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
@@ -62,8 +61,8 @@ namespace TasteBuddies.Controllers
 
 
             return Redirect("/Posts/Feed");
-
         }
+
         [Route("/Users/{userId:int}/posts/{id:int}/edit")]
         public IActionResult Edit(int userId, int postId)
         {
@@ -86,6 +85,7 @@ namespace TasteBuddies.Controllers
 
             return RedirectToAction("Feed", new { id = posts.Id });
         }
+
         [HttpPost]
         public IActionResult Delete(int userId,int postId)
         {
