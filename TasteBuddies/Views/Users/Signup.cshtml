@@ -1,13 +1,19 @@
-﻿<h1>Create a TasteBuddies Account</h1>
+﻿@model TasteBuddies.Models.User
+
+<h1>Create a TasteBuddies Account</h1>
 
 <form method="post" action="/Users/">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <input type="text" id="Name" name="Name" />
+        <input type="text" id="Name" name="Name">
     </div>
     <div class="form-group">
         <label for="Username">Username:</label>
-        <input type="text" id="Username" name="Username" />
+        <input type="text" id="Username" name="Username"/>
+        @if (ViewData.ModelState.ContainsKey("Username"))
+        {
+            <span class="text-danger">@Html.ValidationMessage("Username")</span>
+        }
     </div>
     <div class="form-group">
         <label for="Password">Password:</label>
