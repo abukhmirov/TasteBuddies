@@ -5,4 +5,8 @@
     <h6>@post.Title</h6>
     <p>@post.User.UserName</p>
     <p>@post.Description</p>
+    <form method="post" action="/posts/Upvote">
+       <Input type ="hidden" name="postId" value="@post.Id"/>
+    <p> @post.Upvotes <button type="submit">Upvote</button></p>
+    </form>
 }
