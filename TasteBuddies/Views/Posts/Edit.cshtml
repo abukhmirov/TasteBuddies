@@ -1,0 +1,24 @@
+﻿@model Post
+
+<h1>Edit Post</h1>
+<form method="post" action="/Users/@Model.User.Id/posts/@Model.Id/update">
+    <div class="form-group">
+		<label for="Title">Title:</label>
+		<input type="text" id="Title" name="Title" value="@Model.Title" />
+    </div>
+    <div class="form-group">
+		<label for="Description">Post Content:</label>
+		<input type="text" id="Description" name="Description" value="@Model.Description" />
+    </div>
+	<div class="form-group">
+		<label for="ImageURL">Post Image URL:</label>
+		<input type="text" id="ImageURL" name="ImageURL" value="@Model.ImageURL" />
+		<p>Image URL Requirements</p>
+		<ul>
+			<li>Must be correctly formatted and point directly to an image file (e.g., JPG, PNG, GIF)</li>
+			<li>Must start with "https://"</li>
+			<li>Must be publicly accessible</li>
+		</ul>
+	</div>
+	<button type="submit">Update Post</button>
+</form>
