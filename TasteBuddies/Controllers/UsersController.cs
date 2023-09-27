@@ -230,7 +230,7 @@ namespace TasteBuddies.Controllers
             user.Password = digestedPassword;
             _context.SaveChanges();
 
-            return RedirectToAction("show", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
         private string EncodePassword(string password)
