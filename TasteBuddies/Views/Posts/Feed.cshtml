@@ -2,12 +2,6 @@
 <h1 class="text-center" style="margin-top:20px;">Hungry? See what other users are whippin' up today!</h1>
 @foreach (var post in Model)
 {
-<<<<<<< HEAD
-    <h6>@post.Title</h6>
-    <p>@post.User.UserName</p>
-    <p>@post.Description</p>
-}
-=======
     <h6><strong>@post.Title</strong></h6>
     <p>
         <a href="/Users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description
@@ -31,4 +25,4 @@
     <br />
 }
 
->>>>>>> db250ae260a62a8840992f57070965fae58c309a
+
