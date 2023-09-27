@@ -23,35 +23,46 @@ namespace TasteBuddies.Controllers
             return View();
         }
 
+
+
         [Route("/users/login")]
         public IActionResult Login()
         {  
             return View();
         }
 
+
+        //Login verification
+
         [HttpPost]
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
         {
+
+			// Check if either the password or username is missing.
+
 			if (password == null || username == null)
 			{
+				// If either is missing, add a validation error and return to the login page.
 				ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
 				return View("Login");
 			}
 
-
+			// Query the database to find a user with the provided username and password.
 			var user = _context.Users
                 .Where(user => user.UserName == username 
                 && user.Password == EncodePassword(password))
                 .FirstOrDefault();
 
 
-
-            if (user == null)
+			//If the database query doesn't return anything, add a validation error and return to the login page.
+			if (user == null)
             {
                 ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
                 return View("Login");
             }
+
+            //Otherwise add the user cookie and return the user's profile
             else
             {
                 Response.Cookies.Append("CurrentUser", user.Id.ToString());
@@ -60,11 +71,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-        //[Route("/users/logout")]
-        //public IActionResult Logout()
-        //{
-        //    return View();
-        //}
 
         
         [Route("/users/logout")]
