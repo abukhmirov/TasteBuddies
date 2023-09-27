@@ -26,6 +26,25 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Feed()
         {
+            //Checking the current user
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
+            int parseId = Int32.Parse(id);
+
+            User user = _context.Users.Where(u => u.Id == parseId).FirstOrDefault();
+
+            ViewBag.user = user;
+
+            //Checking the current user
+
+
             var postList = _context.Posts
                 .OrderBy(post => post.CreatedAt)
                 .Include(post => post.User)
