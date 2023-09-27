@@ -3,5 +3,21 @@
 @foreach (var post in Model)
 {
     <h6><strong>@post.Title</strong></h6>
-    <p> <a href="/users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description</p>
+    <p>
+        <a href="/Users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description
+        <br/>
+        <form method="post" action="/posts/Upvote">
+          <Input type ="hidden" name="postId" value="@post.Id"/>
+          <p> @post.Upvotes <button type="submit">Upvote</button></p>
+        </form>
+        <a href="/Users/@post.User.Id/Posts/@post.Id/Edit">Edit Post</a>
+        <form action="/Users/@post.User.Id/posts/@post.Id/delete" method="post">
+            <button type="submit" onclick="return confirm('Are You Sure You Want To Delete this Post?')">Delete Post</button>
+        </form>
+    </p>
+    <img src="@post.ImageURL" alt="Post Image" style="max-width: 300px; height: auto;">
+    <br />
+    <br />
+    <br />
 }
+

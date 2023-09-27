@@ -45,7 +45,7 @@ namespace TasteBuddies.Controllers
             else
             {
                 Response.Cookies.Append("CurrentUser", user.Id.ToString());
-                return Redirect($"/users/{user.Id}");
+                return Redirect($"/users/profile");
             }
         }
 
@@ -68,9 +68,8 @@ namespace TasteBuddies.Controllers
             
         }
 
-
-            // GET: /signup
-            [Route("/Users/Signup")]
+        // GET: /signup
+        [Route("/Users/Signup")]
         public IActionResult Signup()
         {
             return View();
@@ -81,6 +80,14 @@ namespace TasteBuddies.Controllers
         [Route("/Users/")]
         public IActionResult Create(User user)
         {
+            var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
+                return View("SignUp");
+            }
+
             User userModel = new User();
             string digestedPassword = userModel.GetDigestedPassword(user.Password);
             user.Password = digestedPassword;
@@ -89,7 +96,7 @@ namespace TasteBuddies.Controllers
 
             Response.Cookies.Append("CurrentUser", user.Id.ToString());
 
-            return RedirectToAction("show", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
         [Route("/Users/Profile")]
@@ -150,6 +157,36 @@ namespace TasteBuddies.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("show", new { userId = user.Id });
+        }
+
+        [Route("/users/delete/{userId:int}")]
+        public IActionResult Delete(int userId)
+        {
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                if (userId == int.Parse(Request.Cookies["CurrentUser"]))
+                {
+                    var userToDelete = _context.Users
+                        .Where(user => user.Id == userId)
+                        .Include(user => user.Posts)
+                        .First();
+
+                    _context.Users.Remove(userToDelete);
+                    _context.SaveChanges();
+
+                    Response.Cookies.Delete("CurrentUser");
+
+                    return Redirect("/");
+                }
+                else
+                {
+                    return StatusCode(403);
+                }
+            }
+            else
+            {
+                return StatusCode(403);
+            }
         }
 
         // Goes to view to reset password
