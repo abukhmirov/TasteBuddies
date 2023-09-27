@@ -16,6 +16,7 @@
 <br />
 <br />
 
+
 <h2>@Model.Name's Posts:</h2>
 @if (Model.Posts.Any() != false)
 {
@@ -27,7 +28,7 @@
                 @post.CreatedAt.ToLocalTime().ToString(): @post.Description
                 <br />
                 <img src="@post.ImageURL" alt="Post Image" style="max-width: 300px; height: auto;">
-                <br/>
+                <br />
                 <a href="/Users/@post.User.Id/Posts/@post.Id/Edit">Edit Post</a>
                 <form action="/Users/@post.User.Id/posts/@post.Id/delete" method="post">
                     <button type="submit" onclick="return confirm('Are You Sure You Want To Delete this Post?')">Delete Post</button>
@@ -43,12 +44,19 @@ else
 
 
 <h2>@Model.Name is in these groups: </h2>
-@foreach (var group in Model.Groups)
+@if (Model.Groups.Any() != false)
 {
-    <div>
-        <h6> @group.Name</h6>
-        <p>
-             @group.Description
-        </p>
-    </div>
+    @foreach (var group in Model.Groups)
+    {
+        <div>
+            <h6> @group.Name</h6>
+            <p>
+                @group.Description
+            </p>
+        </div>
+    }
+}
+else
+{
+    <p><strong>@Model.UserName has not joined any groups yet.</strong></p>
 }
