@@ -67,6 +67,24 @@ namespace TasteBuddies.Controllers
         public IActionResult Create(Group group)
         {
 
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
+            int parseId = Int32.Parse(id);
+
+
+            var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
+           
+
+            group.Users.Add(dbUser);
+
+
             _context.Add(group);
             _context.SaveChanges();
 

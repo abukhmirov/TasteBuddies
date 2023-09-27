@@ -47,7 +47,7 @@ namespace TasteBuddies.Controllers
 
 
             var postList = _context.Posts
-                .OrderBy(post => post.CreatedAt)
+                .OrderByDescending(post => post.CreatedAt)
                 .Include(post => post.User)
                 .ToList();
 
