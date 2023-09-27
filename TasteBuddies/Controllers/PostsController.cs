@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Hosting;
 
 namespace TasteBuddies.Controllers
 {
@@ -26,8 +27,27 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Feed()
         {
+            //Checking the current user
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
+            int parseId = Int32.Parse(id);
+
+            User user = _context.Users.Where(u => u.Id == parseId).FirstOrDefault();
+
+            ViewBag.user = user;
+
+            //Checking the current user
+
+
             var postList = _context.Posts
-                .OrderBy(post => post.CreatedAt)
+                .OrderByDescending(post => post.CreatedAt)
                 .Include(post => post.User)
                 .ToList();
 
@@ -64,32 +84,45 @@ namespace TasteBuddies.Controllers
         }
 
         [Route("/Users/{userId:int}/posts/{id:int}/edit")]
-        public IActionResult Edit(int userId, int postId)
+        public IActionResult Edit(int userId, int id)
         {
-            var post = _context.Posts.Find(postId);
+            var post = _context.Posts.Find(id);
             var user = _context.Users.Find(userId);
-            post.User = user;
+
+            
 
             return View(post);
         }
 
         // PUT: /Users/:id
         [HttpPost]
-        [Route("/posts/{id:int}")]
-        public IActionResult Update(Post posts,int userId, int postId)
+        [Route("/Users/{userId:int}/posts/{id:int}/update")]
+        public IActionResult Update(Post posts, int id)
         {
-            posts.Id = postId;
+
+            var existingPost = _context.Posts.Find(id);
+            if (existingPost != null) 
+            {
+                return RedirectToAction("Feed");
+            }
+
+            posts.Upvotes = existingPost.Upvotes;
+
+            posts.Id = id;
             posts.CreatedAt = DateTime.Now.ToUniversalTime();
+
             _context.Posts.Update(posts);
             _context.SaveChanges();
 
+            var newUpvotes = posts.Upvotes;
             return RedirectToAction("Feed", new { id = posts.Id });
         }
 
         [HttpPost]
-        public IActionResult Delete(int userId,int postId)
+        [Route("/Users/{userId:int}/posts/{id:int}/delete")]
+        public IActionResult Delete(int userId,int id)
         {
-            var posts = _context.Posts.Find(postId);
+            var posts = _context.Posts.Find(id);
             _context.Posts.Remove(posts);
             _context.SaveChanges();
             return RedirectToAction("Feed", new { id = posts.Id });

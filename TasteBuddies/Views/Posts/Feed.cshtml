@@ -1,8 +1,34 @@
 ﻿@model List<Post>
-
+<h1 class="text-center" style="margin-top:20px;">Hungry? See what other users are whippin' up today!</h1>
 @foreach (var post in Model)
 {
+<<<<<<< HEAD
     <h6>@post.Title</h6>
     <p>@post.User.UserName</p>
     <p>@post.Description</p>
 }
+=======
+    <h6><strong>@post.Title</strong></h6>
+    <p>
+        <a href="/Users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description
+        <br/>
+        <form method="post" action="/posts/Upvote">
+          <Input type ="hidden" name="postId" value="@post.Id"/>
+          <p> @post.Upvotes <button type="submit">Upvote</button></p>
+        </form>
+        @if(ViewBag.user == post.User)
+        {
+             <a href="/Users/@post.User.Id/Posts/@post.Id/Edit">Edit Post</a>
+        <form action="/Users/@post.User.Id/posts/@post.Id/delete" method="post">
+            <button type="submit" onclick="return confirm('Are You Sure You Want To Delete this Post?')">Delete Post</button>
+        </form>
+        }
+       
+    </p>
+    <img src="@post.ImageURL" alt="Post Image" style="max-width: 300px; height: auto;">
+    <br />
+    <br />
+    <br />
+}
+
+>>>>>>> db250ae260a62a8840992f57070965fae58c309a

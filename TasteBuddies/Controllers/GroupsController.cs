@@ -20,6 +20,37 @@ namespace TasteBuddies.Controllers
         {
             var groups = _context.Groups;
 
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
+
+            int parseId = Int32.Parse(id);
+
+            var groupsWithUsers = _context.Groups.Include(g => g.Users);
+
+            User user = new User();
+
+            foreach (var group in groupsWithUsers)
+            {
+                foreach (var user1 in group.Users)
+                {
+                    if (user1.Id == parseId)
+                    {
+                        user = user1;
+                        break;
+                    }
+
+                }
+            }
+
+            ViewBag.user = user;
+
             return View(groups);
         }
 
@@ -36,6 +67,24 @@ namespace TasteBuddies.Controllers
         public IActionResult Create(Group group)
         {
 
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
+            int parseId = Int32.Parse(id);
+
+
+            var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
+           
+
+            group.Users.Add(dbUser);
+
+
             _context.Add(group);
             _context.SaveChanges();
 
@@ -46,56 +95,80 @@ namespace TasteBuddies.Controllers
 
         [HttpPost]
        
-        public IActionResult Join(Group group)
+        public IActionResult Join()
         {
             string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            {
+                // Handle the case where the cookie is missing or invalid
+                return RedirectToAction("Index", "Home"); // Redirect to login page 
+            }
+
+
             int parseId = Int32.Parse(id);
 
-            Response.Cookies.Append("CurrentGroup", group.Id.ToString());
-
-            var currentUserCookie = Request.Cookies["CurrentUser"];
-            var currentGroupCookie = Request.Cookies["CurrentGroup"];
+            int groupId = Int32.Parse(Request.Form["GroupId"]);
 
 
 
             var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
-            var dbGroup = _context.Groups.FirstOrDefault(g => g.Id == group.Id);
+            var dbGroup = _context.Groups.FirstOrDefault(g => g.Id == groupId);
 
+
+
+
+           
+            dbGroup.Users.Add(dbUser);
+        
+            //dbUser.Groups.Add(_context.Groups.FirstOrDefault(g => g.Id == groupId));
+
+            _context.SaveChanges();
             
 
-            if (dbUser != null && dbGroup != null)
-            {
-                dbGroup.Users.Add(dbUser);
-                dbUser.Groups.Add(dbGroup);
-        
-                _context.SaveChanges();
-            }
 
-            return Redirect("/Groups/Feed");
+
+            return RedirectToAction("Profile", "Users");
         }
 
 
 
-        public IActionResult Feed()
-        {
-            //var postList = _context.Posts.Where(p => U);
+        //public IActionResult CheckGroupUsers()
+        //{
+        //    string id = Request.Cookies["CurrentUser"].ToString();
 
-            var postList = _context.Posts
-                .OrderBy(post => post.CreatedAt)
-                .Include(post => post.User)
-                .ToList();
+        //    if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+        //    {
+        //        // Handle the case where the cookie is missing or invalid
+        //        return RedirectToAction("Index", "Home"); // Redirect to login page 
+        //    }
 
-            var last5Posts = new List<Post>();
 
-            if (postList.Count > 5)
-            {
-                last5Posts.AddRange(postList.TakeLast(5));
-            }
-            else
-            {
-                last5Posts = postList;
-            }
-            return View(last5Posts);
-        }
+
+        //    int parseId = Int32.Parse(id);
+
+        //    var groupsWithUsers = _context.Groups.Include(g => g.Users);
+
+        //    bool user = new bool;
+
+        //    foreach (var group in groupsWithUsers) 
+        //    { 
+        //        foreach(var user1 in group.Users) 
+        //        {
+        //            if(user1.Id == parseId)
+        //            {
+        //                user = true;
+        //                break;
+        //            }
+                 
+        //        }
+        //    }
+            
+        //    ViewBag.Users = user;
+
+        //    return RedirectToAction("Index", "Groups");
+        //}
+
+
     }
 }

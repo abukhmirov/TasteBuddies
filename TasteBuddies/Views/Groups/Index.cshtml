@@ -11,13 +11,23 @@
     @group.Name
     <br>
     @group.Description
-    <form method="post" action="/user/@group.Id">
-        <button type="submit" class="join-button">Join</button>
-    </form>
 
+    @if (ViewBag.user.Groups.Contains(group))
+    {
+        <p>You are already in this group</p>
+    }
+    else
+    {
+        <form method="post" action="@Url.Action("Join", "Groups")">
+            <input type="hidden" name="GroupId" value="@group.Id" />
+            <button type="submit" class="join-button">Join</button>
+        </form>
+    }
 }
 
+
+<br />
 <form method="get" action="/groups/new">
-    <button type="submit" class="add-user-button">Add Group</button>
+    <button type="submit" class="add-group-button">Add Group</button>
 </form>
 
