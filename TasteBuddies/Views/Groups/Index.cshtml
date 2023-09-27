@@ -12,7 +12,7 @@
 
             @if (ViewBag.user.Groups.Contains(group))
             {
-                <p>You are already in this group</p>
+                <p class="group-info">You are already in this group</p>
             }
             else
             {
@@ -27,7 +27,7 @@
     <h5 class="text-center">Don't see a group that fits your needs? Create one!</h5>
     <form method="get" action="/groups/new">
         <div class="d-grid gap-2">
-            <button class="btn btn-success" type="submit">Create Group</button>
+            <button class="btn btn-success" id="CreateButton" type="submit">Create Group</button>
         </div>
     </form>
 </div>
@@ -53,6 +53,10 @@
         margin-top: 10px;
     }
 
+    #CreateButton {
+        margin-bottom: 50px;
+        
+    }
     .group-info {
         color: black
     }
