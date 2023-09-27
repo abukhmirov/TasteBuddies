@@ -1,23 +1,26 @@
 ﻿@model TasteBuddies.Models.User
 
-<h1>Create a TasteBuddies Account</h1>
-
-<form method="post" action="/Users/">
-    <div class="form-group">
-        <label for="Name">Name:</label>
-        <input type="text" id="Name" name="Name">
-    </div>
-    <div class="form-group">
-        <label for="Username">Username:</label>
-        <input type="text" id="Username" name="Username"/>
-        @if (ViewData.ModelState.ContainsKey("Username"))
-        {
-            <span class="text-danger">@Html.ValidationMessage("Username")</span>
-        }
-    </div>
-    <div class="form-group">
-        <label for="Password">Password:</label>
-        <input type="password" id="Password" name="Password" />
-    </div>
-    <button type="submit">Create Account</button>
-</form>
+<div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
+    <h1 class=" justify-content-center">Create TasteBuddies Account</h1>
+    <form method="post" action="/Users/">
+        <div class="form-group">
+            <label class="form-label" for="Name" class="form-label mt-2">Name:</label>
+            <input class="form-control" type="text" id="Name" placeholder="Enter name" required name="Name">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Username" class="form-label mt-2">Username:</label>
+            <input class="form-control" type="text" id="Username" placeholder="Enter username" required name="Username" />
+            @if (ViewData.ModelState.ContainsKey("Username"))
+            {
+                <span class="text-danger">@Html.ValidationMessage("Username")</span>
+            }
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="Password" class="form-label mt-2">Password:</label>
+            <input class="form-control" type="password" id="Password" placeholder="Enter password" required name="Password" />
+        </div><br/>
+        <div class="d-grid gap-2">
+            <button class="btn btn-success"  type="submit">Create Account</button>
+        </div>
+    </form>
+</div>
