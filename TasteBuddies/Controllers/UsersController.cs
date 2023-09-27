@@ -77,10 +77,10 @@ namespace TasteBuddies.Controllers
         public IActionResult Logout()
         {
 
-     
-                Response.Cookies.Delete("CurrentUser");
-
-                return Redirect($"/");
+			// Delete the "CurrentUser" cookie to log the user out.
+			Response.Cookies.Delete("CurrentUser");
+			// Redirect the user to the root (home) page.
+			return Redirect($"/");
             
         }
 
