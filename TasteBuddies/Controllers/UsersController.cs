@@ -23,25 +23,46 @@ namespace TasteBuddies.Controllers
             return View();
         }
 
+
+
         [Route("/users/login")]
         public IActionResult Login()
         {  
             return View();
         }
 
+
+        //Login verification
+
         [HttpPost]
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
         {
-            var user = _context.Users
+
+			// Check if either the password or username is missing.
+
+			if (password == null || username == null)
+			{
+				// If either is missing, add a validation error and return to the login page.
+				ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+				return View("Login");
+			}
+
+			// Query the database to find a user with the provided username and password.
+			var user = _context.Users
                 .Where(user => user.UserName == username 
                 && user.Password == EncodePassword(password))
-                .First();
+                .FirstOrDefault();
 
-            if(user == null)
+
+			//If the database query doesn't return anything, add a validation error and return to the login page.
+			if (user == null)
             {
-                return Redirect("/users/login");
+                ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+                return View("Login");
             }
+
+            //Otherwise add the user cookie and return the user's profile
             else
             {
                 Response.Cookies.Append("CurrentUser", user.Id.ToString());
@@ -50,29 +71,17 @@ namespace TasteBuddies.Controllers
         }
 
 
-        //[Route("/users/logout")]
-        //public IActionResult Logout()
-        //{
-        //    return View();
-        //}
 
         
         [Route("/users/logout")]
         public IActionResult Logout()
         {
 
-            var currentUserCookie = Request.Cookies["CurrentUser"];
-
-            if (!string.IsNullOrEmpty(currentUserCookie))
-            {
+     
                 Response.Cookies.Delete("CurrentUser");
-                return Redirect("/users/login");
-            }
-            else
-            {
 
-                return Redirect($"/users/login");
-            }
+                return Redirect($"/");
+            
         }
 
         // GET: /signup
@@ -103,7 +112,7 @@ namespace TasteBuddies.Controllers
 
             Response.Cookies.Append("CurrentUser", user.Id.ToString());
 
-            return RedirectToAction("show", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
         [Route("/Users/Profile")]
@@ -114,6 +123,7 @@ namespace TasteBuddies.Controllers
             var user1 = _context.Users
               .Where(u => u.Id == parseId)
               .Include(u => u.Posts)
+              .Include (u => u.Groups)
               .FirstOrDefault();
 
             return View(user1);
@@ -163,6 +173,36 @@ namespace TasteBuddies.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("show", new { userId = user.Id });
+        }
+
+        [Route("/users/delete/{userId:int}")]
+        public IActionResult Delete(int userId)
+        {
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                if (userId == int.Parse(Request.Cookies["CurrentUser"]))
+                {
+                    var userToDelete = _context.Users
+                        .Where(user => user.Id == userId)
+                        .Include(user => user.Posts)
+                        .First();
+
+                    _context.Users.Remove(userToDelete);
+                    _context.SaveChanges();
+
+                    Response.Cookies.Delete("CurrentUser");
+
+                    return Redirect("/");
+                }
+                else
+                {
+                    return StatusCode(403);
+                }
+            }
+            else
+            {
+                return StatusCode(403);
+            }
         }
 
         // Goes to view to reset password

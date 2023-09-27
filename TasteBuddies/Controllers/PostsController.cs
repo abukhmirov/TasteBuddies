@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace TasteBuddies.Controllers
 {
@@ -92,6 +93,16 @@ namespace TasteBuddies.Controllers
             _context.Posts.Remove(posts);
             _context.SaveChanges();
             return RedirectToAction("Feed", new { id = posts.Id });
+        }
+        [HttpPost]
+        public IActionResult Upvote(int postId)
+        {
+            var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
+            post.Upvote();
+            _context.SaveChanges();
+            var newUpvotes = post.Upvotes;
+            return RedirectToAction("Feed", new {V = post.Upvotes = newUpvotes});
+            
         }
 
     }
