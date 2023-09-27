@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Hosting;
 
 namespace TasteBuddies.Controllers
 {
@@ -88,6 +89,8 @@ namespace TasteBuddies.Controllers
             var post = _context.Posts.Find(id);
             var user = _context.Users.Find(userId);
 
+            
+
             return View(post);
         }
 
@@ -96,11 +99,22 @@ namespace TasteBuddies.Controllers
         [Route("/Users/{userId:int}/posts/{id:int}/update")]
         public IActionResult Update(Post posts, int id)
         {
+
+            var existingPost = _context.Posts.Find(id);
+            if (existingPost != null) 
+            {
+                return RedirectToAction("Feed");
+            }
+
+            posts.Upvotes = existingPost.Upvotes;
+
             posts.Id = id;
             posts.CreatedAt = DateTime.Now.ToUniversalTime();
+
             _context.Posts.Update(posts);
             _context.SaveChanges();
 
+            var newUpvotes = posts.Upvotes;
             return RedirectToAction("Feed", new { id = posts.Id });
         }
 
