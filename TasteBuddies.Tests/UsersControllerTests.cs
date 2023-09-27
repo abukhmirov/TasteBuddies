@@ -225,6 +225,8 @@ namespace TasteBuddies.Tests
 
 
         }
+    }
+}
 
          //I cant figure out how to make this work
         //[Fact]

@@ -33,14 +33,24 @@ namespace TasteBuddies.Controllers
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
         {
-            var user = _context.Users
+			if (password == null || username == null)
+			{
+				ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+				return View("Login");
+			}
+
+
+			var user = _context.Users
                 .Where(user => user.UserName == username 
                 && user.Password == EncodePassword(password))
-                .First();
+                .FirstOrDefault();
 
-            if(user == null)
+
+
+            if (user == null)
             {
-                return Redirect("/users/login");
+                ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+                return View("Login");
             }
             else
             {
