@@ -1,6 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var currentUser = Context.Request.Cookies["CurrentUser"];
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
+   
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TasteBuddies</title>
@@ -21,10 +25,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Feed">Taste Buddies</a>
-                        </li> -->
-                        <li class="nav-item">
+                       @if (currentUser is not null)
+                        {
+                             <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Profile">Profile</a>
                         </li>
                         <li class="nav-item">
@@ -37,11 +40,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Groups" asp-action="Index">Groups</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
                         </li>
+                        }
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                       
                     </ul>
                 </div>
             </div>
