@@ -172,7 +172,7 @@ namespace TasteBuddies.Controllers
             existingUser.UserName = user.UserName;
             _context.SaveChanges();
 
-            return RedirectToAction("show", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
         [Route("/users/delete/{userId:int}")]
