@@ -226,7 +226,7 @@ namespace TasteBuddies.Tests
 
         }
 
-        //I cant figure out how to make this work
+         //I cant figure out how to make this work
         //[Fact]
         //public async Task Delete_RemovesUserFromDb()
         //{
@@ -246,5 +246,4 @@ namespace TasteBuddies.Tests
         //    response.EnsureSuccessStatusCode();
         //    Assert.DoesNotContain(user1, context.Users);
         //}
-    }
-}
+
