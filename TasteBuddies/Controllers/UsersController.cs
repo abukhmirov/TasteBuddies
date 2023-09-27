@@ -61,18 +61,11 @@ namespace TasteBuddies.Controllers
         public IActionResult Logout()
         {
 
-            var currentUserCookie = Request.Cookies["CurrentUser"];
-
-            if (!string.IsNullOrEmpty(currentUserCookie))
-            {
+     
                 Response.Cookies.Delete("CurrentUser");
-                return Redirect("/users/login");
-            }
-            else
-            {
 
-                return Redirect($"/users/login");
-            }
+                return Redirect($"/");
+            
         }
 
 
@@ -107,6 +100,7 @@ namespace TasteBuddies.Controllers
             var user1 = _context.Users
               .Where(u => u.Id == parseId)
               .Include(u => u.Posts)
+              .Include (u => u.Groups)
               .FirstOrDefault();
 
             return View(user1);

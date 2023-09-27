@@ -31,3 +31,15 @@ else
 {
     <p><strong>@Model.UserName has not created any posts yet.</strong></p>
 }
+
+
+<h2>@Model.Name is in these groups: </h2>
+@foreach (var group in Model.Groups)
+{
+    <div>
+        <h6> @group.Name</h6>
+        <p>
+             @group.Description
+        </p>
+    </div>
+}
