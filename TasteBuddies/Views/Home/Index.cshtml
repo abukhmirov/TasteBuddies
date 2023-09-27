@@ -2,8 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">TasteBuddies</h1>
-    <a href="/users/login">Log in to an existing account</a>
-    <a href="/users/signup">Create a New Account</a>
+<div class="row">
+    <div class="col-4">
+        <h1>TasteBuddies</h1>
+        <br />
+        <form method="get" action="/users/login">
+            <button class="btn btn-light" type="submit">Log in to an existing account</button>
+        </form>
+        <br />
+        <form method="get" action="/users/signup">
+            <button class="btn btn-light" type="submit">Create a New Account</button>
+        </form>
+    </div>
+
+    <div class="col-8">
+        <img src="https://i.imgur.com/QMH5Yav.png" alt="TasteBuddies Logo" />
+    </div>
 </div>
