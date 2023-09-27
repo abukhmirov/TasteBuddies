@@ -1,33 +1,60 @@
 ﻿@model IEnumerable<Group>
 
+<div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
+    <h1 class="text-center">Active TasteBuddies Groups</h1>
+    <h5 class="text-center">Have a special culinary interest? Connect with other users!</h5>
 
-
-
-
-<h4>Groups List</h4>
-
-@foreach (var group in Model)
-{
-    @group.Name
-    <br>
-    @group.Description
-
-    @if (ViewBag.user.Groups.Contains(group))
+    @foreach (var group in Model)
     {
-        <p>You are already in this group</p>
-    }
-    else
-    {
-        <form method="post" action="@Url.Action("Join", "Groups")">
-            <input type="hidden" name="GroupId" value="@group.Id" />
-            <button type="submit" class="join-button">Join</button>
-        </form>
-    }
-}
+        <div class="group-container">
+            <h2 class="group-info">@group.Name</h2>
+            <p class="group-info">@group.Description</p>
 
+            @if (ViewBag.user.Groups.Contains(group))
+            {
+                <p>You are already in this group</p>
+            }
+            else
+            {
+                <form method="post" action="@Url.Action("Join", "Groups")">
+                    <input class="form-control" type="hidden" name="GroupId" value="@group.Id" />
+                    <button class="btn btn-success join-button" type="submit">Join</button>
+                </form>
+            }
+        </div>
+    }
 
-<br />
-<form method="get" action="/groups/new">
-    <button type="submit" class="add-group-button">Add Group</button>
-</form>
+    <h5 class="text-center">Don't see a group that fits your needs? Create one!</h5>
+    <form method="get" action="/groups/new">
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Create Group</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .group-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border: 1px solid #dee2e6;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+        .group-container h2 {
+            font-size: 1.5rem;
+        }
+
+        .group-container p {
+            font-size: 1rem;
+        }
+
+    .join-button {
+        margin-top: 10px;
+    }
+
+    .group-info {
+        color: black
+    }
+</style>
 
