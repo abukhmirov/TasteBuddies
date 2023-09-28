@@ -10,7 +10,7 @@
 		<input class="form-control" type="password" id="password" name="password" />
 	</div><br />
 	<button class="btn btn-success" type="submit">Log In</button>
-	@if (ViewData.ModelState.ContainsKey("loginFail"))
+	@if (ViewData.ModelState.ContainsKey("LoginFail"))
 	{
 		<span class="text-danger">@Html.ValidationMessage("LoginFail")</span>
 	}
