@@ -70,9 +70,10 @@
                     <p> @post.Upvotes <button class="btn btn-success" type="submit">Upvote</button></p>
                 </form>
             </p>
+            <div class="button-container">
             @if(ViewBag.user == post.User)
                 {
-                 <div class="button-container">
+                 
                                 <form action="/Users/@post.User.Id/Posts/@post.Id/Edit">
                                     <button class="btn btn-success" type="submit">Edit Post</button>
                                 </form>
