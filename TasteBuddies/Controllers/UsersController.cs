@@ -174,6 +174,7 @@ namespace TasteBuddies.Controllers
             existingUser.Name = user.Name;
             existingUser.UserName = user.UserName;
             _context.SaveChanges();
+            Log.Information("A user's information has been updated.");
 
             return RedirectToAction("profile", new { userId = user.Id });
         }
