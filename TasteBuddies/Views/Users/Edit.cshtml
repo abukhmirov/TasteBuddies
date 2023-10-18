@@ -1,18 +1,46 @@
 ﻿@model User
 
+
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
+
+
     <h1 class=" justify-content-center">Edit User</h1>
+
     <form method="post" action="/Users/update/@Model.Id">
+
+
         <div class="form-group">
+
             <label class="form-label" for="Name">Name:</label>
+
             <input class="form-control" type="text" id="Name" name="Name" value="@Model.Name" />
-        </div></br>
-        <div class="form-group">
-            <label class="form-label" for="UserName">UserName:</label>
-            <input class="form-control" type="text" id="UserName" name="UserName" value="@Model.UserName" />
-        </div></br>
-        <div>
-            <button class="btn btn-success" type="submit">Update User</button>
+
         </div>
+
+
+        <br>
+
+
+        <div class="form-group">
+
+            <label class="form-label" for="UserName">UserName:</label>
+
+            <input class="form-control" type="text" id="UserName" name="UserName" value="@Model.UserName" />
+
+        </div>
+        
+
+        <br>
+
+
+        <div>
+
+            <button class="btn btn-success" type="submit">Update User</button>
+
+        </div>
+
+
     </form>
+
+
 </div>

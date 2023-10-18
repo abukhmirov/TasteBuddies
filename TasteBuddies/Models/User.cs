@@ -16,8 +16,9 @@ namespace TasteBuddies.Models
 
         public User()
         {
-            
+
         }
+
 
         public User(string name, string userName, string password)
         {
@@ -25,6 +26,8 @@ namespace TasteBuddies.Models
             UserName = userName;
             Password = password;
         }
+
+
 
         public string GetDigestedPassword(string password)
         {
@@ -38,9 +41,11 @@ namespace TasteBuddies.Models
             string PasswordInput = password;
 
             byte[] firstInputBytes = Encoding.ASCII.GetBytes(PasswordInput);
+
             byte[] firstInputDigested = sha.ComputeHash(firstInputBytes);
 
             StringBuilder firstInputBuilder = new StringBuilder();
+
             foreach (byte b in firstInputDigested)
             {
                 Console.Write(b + ", ");
@@ -48,12 +53,17 @@ namespace TasteBuddies.Models
             }
 
             return firstInputBuilder.ToString();
+
         }
+
+
+
 
 
         public bool VerifyPassword(string password)
         {
             string inputHash = GetDigestedPassword(password).ToString();
+
             return inputHash == Password;
         }
     }

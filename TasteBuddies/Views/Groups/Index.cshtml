@@ -1,38 +1,57 @@
 ﻿@model IEnumerable<Group>
 
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
+
     <h1 class="text-center">Active TasteBuddies Groups</h1>
+
     <h5 class="text-center">Have a special culinary interest? Connect with other users!</h5>
+
 
     @foreach (var group in Model)
     {
         <div class="group-container">
+
             <h2 class="group-info">@group.Name</h2>
+
             <p class="group-info">@group.Description</p>
 
             @if (ViewBag.user.Groups.Contains(group))
             {
                 <p class="group-info">You are already in this group</p>
             }
+
             else
             {
                 <form method="post" action="@Url.Action("Join", "Groups")">
+
                     <input class="form-control" type="hidden" name="GroupId" value="@group.Id" />
+
                     <button class="btn btn-success join-button" type="submit">Join</button>
+
                 </form>
             }
+
         </div>
     }
 
+
+
     <h5 class="text-center">Don't see a group that fits your needs? Create one!</h5>
+
     <form method="get" action="/groups/new">
+
         <div class="d-grid gap-2">
+
             <button class="btn btn-success" id="CreateButton" type="submit">Create Group</button>
+
         </div>
+
     </form>
+
 </div>
 
 <style>
+
     .group-container {
         background-color: #f8f9fa;
         padding: 20px;
@@ -45,20 +64,25 @@
             font-size: 1.5rem;
         }
 
+
         .group-container p {
             font-size: 1rem;
         }
+
 
     .join-button {
         margin-top: 10px;
     }
 
+
     #CreateButton {
         margin-bottom: 50px;
-        
     }
+
+
     .group-info {
         color: black
     }
+
 </style>
 

@@ -1,34 +1,69 @@
 ﻿
 
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
+
+
     <h1 class=" justify-content-center">Create a Post</h1>
+
     <form method="post" action="/posts/create">
+
+
         <div class="form-group">
+
             <label class="form-label" for="Title">Title:</label>
+
             <input class="form-control" type="text" id="Title" name="Title" placeholder="Title" />
+
         </div>
+
+
         <div class="form-group">
+
             <label class="form-label" for="Description">Post Content:</label>
+
             <input class="form-control" type="text" id="Description" name="Description" placeholder="Tell us about your culinary creation" />
+
         </div>
+
+
         <div class="form-group">
+
+
             <label class="form-label" for="ImageURL">Post Image URL:</label>
+
             <input class="form-control" type="text" id="ImageURL" name="ImageURL" placeholder="Add an open source image URL of your creation" />
+
             <p>Check out these sites for open source images:</p>
+
             <ul>
+
                 <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
                 <li><a href="https://pixabay.com/" target="_blank">Pixabay</a></li>
                 <li><a href="https://www.pexels.com/" target="_blank">Pexels</a></li>
+
             </ul>
+
             <p>Image URL Requirements:</p>
+
             <ul>
+
                 <li>Must be correctly formatted and point directly to an image file (e.g., JPG, PNG, GIF)</li>
                 <li>Must start with "https://"</li>
                 <li>Must be publicly accessible</li>
+
             </ul>
+
+
         </div>
+
+
         <div class="d-grid gap-2">
+
             <button class="btn btn-success" type="submit">Create Post</button>
+
         </div>
+
+
     </form>
+
 </div>
