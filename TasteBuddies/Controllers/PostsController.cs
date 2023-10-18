@@ -7,6 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace TasteBuddies.Controllers
 {
@@ -77,7 +78,7 @@ namespace TasteBuddies.Controllers
             _context.Posts.Add(post);
             user.Posts.Add(post);
             _context.SaveChanges();
-
+            Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
 
 
             return Redirect("/Posts/Feed");
@@ -97,35 +98,39 @@ namespace TasteBuddies.Controllers
         // PUT: /Users/:id
         [HttpPost]
         [Route("/Users/{userId:int}/posts/{id:int}/update")]
-        public IActionResult Update(Post posts, int id)
+        public IActionResult Update(Post post, int id, int userId)
         {
-
+            var user = _context.Users.Find(userId);
             var existingPost = _context.Posts.Find(id);
             if (existingPost != null) 
             {
                 return RedirectToAction("Feed");
             }
 
-            posts.Upvotes = existingPost.Upvotes;
+            post.Upvotes = existingPost.Upvotes;
 
-            posts.Id = id;
-            posts.CreatedAt = DateTime.Now.ToUniversalTime();
+            post.Id = id;
+            post.CreatedAt = DateTime.Now.ToUniversalTime();
 
-            _context.Posts.Update(posts);
+            _context.Posts.Update(post);
             _context.SaveChanges();
+            Log.Information($"A [{post.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
 
-            var newUpvotes = posts.Upvotes;
-            return RedirectToAction("Feed", new { id = posts.Id });
+            var newUpvotes = post.Upvotes;
+            return RedirectToAction("Feed", new { id = post.Id });
         }
 
         [HttpPost]
         [Route("/Users/{userId:int}/posts/{id:int}/delete")]
         public IActionResult Delete(int userId,int id)
         {
-            var posts = _context.Posts.Find(id);
-            _context.Posts.Remove(posts);
+            var user = _context.Users.Find(userId);
+            var post = _context.Posts.Find(id);
+            _context.Posts.Remove(post);
             _context.SaveChanges();
-            return RedirectToAction("Feed", new { id = posts.Id });
+            Log.Information($"A [{post.Id}]post has been deleted by user: [{user.Id}]{user.UserName}");
+
+            return RedirectToAction("Feed", new { id = post.Id });
         }
         [HttpPost]
         public IActionResult Upvote(int postId)
@@ -133,6 +138,8 @@ namespace TasteBuddies.Controllers
             var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
             post.Upvote();
             _context.SaveChanges();
+            Log.Information($"A [{post.Id}]post has been upvoted");
+
             var newUpvotes = post.Upvotes;
             return RedirectToAction("Feed", new {V = post.Upvotes = newUpvotes});
             

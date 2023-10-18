@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
+using Serilog;
 
 namespace TasteBuddies.Controllers
 {
@@ -107,11 +108,13 @@ namespace TasteBuddies.Controllers
             User userModel = new User();
             string digestedPassword = userModel.GetDigestedPassword(user.Password);
             user.Password = digestedPassword;
+
+
             _context.Add(user);
             _context.SaveChanges();
+            Log.Information("A user has been created");
 
             Response.Cookies.Append("CurrentUser", user.Id.ToString());
-
             return RedirectToAction("profile", new { userId = user.Id });
         }
 
@@ -171,6 +174,7 @@ namespace TasteBuddies.Controllers
             existingUser.Name = user.Name;
             existingUser.UserName = user.UserName;
             _context.SaveChanges();
+            Log.Information("A user's information has been updated.");
 
             return RedirectToAction("profile", new { userId = user.Id });
         }
@@ -191,6 +195,7 @@ namespace TasteBuddies.Controllers
                     _context.SaveChanges();
 
                     Response.Cookies.Delete("CurrentUser");
+                    Log.Information($"A user has been deleted, id: {userId}");
 
                     return Redirect("/");
                 }
@@ -229,6 +234,7 @@ namespace TasteBuddies.Controllers
             string digestedPassword = EncodePassword(newPassword);
             user.Password = digestedPassword;
             _context.SaveChanges();
+            Log.Information("A user's password has been changed.");
 
             return RedirectToAction("profile", new { userId = user.Id });
         }
