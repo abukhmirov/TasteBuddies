@@ -1,58 +1,78 @@
 using Microsoft.EntityFrameworkCore;
 using TasteBuddies.DataAccess;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<TasteBuddiesContext>(
-    options =>
-        options
-            .UseNpgsql(
-                builder.Configuration["TASTEBUDDIES_DBCONNECTIONSTRING"]
-                    ?? throw new InvalidOperationException(
-                        "Connection string 'TasteBuddies' not found."
-                    )
-            )
-            .UseSnakeCaseNamingConvention()
-);
-
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+try
 {
-    //Override Exception Page
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseExceptionHandler("/Home/NotFound");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    Log.Information("Starting web application...");
 
-//Handle 404 Routing
-app.Use(async (context, next) =>
-{
-    await next();
-    if (context.Response.StatusCode == 404)
+    var builder = WebApplication.CreateBuilder(args);
+
+    builder.Host.UseSerilog();
+
+    // Add services to the container.
+    builder.Services.AddControllersWithViews();
+    builder.Services.AddDbContext<TasteBuddiesContext>(
+        options =>
+            options
+                .UseNpgsql(
+                    builder.Configuration["TASTEBUDDIES_DBCONNECTIONSTRING"]
+                        ?? throw new InvalidOperationException(
+                            "Connection string 'TasteBuddies' not found."
+                        )
+                )
+                .UseSnakeCaseNamingConvention()
+    );
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
     {
-        context.Request.Path = "/Home/NotFound";
-        await next();
+        //Override Exception Page
+        app.UseDeveloperExceptionPage();
     }
-});
+    else
+    {
+        app.UseExceptionHandler("/Home/NotFound");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+    }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+    //Handle 404 Routing
+    app.Use(async (context, next) =>
+    {
+        await next();
+        if (context.Response.StatusCode == 404)
+        {
+            context.Request.Path = "/Home/NotFound";
+            await next();
+        }
+    });
 
-app.UseRouting();
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
 
-app.UseAuthorization();
+    app.UseRouting();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    app.UseAuthorization();
 
-app.Run();
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    app.Run();
+}
+catch(Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
