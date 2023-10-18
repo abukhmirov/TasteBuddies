@@ -195,6 +195,7 @@ namespace TasteBuddies.Controllers
                     _context.SaveChanges();
 
                     Response.Cookies.Delete("CurrentUser");
+                    Log.Information($"A user has been deleted, id: {userId}");
 
                     return Redirect("/");
                 }
@@ -233,6 +234,7 @@ namespace TasteBuddies.Controllers
             string digestedPassword = EncodePassword(newPassword);
             user.Password = digestedPassword;
             _context.SaveChanges();
+            Log.Information("A user's password has been changed.");
 
             return RedirectToAction("profile", new { userId = user.Id });
         }

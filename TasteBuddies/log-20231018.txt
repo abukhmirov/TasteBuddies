@@ -298,3 +298,6 @@ ORDER BY t.id, p.id, t0.groups_id, t0.users_id
 2023-10-18 12:34:38.775 -05:00 [INF] Starting web application...
 2023-10-18 12:34:49.546 -05:00 [INF] A user's information has been updated.
 2023-10-18 12:35:02.298 -05:00 [INF] A user has been created
+2023-10-18 12:37:10.017 -05:00 [INF] Starting web application...
+2023-10-18 12:37:22.472 -05:00 [INF] A user's password has been changed.
+2023-10-18 12:37:26.100 -05:00 [INF] A user has been deleted, id: 4
