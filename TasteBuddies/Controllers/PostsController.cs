@@ -133,7 +133,7 @@ namespace TasteBuddies.Controllers
             var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
              if(post.Upvotes > 1)
             {
-                return BadRequest("Stop clicking the button");
+                return RedirectToAction("Feed");
             }
         
             post.Upvote();
