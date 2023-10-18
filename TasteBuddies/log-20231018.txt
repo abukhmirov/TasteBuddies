@@ -1,0 +1,84 @@
+2023-10-18 12:08:19.542 -05:00 [INF] Starting web application...
+2023-10-18 12:08:19.789 -05:00 [INF] User profile is available. Using 'C:\Users\sharl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 12:08:19.850 -05:00 [INF] Now listening on: https://localhost:7053
+2023-10-18 12:08:19.851 -05:00 [INF] Now listening on: http://localhost:5113
+2023-10-18 12:08:19.855 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 12:08:19.855 -05:00 [INF] Hosting environment: Development
+2023-10-18 12:08:19.855 -05:00 [INF] Content root path: C:\Users\sharl\Source\Repos\TasteBuddies2\TasteBuddies\
+2023-10-18 12:08:20.456 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-18 12:08:20.488 -05:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:08:20.504 -05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-18 12:08:20.513 -05:00 [INF] Executing ViewResult, running view Index.
+2023-10-18 12:08:20.592 -05:00 [INF] Executed ViewResult - view Index executed in 81.4875ms.
+2023-10-18 12:08:20.597 -05:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 91.2728ms
+2023-10-18 12:08:20.597 -05:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:08:20.605 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 152.7260ms
+2023-10-18 12:08:20.613 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - -
+2023-10-18 12:08:20.613 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/StyleSheet.css - -
+2023-10-18 12:08:20.613 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - -
+2023-10-18 12:08:20.613 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - -
+2023-10-18 12:08:20.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-10-18 12:08:20.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 12:08:20.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-10-18 12:08:20.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-18 12:08:20.617 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 2.5247ms
+2023-10-18 12:08:20.622 -05:00 [INF] The file /css/StyleSheet.css was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] The file /TasteBuddies.styles.css was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] The file /js/site.js was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] The file /css/site.css was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2023-10-18 12:08:20.622 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.1788ms
+2023-10-18 12:08:20.623 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/StyleSheet.css - - - 304 - text/css 10.1146ms
+2023-10-18 12:08:20.623 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - - - 304 - text/css 10.6467ms
+2023-10-18 12:08:20.625 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 304 - application/javascript 11.0357ms
+2023-10-18 12:08:20.626 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - - - 304 - text/css 13.4049ms
+2023-10-18 12:08:20.628 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 13.6624ms
+2023-10-18 12:08:20.629 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 15.7281ms
+2023-10-18 12:08:37.376 -05:00 [INF] Starting web application...
+2023-10-18 12:08:38.196 -05:00 [INF] User profile is available. Using 'C:\Users\sharl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 12:08:38.356 -05:00 [INF] Now listening on: https://localhost:7053
+2023-10-18 12:08:38.357 -05:00 [INF] Now listening on: http://localhost:5113
+2023-10-18 12:08:38.361 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 12:08:38.362 -05:00 [INF] Hosting environment: Development
+2023-10-18 12:08:38.363 -05:00 [INF] Content root path: C:\Users\sharl\Source\Repos\TasteBuddies2\TasteBuddies\
+2023-10-18 12:08:38.930 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-18 12:08:38.978 -05:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:08:39.007 -05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-18 12:08:39.019 -05:00 [INF] Executing ViewResult, running view Index.
+2023-10-18 12:08:39.181 -05:00 [INF] Executed ViewResult - view Index executed in 167.2158ms.
+2023-10-18 12:08:39.190 -05:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 182.4082ms
+2023-10-18 12:08:39.192 -05:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:08:39.213 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 285.6650ms
+2023-10-18 12:08:39.229 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-18 12:08:39.229 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 12:08:39.235 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 6.1024ms
+2023-10-18 12:08:39.241 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 11.8558ms
+2023-10-18 12:10:13.496 -05:00 [INF] Starting web application...
+2023-10-18 12:10:13.700 -05:00 [INF] User profile is available. Using 'C:\Users\sharl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 12:10:13.760 -05:00 [INF] Now listening on: https://localhost:7053
+2023-10-18 12:10:13.761 -05:00 [INF] Now listening on: http://localhost:5113
+2023-10-18 12:10:13.763 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 12:10:13.763 -05:00 [INF] Hosting environment: Development
+2023-10-18 12:10:13.764 -05:00 [INF] Content root path: C:\Users\sharl\Source\Repos\TasteBuddies2\TasteBuddies\
+2023-10-18 12:10:14.142 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-18 12:10:14.179 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 404 0 - 38.9735ms
+2023-10-18 12:10:22.148 -05:00 [INF] Starting web application...
+2023-10-18 12:10:22.930 -05:00 [INF] User profile is available. Using 'C:\Users\sharl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 12:10:23.059 -05:00 [INF] Now listening on: https://localhost:7053
+2023-10-18 12:10:23.060 -05:00 [INF] Now listening on: http://localhost:5113
+2023-10-18 12:10:23.063 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 12:10:23.063 -05:00 [INF] Hosting environment: Development
+2023-10-18 12:10:23.064 -05:00 [INF] Content root path: C:\Users\sharl\Source\Repos\TasteBuddies2\TasteBuddies\
+2023-10-18 12:10:23.863 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-18 12:10:23.907 -05:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:10:23.929 -05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-18 12:10:23.943 -05:00 [INF] Executing ViewResult, running view Index.
+2023-10-18 12:10:24.080 -05:00 [INF] Executed ViewResult - view Index executed in 143.3198ms.
+2023-10-18 12:10:24.090 -05:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 159.4568ms
+2023-10-18 12:10:24.091 -05:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:10:24.114 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 253.5736ms
+2023-10-18 12:10:24.128 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-18 12:10:24.128 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 12:10:24.133 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 4.5574ms
+2023-10-18 12:10:24.151 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.5492ms
