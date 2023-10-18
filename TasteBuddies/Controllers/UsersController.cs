@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
+using Serilog;
 
 namespace TasteBuddies.Controllers
 {
@@ -107,11 +108,13 @@ namespace TasteBuddies.Controllers
             User userModel = new User();
             string digestedPassword = userModel.GetDigestedPassword(user.Password);
             user.Password = digestedPassword;
+
+
             _context.Add(user);
             _context.SaveChanges();
+            Log.Information("A user has been created");
 
             Response.Cookies.Append("CurrentUser", user.Id.ToString());
-
             return RedirectToAction("profile", new { userId = user.Id });
         }
 
