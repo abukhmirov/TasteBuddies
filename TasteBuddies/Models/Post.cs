@@ -9,12 +9,11 @@
         public DateTime CreatedAt { get; set; }
         public User User { get; set; }
         public int Upvotes { get; set; }
-       // public List<int> Upvotes { get; set; }  = new List<int>();
-      
+
 
         public void Upvote()
         {
-          Upvotes ++;
+            Upvotes++;
         }
     }
 }

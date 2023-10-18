@@ -218,34 +218,9 @@ namespace TasteBuddies.Tests
             Assert.Contains("Reset Password", html);
         }
 
-        //Needs work
-        [Fact]
-        public async Task UpdatePassword_SavesChangesToPassword()
-        {
-
-
-        }
+       
     }
 }
 
-         //I cant figure out how to make this work
-        //[Fact]
-        //public async Task Delete_RemovesUserFromDb()
-        //{
-        //    var context = GetDbContext();
-        //    var client = _factory.CreateClient();
-
-        //    User user = new User { Name = "Skylar", UserName = "ssandler", Password = "123" };
-        //    var user1 = new User { Name = "John", UserName = "Doe", Password = "1234" };
-
-        //    context.Users.Add(user1);
-        //    context.Users.Add(user);
-        //    context.SaveChanges();
-
-        //    client.DefaultRequestHeaders.Add("Cookie", new CookieHeaderValue("CurrentUser", user1.Id.ToString()).ToString());
-        //    var response = await client.GetAsync($"users/delete/{user1.Id}");
-
-        //    response.EnsureSuccessStatusCode();
-        //    Assert.DoesNotContain(user1, context.Users);
-        //}
+     
 
