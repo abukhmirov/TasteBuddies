@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
+using Serilog;
 namespace TasteBuddies.Controllers
 {
     public class GroupsController : Controller
@@ -101,6 +102,7 @@ namespace TasteBuddies.Controllers
 
             _context.Add(group);
             _context.SaveChanges();
+            Log.Information($"A new [{group.Id}]group has been created by [{id}]user.");
 
             Response.Cookies.Append("CurrentGroup", group.Id.ToString());
 
@@ -136,7 +138,7 @@ namespace TasteBuddies.Controllers
         
 
             _context.SaveChanges();
-            
+            Log.Information($"A [{dbUser.Id}]user has joined a new [{dbGroup.Id}]group.");
 
             return RedirectToAction("Profile", "Users");
         }
