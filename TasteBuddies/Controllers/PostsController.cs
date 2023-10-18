@@ -131,6 +131,11 @@ namespace TasteBuddies.Controllers
         public IActionResult Upvote(int postId)
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
+             if(post.Upvotes > 1)
+            {
+                return BadRequest("Stop clicking the button");
+            }
+        
             post.Upvote();
             _context.SaveChanges();
             var newUpvotes = post.Upvotes;
