@@ -1,12 +1,14 @@
 ﻿@model List<Post>
 
 <style>
+
     .button-container {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
     }
+
 
     button.btn-success {
         width: 100px;
@@ -15,12 +17,14 @@
         padding: 5px 10px;
     }
 
+
     .image-container {
         position: relative;
         overflow: hidden;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
 
     .post-image {
         max-width: 500px;
@@ -34,6 +38,7 @@
             transform: scale(1.05);
         }
 
+
     .feed-title {
         text-align: center;
         margin-top: 20px;
@@ -44,47 +49,94 @@
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
 </style>
 
+
 <h1 class="feed-title">Hungry? See what other users are whippin' up today!</h1>
+
+
 <br />
 <br />
+
+
 @foreach (var post in Model)
 {
 
     <div>
+
+
         <figure class="text-center">
+
+
             <div class="image-container">
+
                 <img src="@post.ImageURL" alt="Post Image" class="post-image">
+
             </div>
+
+
             <blockquote class="blockquote">
+
                 <br />
+
                 <h5><strong>@post.Title</strong></h5>
+
             </blockquote>
+
+
             <p>
+
                 <figcaption class="blockquote-footer">
+
                     <a href="/Users/@post.User.Id"><strong>@post.User.UserName</strong></a>: @post.Description
+
                 </figcaption>
+
+
                 <form method="post" action="/posts/Upvote">
+
                     <Input type="hidden" name="postId" value="@post.Id" />
+
                     <p> @post.Upvotes <button class="btn btn-success" type="submit">Upvote</button></p>
+
                 </form>
+
+
             </p>
+
+
  <div class="button-container">
+
+
             @if(ViewBag.user == post.User)
                 {
                 
                                 <form action="/Users/@post.User.Id/Posts/@post.Id/Edit">
+
                                     <button class="btn btn-success" type="submit">Edit Post</button>
+
                                 </form>
+
+
                                 <br>
+
+
                                 <form action="/Users/@post.User.Id/posts/@post.Id/delete" method="post">
+
                                     <button class="btn btn-success" type="submit" onclick="return confirm('Are You Sure You Want To Delete this Post?')">Delete Post</button>
+
                                 </form>
+
                 }
-           
+
+
+           </div>
+
         </figure>
+
     </div>
+
     <br />
 }
 

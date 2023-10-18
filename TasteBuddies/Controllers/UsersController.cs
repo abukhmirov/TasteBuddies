@@ -29,7 +29,9 @@ namespace TasteBuddies.Controllers
         [Route("/users/login")]
         public IActionResult Login()
         {  
+
             return View();
+
         }
 
 
@@ -46,8 +48,11 @@ namespace TasteBuddies.Controllers
 			{
 				// If either is missing, add a validation error and return to the login page.
 				ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+
 				return View("Login");
+
 			}
+
 
 			// Query the database to find a user with the provided username and password.
 			var user = _context.Users
@@ -56,18 +61,23 @@ namespace TasteBuddies.Controllers
                 .FirstOrDefault();
 
 
+
 			//If the database query doesn't return anything, add a validation error and return to the login page.
 			if (user == null)
             {
                 ModelState.AddModelError("LoginFail", "Wrong password or username. Try again!");
+
                 return View("Login");
+
             }
 
             //Otherwise add the user cookie and return the user's profile
             else
             {
                 Response.Cookies.Append("CurrentUser", user.Id.ToString());
+
                 return Redirect($"/users/profile");
+
             }
         }
 
@@ -80,10 +90,15 @@ namespace TasteBuddies.Controllers
 
 			// Delete the "CurrentUser" cookie to log the user out.
 			Response.Cookies.Delete("CurrentUser");
+
 			// Redirect the user to the root (home) page.
 			return Redirect($"/");
             
         }
+
+
+
+
 
         // GET: /signup
         [Route("/Users/Signup")]
@@ -92,11 +107,16 @@ namespace TasteBuddies.Controllers
             return View();
         }
 
+
+
+
+
         // POST: 
         [HttpPost]
         [Route("/Users/")]
         public IActionResult Create(User user)
         {
+
             var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
 
             if (existingUser != null)
@@ -106,11 +126,13 @@ namespace TasteBuddies.Controllers
             }
 
             User userModel = new User();
+
             string digestedPassword = userModel.GetDigestedPassword(user.Password);
+
             user.Password = digestedPassword;
 
-
             _context.Add(user);
+
             _context.SaveChanges();
             Log.Information("A user has been created");
 
@@ -118,11 +140,18 @@ namespace TasteBuddies.Controllers
             return RedirectToAction("profile", new { userId = user.Id });
         }
 
+
+
+
+
         [Route("/Users/Profile")]
         public IActionResult Profile(int userId)
         {
+
             string id = Request.Cookies["CurrentUser"].ToString();
+
             int parseId = Int32.Parse(id); 
+
             var user1 = _context.Users
               .Where(u => u.Id == parseId)
               .Include(u => u.Posts)
@@ -130,11 +159,17 @@ namespace TasteBuddies.Controllers
               .FirstOrDefault();
 
             return View(user1);
+
         }
+
+
+
+
 
         [Route("/Users/{userId:int}")]
         public IActionResult Show(int userId)
         {
+
             var user = _context.Users
                 .Where(u => u.Id == userId)
                 .Include(u => u.Posts)
@@ -142,6 +177,10 @@ namespace TasteBuddies.Controllers
 
             return View(user);
         }
+
+
+
+
 
         [Route("/Users/{id:int}/Edit")]
         public IActionResult Edit(int id)
@@ -156,7 +195,12 @@ namespace TasteBuddies.Controllers
             var user = _context.Users.Find(id);
 
             return View(user);
+
         }
+
+
+
+
 
         [HttpPost]
         [Route("/Users/update/{userId:int}")]
@@ -172,12 +216,20 @@ namespace TasteBuddies.Controllers
             var existingUser = _context.Users.Find(userId);
 
             existingUser.Name = user.Name;
+
             existingUser.UserName = user.UserName;
+
             _context.SaveChanges();
             Log.Information("A user's information has been updated.");
 
             return RedirectToAction("profile", new { userId = user.Id });
+
         }
+
+
+
+
+
 
         [Route("/users/delete/{userId:int}")]
         public IActionResult Delete(int userId)
@@ -192,6 +244,7 @@ namespace TasteBuddies.Controllers
                         .First();
 
                     _context.Users.Remove(userToDelete);
+
                     _context.SaveChanges();
 
                     Response.Cookies.Delete("CurrentUser");
@@ -199,16 +252,22 @@ namespace TasteBuddies.Controllers
 
                     return Redirect("/");
                 }
+
                 else
                 {
                     return StatusCode(403);
                 }
             }
+
             else
             {
                 return StatusCode(403);
             }
         }
+
+
+
+
 
         // Goes to view to reset password
         [Route("/Users/{id:int}/ResetPassword")]
@@ -224,33 +283,51 @@ namespace TasteBuddies.Controllers
             var user = _context.Users.Find(id);
 
             return View(user);
+
         }
+
+
+
+
 
         // Updates password
         [Route("/Users/updatepassword/{id}")]
         public IActionResult UpdatePassword(int id, string newPassword)
         {
             var user = _context.Users.Find(id);
+
             string digestedPassword = EncodePassword(newPassword);
+
             user.Password = digestedPassword;
+
             _context.SaveChanges();
             Log.Information("A user's password has been changed.");
 
             return RedirectToAction("profile", new { userId = user.Id });
+
         }
+
+
+
+
 
         private string EncodePassword(string password)
         {
             HashAlgorithm sha = SHA256.Create();
 
             byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+
             byte[] passwordDigested = sha.ComputeHash(passwordBytes);
+
             StringBuilder passwordBuilder = new StringBuilder();
+
             foreach (byte b in passwordDigested)
             {
                 passwordBuilder.Append(b.ToString("x2"));
             }
+
             return passwordBuilder.ToString();
+
         }
     }
 }
