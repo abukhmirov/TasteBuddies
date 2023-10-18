@@ -301,3 +301,7 @@ ORDER BY t.id, p.id, t0.groups_id, t0.users_id
 2023-10-18 12:37:10.017 -05:00 [INF] Starting web application...
 2023-10-18 12:37:22.472 -05:00 [INF] A user's password has been changed.
 2023-10-18 12:37:26.100 -05:00 [INF] A user has been deleted, id: 4
+2023-10-18 12:48:03.681 -05:00 [INF] Starting web application...
+2023-10-18 12:49:01.651 -05:00 [INF] A post has been created by user: [1]bsmith
+2023-10-18 12:49:04.415 -05:00 [INF] A [2]post has been upvoted
+2023-10-18 12:49:12.076 -05:00 [INF] A [2]post has been deleted by user: [1]bsmith
