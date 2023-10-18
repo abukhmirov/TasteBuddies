@@ -182,6 +182,14 @@ namespace TasteBuddies.Controllers
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
 
+             if(post.Upvotes > 1)
+            {
+                return RedirectToAction("Feed");
+            }
+        
+
+
+
             post.Upvote();
 
             _context.SaveChanges();
