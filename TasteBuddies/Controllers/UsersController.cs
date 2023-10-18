@@ -6,6 +6,8 @@ using System.Text;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
 using Serilog;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Composition;
 
 namespace TasteBuddies.Controllers
 {
@@ -92,7 +94,7 @@ namespace TasteBuddies.Controllers
 			Response.Cookies.Delete("CurrentUser");
 
 			// Redirect the user to the root (home) page.
-			return Redirect($"/");
+			return Redirect("/");
             
         }
 
@@ -104,6 +106,7 @@ namespace TasteBuddies.Controllers
         [Route("/Users/Signup")]
         public IActionResult Signup()
         {
+            ViewData["UserCreateError"] = TempData["UserCreateError"];
             return View();
         }
 
@@ -116,6 +119,13 @@ namespace TasteBuddies.Controllers
         [Route("/Users/")]
         public IActionResult Create(User user)
         {
+            if (!ModelState.IsValid)
+            {
+                Log.Warning("User model not valid for create action");
+                TempData["UserCreateError"] = "One or more fields were invalid, please try again";
+
+                return Redirect("/users/signup");
+            }
 
             var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
 
@@ -145,21 +155,29 @@ namespace TasteBuddies.Controllers
 
 
         [Route("/Users/Profile")]
-        public IActionResult Profile(int userId)
+        public IActionResult Profile()
         {
-
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return Redirect("/");
+            }
             string id = Request.Cookies["CurrentUser"].ToString();
 
-            int parseId = Int32.Parse(id); 
-
-            var user1 = _context.Users
-              .Where(u => u.Id == parseId)
+            if(int.TryParse(id, out int parsedId))
+            {
+                var user1 = _context.Users
+              .Where(u => u.Id == parsedId)
               .Include(u => u.Posts)
-              .Include (u => u.Groups)
+              .Include(u => u.Groups)
               .FirstOrDefault();
 
-            return View(user1);
-
+                return View(user1);
+            }
+            else
+            {
+                Response.Cookies.Delete("CurrentUser");
+                return NotFound();
+            }
         }
 
 
@@ -167,9 +185,26 @@ namespace TasteBuddies.Controllers
 
 
         [Route("/Users/{userId:int}")]
-        public IActionResult Show(int userId)
+        public IActionResult Show(int? userId)
         {
+            if(userId is null)
+            {
+                return NotFound();
+            }
 
+            //if they navigate to their own show page, redirect to profile
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                string cookieId = Request.Cookies["CurrentUser"].ToString();
+
+                if (int.TryParse(cookieId, out int parsedId))
+                {
+                    if(parsedId == userId)
+                    {
+                        return Redirect("/users/profile");
+                    }
+                }
+            }
             var user = _context.Users
                 .Where(u => u.Id == userId)
                 .Include(u => u.Posts)
@@ -179,14 +214,23 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
         [Route("/Users/{id:int}/Edit")]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
+            if (id is null)
+            {
+                return NotFound();
+            }
+
             var currentUserId = Request.Cookies["CurrentUser"];
 
+            // if not logged in
+            if(currentUserId is null)
+            {
+                return NotFound();
+            }
+
+            // trying to edit someone else's stuff
             if (currentUserId != id.ToString())
             {
                 return StatusCode(403);
@@ -194,12 +238,14 @@ namespace TasteBuddies.Controllers
 
             var user = _context.Users.Find(id);
 
+            if(user is null)
+            {
+                return NotFound();
+            }
+
             return View(user);
 
         }
-
-
-
 
 
         [HttpPost]

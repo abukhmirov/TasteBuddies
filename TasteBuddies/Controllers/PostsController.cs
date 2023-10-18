@@ -140,9 +140,9 @@ namespace TasteBuddies.Controllers
 
             post.Upvotes = existingPost.Upvotes;
 
-            posts.Id = id;
+            post.Id = id;
 
-            posts.CreatedAt = DateTime.Now.ToUniversalTime();
+            post.CreatedAt = DateTime.Now.ToUniversalTime();
 
             _context.Posts.Update(post);
             _context.SaveChanges();
