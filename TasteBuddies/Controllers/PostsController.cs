@@ -87,36 +87,40 @@ namespace TasteBuddies.Controllers
         [HttpPost]
         public IActionResult Create(Post post)
         {
-            if (!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
-                return BadRequest();
-            }
+                if (!Request.Cookies.ContainsKey("CurrentUser"))
+                {
+                    return Redirect("/users/login");
+                }
+                string id = Request.Cookies["CurrentUser"].ToString();
 
-            if (!Request.Cookies.ContainsKey("CurrentUser"))
-            {
-                return Redirect("/users/login");
-            }
+                if (int.TryParse(id, out int parseId))
+                {
+                    var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
 
-            string id = Request.Cookies["CurrentUser"].ToString();
-            if (int.TryParse(id, out int parseId))
-            {
-                var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
+                   post.CreatedAt = DateTime.Now.ToUniversalTime();
 
-                post.CreatedAt = DateTime.Now.ToUniversalTime();
+                   _context.Posts.Add(post);
+                   user.Posts.Add(post);
 
-                _context.Posts.Add(post);
-                user.Posts.Add(post);
+                   _context.SaveChanges();
+                   Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
 
-                _context.SaveChanges();
-                Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
-
-                return Redirect("/Posts/Feed");
+                   return Redirect("/Posts/Feed");
+                }
+                else
+                {
+                    Response.Cookies.Delete("CurrentUser");
+                    return Redirect("/");
+                }
             }
             else
-            {
-                Response.Cookies.Delete("CurrentUser");
-                return Redirect("/");
-            }   
+            { 
+                Log.Warning("Image URL does not contain https:// at the begin.");
+
+                return View("Index", post);
+            }
         }
 
 
