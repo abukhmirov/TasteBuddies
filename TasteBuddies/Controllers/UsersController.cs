@@ -114,7 +114,7 @@ namespace TasteBuddies.Controllers
                 Log.Warning("User model not valid for create action");
                 TempData["UserCreateError"] = "One or more fields were invalid, please try again";
 
-                return Redirect("/users/signup");
+                return View("Singup", user);
             }
 
             var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
