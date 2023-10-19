@@ -117,7 +117,7 @@ namespace TasteBuddies.Controllers
             }
             else
             { 
-                Log.Warning("Image URL does not contain https:// at the begin.");
+                Log.Warning("Image URL is invalid.");
 
                 return View("Index", post);
             }

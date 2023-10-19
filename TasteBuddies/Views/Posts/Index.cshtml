@@ -1,5 +1,23 @@
 ﻿@model Post
 
+<style>
+    #openSourceImages, #hostImageOnImgur {
+        display: none;
+    }
+</style>
+
+<script>
+    function toggleVisibility(elementId) {
+        var element = document.getElementById(elementId);
+        if (element.style.display === 'none') {
+            element.style.display = 'block';
+        }
+        else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
 
 
@@ -10,7 +28,7 @@
 
         <div class="form-group">
 
-            <label class="form-label" for="Title">Title:</label>
+            <label class="form-label" for="Title"><strong>Title:</strong></label>
 
             <input class="form-control" type="text" id="Title" name="Title" placeholder="Title" />
 
@@ -20,7 +38,7 @@
 
         <div class="form-group">
 
-            <label class="form-label" for="Description">Post Content:</label>
+            <label class="form-label" for="Description"><strong>Post Content:</strong></label>
 
             <input class="form-control" type="text" id="Description" name="Description" placeholder="Tell us about your culinary creation" />
 
@@ -32,30 +50,40 @@
         <div class="form-group">
 
 
-            <label class="form-label" for="ImageURL">Post Image URL:</label>
+            <label class="form-label" for="ImageURL"><strong>Post Image URL:</strong></label>
 
             <input class="form-control" type="text" id="ImageURL" name="ImageURL" placeholder="Add an open source image URL of your creation" />
             <span asp-validation-for="ImageURL" class="text-danger"></span>
 
-            <p>Check out these sites for open source images:</p>
+            <br />
+            <p><strong>All Image URLs Must:</strong></p>
 
             <ul>
 
+                <li>Be correctly formatted and point directly to an image file (e.g., JPG, PNG, GIF)</li>
+                <li>Start with "https://"</li>
+                <li>Be publicly accessible</li>
+
+            </ul>
+
+            <p><strong>Your post image can either be open source or hosted on Imgur. </strong></p>
+            <p><a href="javascript:void(0);" onclick="toggleVisibility('openSourceImages')"><strong>Click here to see open source images sites:</strong></a></p>
+            <ul id="openSourceImages">
                 <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
-                <li><a href="https://pixabay.com/" target="_blank">Pixabay</a></li>
-                <li><a href="https://www.pexels.com/" target="_blank">Pexels</a></li>
-
+                        <li><a href="https://pixabay.com/" target="_blank">Pixabay</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank">Pexels</a></li>
             </ul>
 
-            <p>Image URL Requirements:</p>
-
-            <ul>
-
-                <li>Must be correctly formatted and point directly to an image file (e.g., JPG, PNG, GIF)</li>
-                <li>Must start with "https://"</li>
-                <li>Must be publicly accessible</li>
-
-            </ul>
+            <p><a href="javascript:void(0);" onclick="toggleVisibility('hostImageOnImgur')"><strong>Click here to see how to host an image on Imgur:</strong></p></a>
+            <ol id="hostImageOnImgur">
+                        <li><a href="https://imgur.com/upload" target="_blank">Go to Imgur's website</a></li>
+                        <li>Choose Your Image: Drag or drop an image onto the page or click "Browse" to select an image from your device</li>
+                        <li>Upload the Image: Once you've selected the image, click "Open" or equivalent to start the upload process.</li>
+                        <li>Configure Settings (Optional): You can add a title, description, and choose the privacy settings for your image.</li>
+                        <li>Click "Upload": After configuring any desired settings, click the "Upload" button to finalize the process.</li>
+                        <li>Share the Image: Once your image is uploaded, you'll be provided with a shareable link. Use this link as your post image URL.</li>
+                    </ol>
+            </ol>
 
 
         </div>
