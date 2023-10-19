@@ -221,6 +221,12 @@ namespace TasteBuddies.Controllers
             {
                 return NotFound();
             }
+
+             if(post.Upvotes > 1)
+            {
+                return RedirectToAction("Feed");
+            }
+        
             post.Upvote();
 
             _context.SaveChanges();
