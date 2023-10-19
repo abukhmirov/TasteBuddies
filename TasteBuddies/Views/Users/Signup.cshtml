@@ -1,4 +1,7 @@
 ﻿@model TasteBuddies.Models.User
+@{
+    string userCreateError = ViewData["UserCreateError"] as string;
+}
 
 
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
@@ -16,6 +19,8 @@
 
             <input class="form-control" type="text" id="Name" placeholder="Enter name" required name="Name">
 
+            <span asp-validation-for="Name" class="text-danger"></span>
+
 
         </div>
 
@@ -27,13 +32,12 @@
 
             <input class="form-control" type="text" id="Username" placeholder="Enter username" required name="Username" />
 
-            @if (ViewData.ModelState.ContainsKey("Username"))
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+            @*@if (ViewData.ModelState.ContainsKey("Username"))
             {
-
                 <span class="text-danger">@Html.ValidationMessage("Username")</span>
-
-            }
-
+            }*@
 
         </div>
 
@@ -45,9 +49,15 @@
 
             <input class="form-control" type="password" id="Password" placeholder="Enter password" required name="Password" />
 
+            <span asp-validation-for="Password" class="text-danger"></span>
+
 
         </div><br />
 
+        @if(userCreateError is not null)
+        {
+            <p class="text-danger">@userCreateError</p>
+        }
 
         <div class="d-grid gap-2">
 
