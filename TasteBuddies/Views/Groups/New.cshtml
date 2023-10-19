@@ -1,4 +1,5 @@
-﻿
+﻿@model Group
+
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
 
     <h1 class=" justify-content-center">Create a TasteBuddies Group</h1>
@@ -13,6 +14,7 @@
 
             <input class="form-control" type="text" id="Name" name="Name" placeholder="Name" />
 
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
 
@@ -22,6 +24,7 @@
 
             <input class="form-control" type="text" id="Description" name="Description" maxlength="500" placeholder="Description" />
 
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         
         <br />

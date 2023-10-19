@@ -32,6 +32,7 @@
 
             <input class="form-control" type="text" id="Title" name="Title" placeholder="Title" />
 
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
 
@@ -40,6 +41,8 @@
             <label class="form-label" for="Description"><strong>Post Content:</strong></label>
 
             <input class="form-control" type="text" id="Description" name="Description" placeholder="Tell us about your culinary creation" />
+
+            <span asp-validation-for="Description" class="text-danger"></span>
 
         </div>
 

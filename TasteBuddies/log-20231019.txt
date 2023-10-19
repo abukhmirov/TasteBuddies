@@ -1,3 +1,4 @@
+
 2023-10-19 11:59:06.783 -06:00 [INF] Starting web application...
 2023-10-19 11:59:13.704 -06:00 [INF] User profile is available. Using 'C:\Users\skyla\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2023-10-19 11:59:16.067 -06:00 [INF] Now listening on: https://localhost:7053

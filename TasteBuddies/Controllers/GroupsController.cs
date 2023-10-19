@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using Serilog;
+using Microsoft.Extensions.Hosting;
+
 namespace TasteBuddies.Controllers
 {
     public class GroupsController : Controller
@@ -76,39 +78,44 @@ namespace TasteBuddies.Controllers
         [Route("/Groups")]
         public IActionResult Create(Group group)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return BadRequest();
+
+                string id = Request.Cookies["CurrentUser"].ToString();
+
+                if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+                {
+                    // Handle the case where the cookie is missing or invalid
+                    return RedirectToAction("Index", "Home"); // Redirect to login page 
+                }
+
+
+                int parseId = Int32.Parse(id);
+
+
+                var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
+                if (dbUser is null)
+                {
+                    return NotFound();
+                }
+
+                group.Users.Add(dbUser);
+
+
+                _context.Add(group);
+                _context.SaveChanges();
+                Log.Information($"A new [{group.Id}]group has been created by [{id}]user.");
+
+                Response.Cookies.Append("CurrentGroup", group.Id.ToString());
+
+                return Redirect("/Groups");
             }
-
-            string id = Request.Cookies["CurrentUser"].ToString();
-
-            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
+            else
             {
-                // Handle the case where the cookie is missing or invalid
-                return RedirectToAction("Index", "Home"); // Redirect to login page 
+                Log.Warning("Group model is not valid");
+
+                return View("New", group);
             }
-
-
-            int parseId = Int32.Parse(id);
-
-
-            var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
-            if (dbUser is null)
-            {
-                return NotFound();
-            }
-
-            group.Users.Add(dbUser);
-
-
-            _context.Add(group);
-            _context.SaveChanges();
-            Log.Information($"A new [{group.Id}]group has been created by [{id}]user.");
-
-            Response.Cookies.Append("CurrentGroup", group.Id.ToString());
-
-            return Redirect("/Groups");
         }
 
 
