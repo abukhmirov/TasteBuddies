@@ -120,34 +120,24 @@ namespace TasteBuddies.Controllers
             var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
 
             if (existingUser != null)
-
             {
-                var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
-
-                if (existingUser != null)
-                {
-                    ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
-                    return View("SignUp");
-                }
-
-                User userModel = new User();
-
-                string digestedPassword = userModel.GetDigestedPassword(user.Password);
-
-                user.Password = digestedPassword;
-
-                _context.Add(user);
-
-                _context.SaveChanges();
-                Log.Information("A user has been created");
-
-                Response.Cookies.Append("CurrentUser", user.Id.ToString());
-                return RedirectToAction("profile", new { userId = user.Id });
-            } 
-            else
-            {
-                return View("Signup", user);
+                ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
+                return View("SignUp", user);
             }
+
+            User userModel = new User();
+
+            string digestedPassword = userModel.GetDigestedPassword(user.Password);
+
+            user.Password = digestedPassword;
+
+            _context.Add(user);
+
+            _context.SaveChanges();
+            Log.Information("A user has been created");
+
+            Response.Cookies.Append("CurrentUser", user.Id.ToString());
+            return RedirectToAction("profile", new { userId = user.Id });
         }
 
 
