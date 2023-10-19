@@ -177,17 +177,9 @@ namespace TasteBuddies.Controllers
             }
 
             //if they navigate to their own show page, redirect to profile
-            if (Request.Cookies.ContainsKey("CurrentUser"))
+            if (IsCurrentUser((int)userId))
             {
-                string cookieId = Request.Cookies["CurrentUser"].ToString();
-
-                if (int.TryParse(cookieId, out int parsedId))
-                {
-                    if(parsedId == userId)
-                    {
-                        return Redirect("/users/profile");
-                    }
-                }
+                return Redirect("/users/profile");
             }
             var user = _context.Users
                 .Where(u => u.Id == userId)
@@ -206,18 +198,9 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            // if not logged in
-            if(currentUserId is null)
+            if (!IsCurrentUser((int)id))
             {
-                return NotFound();
-            }
-
-            // trying to edit someone else's stuff
-            if (currentUserId != id.ToString())
-            {
-                return StatusCode(403);
+                return BadRequest();
             }
 
             var user = _context.Users.Find(id);
@@ -246,11 +229,9 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            if (currentUserId != userId.ToString())
+            if (!IsCurrentUser((int)userId))
             {
-                return StatusCode(403);
+                return BadRequest();
             }
 
             var existingUser = _context.Users.Find(userId);
@@ -279,43 +260,27 @@ namespace TasteBuddies.Controllers
             {
                 return NotFound();
             }
-            if (Request.Cookies.ContainsKey("CurrentUser"))
+            
+            if (IsCurrentUser((int)userId))
             {
-                if (int.TryParse(Request.Cookies["CurrentUser"], out int currentUserId))
-                {
-                    if (currentUserId == userId)
-                    {
-                        var userToDelete = _context.Users
-                                        .Where(user => user.Id == userId)
-                                        .Include(user => user.Posts)
-                                        .First();
+                var userToDelete = _context.Users
+                                    .Where(user => user.Id == userId)
+                                    .Include(user => user.Posts)
+                                    .First();
 
-                        _context.Users.Remove(userToDelete);
+                _context.Users.Remove(userToDelete);
 
-                        _context.SaveChanges();
+                _context.SaveChanges();
 
-                        Response.Cookies.Delete("CurrentUser");
-                        Log.Information($"A user has been deleted, id: {userId}");
+                Response.Cookies.Delete("CurrentUser");
+                Log.Information($"A user has been deleted, id: {userId}");
 
-                        return Redirect("/");
-                    }
-                    else
-                    {
-                        return StatusCode(403);
-                    }
-                }
-
-                else
-                {
-                    Response.Cookies.Delete("CurrentUser");
-                    return NotFound();
-                }
+                return Redirect("/");
             }
-
             else
             {
-                return StatusCode(403);
-            }
+                return BadRequest();
+            }   
         }      
 
 
@@ -390,6 +355,25 @@ namespace TasteBuddies.Controllers
 
             return passwordBuilder.ToString();
 
+        }
+
+
+        // checks if user cookie matches userId provided
+        private bool IsCurrentUser(int userId)
+        {
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return false;
+            }
+            if (int.TryParse(Request.Cookies["CurrentUser"], out int parseId))
+            {
+                if (userId == parseId)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
         }
     }
 }
