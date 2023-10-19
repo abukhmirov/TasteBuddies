@@ -27,7 +27,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
         [Route("/users/login")]
         public IActionResult Login()
         {  
@@ -38,7 +37,6 @@ namespace TasteBuddies.Controllers
 
 
         //Login verification
-
         [HttpPost]
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
@@ -83,8 +81,6 @@ namespace TasteBuddies.Controllers
             }
         }
 
-
-
         
         [Route("/users/logout")]
         public IActionResult Logout()
@@ -99,9 +95,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
         // GET: /signup
         [Route("/Users/Signup")]
         public IActionResult Signup()
@@ -109,9 +102,6 @@ namespace TasteBuddies.Controllers
             ViewData["UserCreateError"] = TempData["UserCreateError"];
             return View();
         }
-
-
-
 
 
         // POST: 
@@ -151,9 +141,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
         [Route("/Users/Profile")]
         public IActionResult Profile()
         {
@@ -179,9 +166,6 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
         }
-
-
-
 
 
         [Route("/Users/{userId:int}")]
@@ -288,10 +272,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
-
         [Route("/users/delete/{userId:int}")]
         public IActionResult Delete(int? userId)
         {
@@ -367,9 +347,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
         // Updates password
         [Route("/Users/updatepassword/{id}")]
         public IActionResult UpdatePassword(int? id, string newPassword)
@@ -394,9 +371,6 @@ namespace TasteBuddies.Controllers
             return RedirectToAction("profile", new { userId = user.Id });
 
         }
-
-
-
 
 
         private string EncodePassword(string password)
