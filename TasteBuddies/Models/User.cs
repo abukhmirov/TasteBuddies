@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace TasteBuddies.Models
@@ -6,8 +7,16 @@ namespace TasteBuddies.Models
     public class User
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Name is required.")]
+        [StringLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "UserName is required.")]
+        [StringLength(100, ErrorMessage = "UserName cannot exceed 100 characters")]
         public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }
         public List<Post> Posts { get; set; } = new List<Post>();
 

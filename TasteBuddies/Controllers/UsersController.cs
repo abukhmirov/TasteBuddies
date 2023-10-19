@@ -6,6 +6,8 @@ using System.Text;
 using TasteBuddies.DataAccess;
 using TasteBuddies.Models;
 using Serilog;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Composition;
 
 namespace TasteBuddies.Controllers
 {
@@ -25,7 +27,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
         [Route("/users/login")]
         public IActionResult Login()
         {  
@@ -36,7 +37,6 @@ namespace TasteBuddies.Controllers
 
 
         //Login verification
-
         [HttpPost]
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
@@ -81,8 +81,6 @@ namespace TasteBuddies.Controllers
             }
         }
 
-
-
         
         [Route("/users/logout")]
         public IActionResult Logout()
@@ -92,23 +90,18 @@ namespace TasteBuddies.Controllers
 			Response.Cookies.Delete("CurrentUser");
 
 			// Redirect the user to the root (home) page.
-			return Redirect($"/");
+			return Redirect("/");
             
         }
-
-
-
 
 
         // GET: /signup
         [Route("/Users/Signup")]
         public IActionResult Signup()
         {
+            ViewData["UserCreateError"] = TempData["UserCreateError"];
             return View();
         }
-
-
-
 
 
         // POST: 
@@ -116,60 +109,88 @@ namespace TasteBuddies.Controllers
         [Route("/Users/")]
         public IActionResult Create(User user)
         {
+            if (!ModelState.IsValid)
+            {
+                Log.Warning("User model not valid for create action");
+                TempData["UserCreateError"] = "One or more fields were invalid, please try again";
+
+                return Redirect("/users/signup");
+            }
 
             var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
 
             if (existingUser != null)
+
             {
-                ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
-                return View("SignUp");
+                var existingUser = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
+                    return View("SignUp");
+                }
+
+                User userModel = new User();
+
+                string digestedPassword = userModel.GetDigestedPassword(user.Password);
+
+                user.Password = digestedPassword;
+
+                _context.Add(user);
+
+                _context.SaveChanges();
+                Log.Information("A user has been created");
+
+                Response.Cookies.Append("CurrentUser", user.Id.ToString());
+                return RedirectToAction("profile", new { userId = user.Id });
+            } 
+            else
+            {
+                return View("Signup", user);
             }
-
-            User userModel = new User();
-
-            string digestedPassword = userModel.GetDigestedPassword(user.Password);
-
-            user.Password = digestedPassword;
-
-            _context.Add(user);
-
-            _context.SaveChanges();
-            Log.Information("A user has been created");
-
-            Response.Cookies.Append("CurrentUser", user.Id.ToString());
-            return RedirectToAction("profile", new { userId = user.Id });
         }
-
-
-
 
 
         [Route("/Users/Profile")]
-        public IActionResult Profile(int userId)
+        public IActionResult Profile()
         {
-
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return Redirect("/");
+            }
             string id = Request.Cookies["CurrentUser"].ToString();
 
-            int parseId = Int32.Parse(id); 
-
-            var user1 = _context.Users
-              .Where(u => u.Id == parseId)
+            if(int.TryParse(id, out int parsedId))
+            {
+                var user1 = _context.Users
+              .Where(u => u.Id == parsedId)
               .Include(u => u.Posts)
-              .Include (u => u.Groups)
+              .Include(u => u.Groups)
               .FirstOrDefault();
 
-            return View(user1);
-
+                return View(user1);
+            }
+            else
+            {
+                Response.Cookies.Delete("CurrentUser");
+                return NotFound();
+            }
         }
 
 
-
-
-
         [Route("/Users/{userId:int}")]
-        public IActionResult Show(int userId)
+        public IActionResult Show(int? userId)
         {
+            if(userId is null)
+            {
+                return NotFound();
+            }
 
+            //if they navigate to their own show page, redirect to profile
+            if (IsCurrentUser((int)userId))
+            {
+                return Redirect("/users/profile");
+            }
             var user = _context.Users
                 .Where(u => u.Id == userId)
                 .Include(u => u.Posts)
@@ -179,41 +200,56 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
         [Route("/Users/{id:int}/Edit")]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            if (currentUserId != id.ToString())
+            if (id is null)
             {
-                return StatusCode(403);
+                return NotFound();
+            }
+
+            if (!IsCurrentUser((int)id))
+            {
+                return BadRequest();
             }
 
             var user = _context.Users.Find(id);
+
+            if(user is null)
+            {
+                return NotFound();
+            }
 
             return View(user);
 
         }
 
 
-
-
-
         [HttpPost]
         [Route("/Users/update/{userId:int}")]
-        public IActionResult Update(int userId, User user)
+        public IActionResult Update(int? userId, User user)
         {
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            if (currentUserId != userId.ToString())
+            if(userId is null)
             {
-                return StatusCode(403);
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+
+            if (!IsCurrentUser((int)userId))
+            {
+                return BadRequest();
             }
 
             var existingUser = _context.Users.Find(userId);
+
+            if(existingUser is null)
+            {
+                return NotFound();
+            }
 
             existingUser.Name = user.Name;
 
@@ -227,74 +263,78 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
-
-
         [Route("/users/delete/{userId:int}")]
-        public IActionResult Delete(int userId)
+        public IActionResult Delete(int? userId)
         {
-            if (Request.Cookies.ContainsKey("CurrentUser"))
+            if(userId is null)
             {
-                if (userId == int.Parse(Request.Cookies["CurrentUser"]))
-                {
-                    var userToDelete = _context.Users
-                        .Where(user => user.Id == userId)
-                        .Include(user => user.Posts)
-                        .First();
-
-                    _context.Users.Remove(userToDelete);
-
-                    _context.SaveChanges();
-
-                    Response.Cookies.Delete("CurrentUser");
-                    Log.Information($"A user has been deleted, id: {userId}");
-
-                    return Redirect("/");
-                }
-
-                else
-                {
-                    return StatusCode(403);
-                }
+                return NotFound();
             }
+            
+            if (IsCurrentUser((int)userId))
+            {
+                var userToDelete = _context.Users
+                                    .Where(user => user.Id == userId)
+                                    .Include(user => user.Posts)
+                                    .First();
 
+                _context.Users.Remove(userToDelete);
+
+                _context.SaveChanges();
+
+                Response.Cookies.Delete("CurrentUser");
+                Log.Information($"A user has been deleted, id: {userId}");
+
+                return Redirect("/");
+            }
             else
             {
-                return StatusCode(403);
-            }
-        }
-
-
-
+                return BadRequest();
+            }   
+        }      
 
 
         // Goes to view to reset password
         [Route("/Users/{id:int}/ResetPassword")]
-        public IActionResult ResetPassword(int id)
+        public IActionResult ResetPassword(int? id)
         {
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            if (currentUserId != id.ToString())
+            if(id is null)
             {
-                return StatusCode(403);
+                return NotFound();
             }
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                var currentUserId = Request.Cookies["CurrentUser"];
 
-            var user = _context.Users.Find(id);
+                if (currentUserId != id.ToString())
+                {
+                    return StatusCode(403);
+                }
 
-            return View(user);
+                var user = _context.Users.Find(id);
 
+                return View(user);
+            }
+            else
+            {
+                return Redirect("/users/login");
+            }
         }
-
-
-
 
 
         // Updates password
         [Route("/Users/updatepassword/{id}")]
-        public IActionResult UpdatePassword(int id, string newPassword)
+        public IActionResult UpdatePassword(int? id, string newPassword)
         {
+            if (id is null)
+            {
+                return NotFound();
+            }
             var user = _context.Users.Find(id);
+            if (user is null)
+            {
+                return NotFound();
+            }
 
             string digestedPassword = EncodePassword(newPassword);
 
@@ -306,9 +346,6 @@ namespace TasteBuddies.Controllers
             return RedirectToAction("profile", new { userId = user.Id });
 
         }
-
-
-
 
 
         private string EncodePassword(string password)
@@ -328,6 +365,25 @@ namespace TasteBuddies.Controllers
 
             return passwordBuilder.ToString();
 
+        }
+
+
+        // checks if user cookie matches userId provided
+        private bool IsCurrentUser(int userId)
+        {
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return false;
+            }
+            if (int.TryParse(Request.Cookies["CurrentUser"], out int parseId))
+            {
+                if (userId == parseId)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
         }
     }
 }
