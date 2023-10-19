@@ -181,10 +181,7 @@ namespace TasteBuddies.Controllers
             {
                 return Redirect("/users/profile");
             }
-            var user = _context.Users
-                .Where(u => u.Id == userId)
-                .Include(u => u.Posts)
-                .FirstOrDefault();
+            var user = GetUserWithPosts((int)userId);
 
             return View(user);
         }
@@ -264,10 +261,7 @@ namespace TasteBuddies.Controllers
             
             if (IsCurrentUser((int)userId))
             {
-                var userToDelete = _context.Users
-                                    .Where(user => user.Id == userId)
-                                    .Include(user => user.Posts)
-                                    .First();
+                var userToDelete = GetUserWithPosts((int)userId);
 
                 _context.Users.Remove(userToDelete);
 
@@ -375,6 +369,14 @@ namespace TasteBuddies.Controllers
                 else return false;
             }
             else return false;
+        }
+
+        private User GetUserWithPosts(int userId)
+        {
+            return _context.Users
+                .Where(user => user.Id == userId)
+                .Include(user => user.Posts)
+                .First();
         }
     }
 }

@@ -12,11 +12,7 @@ namespace TasteBuddies.Controllers
 {
     public class GroupsController : Controller
     {
-
-
         private readonly TasteBuddiesContext _context;
-
-
 
         public GroupsController(TasteBuddiesContext context)
         {
