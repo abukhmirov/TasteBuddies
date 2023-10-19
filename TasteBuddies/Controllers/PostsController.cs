@@ -97,7 +97,7 @@ namespace TasteBuddies.Controllers
 
                 if (int.TryParse(id, out int parseId))
                 {
-                    var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
+                    var user = GetUserWithPosts(parseId);
 
                    post.CreatedAt = DateTime.Now.ToUniversalTime();
 
@@ -262,5 +262,13 @@ namespace TasteBuddies.Controllers
             else return false;
         }
 
+
+        private User GetUserWithPosts(int userId)
+        {
+            return _context.Users
+                .Where(user => user.Id == userId)
+                .Include(user => user.Posts)
+                .First();
+        }
     }
 }
