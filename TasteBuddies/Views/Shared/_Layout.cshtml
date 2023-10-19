@@ -24,11 +24,10 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-pink border-bottom box-shadow mb-3">
 
 
             <div class="container-fluid">
-
 
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TasteBuddies</a>
 
@@ -47,24 +46,24 @@
                         @if (currentUser is not null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Profile">Profile</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="Profile">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Index">Create Post</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Posts" asp-action="Index">Create Post</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Feed">Feed</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Posts" asp-action="Feed">Feed</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Groups" asp-action="Index">Groups</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Groups" asp-action="Index">Groups</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
                             </li>
                         }
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
 
                     </ul>
