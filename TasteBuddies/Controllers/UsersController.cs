@@ -250,8 +250,18 @@ namespace TasteBuddies.Controllers
 
         [HttpPost]
         [Route("/Users/update/{userId:int}")]
-        public IActionResult Update(int userId, User user)
+        public IActionResult Update(int? userId, User user)
         {
+            if(userId is null)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+
             var currentUserId = Request.Cookies["CurrentUser"];
 
             if (currentUserId != userId.ToString())
@@ -260,6 +270,11 @@ namespace TasteBuddies.Controllers
             }
 
             var existingUser = _context.Users.Find(userId);
+
+            if(existingUser is null)
+            {
+                return NotFound();
+            }
 
             existingUser.Name = user.Name;
 
@@ -278,30 +293,42 @@ namespace TasteBuddies.Controllers
 
 
         [Route("/users/delete/{userId:int}")]
-        public IActionResult Delete(int userId)
+        public IActionResult Delete(int? userId)
         {
+            if(userId is null)
+            {
+                return NotFound();
+            }
             if (Request.Cookies.ContainsKey("CurrentUser"))
             {
-                if (userId == int.Parse(Request.Cookies["CurrentUser"]))
+                if (int.TryParse(Request.Cookies["CurrentUser"], out int currentUserId))
                 {
-                    var userToDelete = _context.Users
-                        .Where(user => user.Id == userId)
-                        .Include(user => user.Posts)
-                        .First();
+                    if (currentUserId == userId)
+                    {
+                        var userToDelete = _context.Users
+                                        .Where(user => user.Id == userId)
+                                        .Include(user => user.Posts)
+                                        .First();
 
-                    _context.Users.Remove(userToDelete);
+                        _context.Users.Remove(userToDelete);
 
-                    _context.SaveChanges();
+                        _context.SaveChanges();
 
-                    Response.Cookies.Delete("CurrentUser");
-                    Log.Information($"A user has been deleted, id: {userId}");
+                        Response.Cookies.Delete("CurrentUser");
+                        Log.Information($"A user has been deleted, id: {userId}");
 
-                    return Redirect("/");
+                        return Redirect("/");
+                    }
+                    else
+                    {
+                        return StatusCode(403);
+                    }
                 }
 
                 else
                 {
-                    return StatusCode(403);
+                    Response.Cookies.Delete("CurrentUser");
+                    return NotFound();
                 }
             }
 
@@ -309,27 +336,34 @@ namespace TasteBuddies.Controllers
             {
                 return StatusCode(403);
             }
-        }
-
-
-
+        }      
 
 
         // Goes to view to reset password
         [Route("/Users/{id:int}/ResetPassword")]
-        public IActionResult ResetPassword(int id)
+        public IActionResult ResetPassword(int? id)
         {
-            var currentUserId = Request.Cookies["CurrentUser"];
-
-            if (currentUserId != id.ToString())
+            if(id is null)
             {
-                return StatusCode(403);
+                return NotFound();
             }
+            if (Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                var currentUserId = Request.Cookies["CurrentUser"];
 
-            var user = _context.Users.Find(id);
+                if (currentUserId != id.ToString())
+                {
+                    return StatusCode(403);
+                }
 
-            return View(user);
+                var user = _context.Users.Find(id);
 
+                return View(user);
+            }
+            else
+            {
+                return Redirect("/users/login");
+            }
         }
 
 
@@ -338,9 +372,17 @@ namespace TasteBuddies.Controllers
 
         // Updates password
         [Route("/Users/updatepassword/{id}")]
-        public IActionResult UpdatePassword(int id, string newPassword)
+        public IActionResult UpdatePassword(int? id, string newPassword)
         {
+            if (id is null)
+            {
+                return NotFound();
+            }
             var user = _context.Users.Find(id);
+            if (user is null)
+            {
+                return NotFound();
+            }
 
             string digestedPassword = EncodePassword(newPassword);
 
