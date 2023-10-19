@@ -27,6 +27,13 @@
 
             <input class="form-control" type="text" id="UserName" name="UserName" value="@Model.UserName" />
 
+            @if (ViewData.ModelState.ContainsKey("Username"))
+            {
+
+                <span class="text-danger">@Html.ValidationMessage("Username")</span>
+
+            }
+
         </div>
         
 

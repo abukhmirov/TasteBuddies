@@ -215,6 +215,12 @@ namespace TasteBuddies.Controllers
 
             var existingUser = _context.Users.Find(userId);
 
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
+                return View("Edit", user);
+            }
+
             existingUser.Name = user.Name;
 
             existingUser.UserName = user.UserName;
