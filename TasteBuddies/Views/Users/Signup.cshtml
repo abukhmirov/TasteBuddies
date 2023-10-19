@@ -1,4 +1,7 @@
 ﻿@model TasteBuddies.Models.User
+@{
+    string userCreateError = ViewData["UserCreateError"] as string;
+}
 
 
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
@@ -51,6 +54,10 @@
 
         </div><br />
 
+        @if(userCreateError is not null)
+        {
+            <p class="text-danger">@userCreateError</p>
+        }
 
         <div class="d-grid gap-2">
 

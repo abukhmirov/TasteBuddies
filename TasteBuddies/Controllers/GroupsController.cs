@@ -22,7 +22,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
         public IActionResult Index()
         {
 
@@ -66,8 +65,6 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
         [Route("/Groups/New")]
         public IActionResult New()
         {
@@ -75,12 +72,14 @@ namespace TasteBuddies.Controllers
         }
 
 
-
-
         [HttpPost]
         [Route("/Groups")]
         public IActionResult Create(Group group)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
             string id = Request.Cookies["CurrentUser"].ToString();
 
@@ -95,7 +94,10 @@ namespace TasteBuddies.Controllers
 
 
             var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
-           
+            if (dbUser is null)
+            {
+                return NotFound();
+            }
 
             group.Users.Add(dbUser);
 
@@ -108,8 +110,6 @@ namespace TasteBuddies.Controllers
 
             return Redirect("/Groups");
         }
-
-
 
 
         [HttpPost]
@@ -133,15 +133,18 @@ namespace TasteBuddies.Controllers
 
             var dbUser = _context.Users.FirstOrDefault(u => u.Id == parseId);
             var dbGroup = _context.Groups.FirstOrDefault(g => g.Id == groupId);
-       
+            if (dbUser is null || dbGroup is null)
+            {
+                return NotFound();
+            }
+
             dbGroup.Users.Add(dbUser);
-        
+
 
             _context.SaveChanges();
             Log.Information($"A [{dbUser.Id}]user has joined a new [{dbGroup.Id}]group.");
 
             return RedirectToAction("Profile", "Users");
         }
-
     }
 }

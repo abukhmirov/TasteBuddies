@@ -307,3 +307,55 @@ ORDER BY t.id, p.id, t0.groups_id, t0.users_id
 2023-10-18 12:49:12.076 -05:00 [INF] A [2]post has been deleted by user: [1]bsmith
 2023-10-18 12:54:19.776 -05:00 [INF] Starting web application...
 2023-10-18 12:54:29.753 -05:00 [INF] A new [1]group has been created.
+2023-10-18 12:28:08.012 -07:00 [INF] Starting web application...
+2023-10-18 12:28:08.759 -07:00 [INF] User profile is available. Using 'C:\Users\sethg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 12:28:08.938 -07:00 [INF] Now listening on: https://localhost:7053
+2023-10-18 12:28:08.939 -07:00 [INF] Now listening on: http://localhost:5113
+2023-10-18 12:28:08.943 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 12:28:08.943 -07:00 [INF] Hosting environment: Development
+2023-10-18 12:28:08.944 -07:00 [INF] Content root path: C:\Users\sethg\source\repos\TasteBuddies\TasteBuddies\
+2023-10-18 12:28:09.439 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-18 12:28:09.498 -07:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:28:09.522 -07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-18 12:28:09.538 -07:00 [INF] Executing ViewResult, running view Index.
+2023-10-18 12:28:09.709 -07:00 [INF] Executed ViewResult - view Index executed in 177.9861ms.
+2023-10-18 12:28:09.715 -07:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 191.1742ms
+2023-10-18 12:28:09.717 -07:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-18 12:28:09.742 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - -
+2023-10-18 12:28:09.743 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - -
+2023-10-18 12:28:09.749 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 12:28:09.742 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/StyleSheet.css - -
+2023-10-18 12:28:09.742 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - -
+2023-10-18 12:28:09.751 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 308.5126ms
+2023-10-18 12:28:09.754 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-10-18 12:28:09.753 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-10-18 12:28:09.758 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-18 12:28:09.767 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 17.9894ms
+2023-10-18 12:28:09.776 -07:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2023-10-18 12:28:09.776 -07:00 [INF] The file /css/site.css was not modified
+2023-10-18 12:28:09.776 -07:00 [INF] The file /TasteBuddies.styles.css was not modified
+2023-10-18 12:28:09.776 -07:00 [INF] The file /css/StyleSheet.css was not modified
+2023-10-18 12:28:09.776 -07:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2023-10-18 12:28:09.776 -07:00 [INF] The file /js/site.js was not modified
+2023-10-18 12:28:09.777 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 34.3823ms
+2023-10-18 12:28:09.777 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - - - 304 - text/css 35.1311ms
+2023-10-18 12:28:09.778 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - - - 304 - text/css 35.9296ms
+2023-10-18 12:28:09.779 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/StyleSheet.css - - - 304 - text/css 36.6525ms
+2023-10-18 12:28:09.780 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 26.6902ms
+2023-10-18 12:28:09.780 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 304 - application/javascript 27.2741ms
+2023-10-18 12:28:09.792 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.1365ms
+2023-10-18 12:28:10.675 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/favicon.ico - -
+2023-10-18 12:28:10.676 -07:00 [INF] The file /favicon.ico was not modified
+2023-10-18 12:28:10.677 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/favicon.ico - - - 304 - image/x-icon 1.6041ms
+2023-10-18 12:28:11.012 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/signup? - -
+2023-10-18 12:28:11.014 -07:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-18 12:28:11.015 -07:00 [INF] Route matched with {action = "Signup", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Signup() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-18 12:28:11.318 -07:00 [INF] Executing ViewResult, running view Signup.
+2023-10-18 12:28:11.331 -07:00 [INF] Executed ViewResult - view Signup executed in 13.512ms.
+2023-10-18 12:28:11.332 -07:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Signup (TasteBuddies) in 315.5644ms
+2023-10-18 12:28:11.333 -07:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-18 12:28:11.337 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/signup? - - - 200 - text/html;+charset=utf-8 325.5519ms
+2023-10-18 12:28:11.340 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-18 12:28:11.340 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 12:28:11.342 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 2.0942ms
+2023-10-18 12:28:11.344 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.1532ms
