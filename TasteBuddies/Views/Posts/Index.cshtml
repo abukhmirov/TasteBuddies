@@ -1,4 +1,4 @@
-﻿
+﻿@model Post
 
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
 
@@ -32,6 +32,7 @@
             <label class="form-label" for="ImageURL">Post Image URL:</label>
 
             <input class="form-control" type="text" id="ImageURL" name="ImageURL" placeholder="Add an open source image URL of your creation" />
+            <span asp-validation-for="ImageURL" class="text-danger"></span>
 
             <p>Check out these sites for open source images:</p>
 

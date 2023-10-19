@@ -83,26 +83,31 @@ namespace TasteBuddies.Controllers
         [HttpPost]
         public IActionResult Create(Post post)
         {
+            if(ModelState.IsValid)
+            {
+                string id = Request.Cookies["CurrentUser"].ToString();
 
+                int parseId = Int32.Parse(id);
 
-            string id = Request.Cookies["CurrentUser"].ToString();
+                var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
 
-            int parseId = Int32.Parse(id);
+                post.CreatedAt = DateTime.Now.ToUniversalTime();
 
+                _context.Posts.Add(post);
 
-            var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
+                user.Posts.Add(post);
 
-            post.CreatedAt = DateTime.Now.ToUniversalTime();
+                _context.SaveChanges();
+                Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
 
-            _context.Posts.Add(post);
+                return Redirect("/Posts/Feed");
+            }
+            else
+            { 
+                Log.Warning("Image URL does not contain https:// at the begin.");
 
-            user.Posts.Add(post);
-
-            _context.SaveChanges();
-            Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
-
-
-            return Redirect("/Posts/Feed");
+                return View("Index", post);
+            }
 
         }
 
