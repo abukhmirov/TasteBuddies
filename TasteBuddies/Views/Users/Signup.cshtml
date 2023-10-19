@@ -19,6 +19,8 @@
 
             <input class="form-control" type="text" id="Name" placeholder="Enter name" required name="Name">
 
+            <span asp-validation-for="Name" class="text-danger"></span>
+
 
         </div>
 
@@ -30,13 +32,12 @@
 
             <input class="form-control" type="text" id="Username" placeholder="Enter username" required name="Username" />
 
-            @if (ViewData.ModelState.ContainsKey("Username"))
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+            @*@if (ViewData.ModelState.ContainsKey("Username"))
             {
-
                 <span class="text-danger">@Html.ValidationMessage("Username")</span>
-
-            }
-
+            }*@
 
         </div>
 
@@ -47,6 +48,8 @@
             <label class="form-label" for="Password" class="form-label mt-2">Password:</label>
 
             <input class="form-control" type="password" id="Password" placeholder="Enter password" required name="Password" />
+
+            <span asp-validation-for="Password" class="text-danger"></span>
 
 
         </div><br />
