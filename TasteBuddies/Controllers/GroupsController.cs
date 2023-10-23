@@ -123,7 +123,7 @@ namespace TasteBuddies.Controllers
 
                 Response.Cookies.Append("CurrentGroup", group.Id.ToString());
 
-                return Redirect("/Groups");
+                return RedirectToPage("/Groups", new {  passwordChanged = true });
             }
             else
             {

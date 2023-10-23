@@ -1163,3 +1163,474 @@ ORDER BY t.id, p.id, t0.groups_id, t0.users_id
 2023-10-23 09:44:20.290 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
 2023-10-23 09:44:20.292 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.2831ms
 2023-10-23 09:44:20.309 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.0250ms
+2023-10-23 10:10:19.914 -06:00 [INF] Starting web application...
+2023-10-23 10:10:20.916 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 10:10:21.087 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 10:10:21.087 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 10:10:21.091 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 10:10:21.091 -06:00 [INF] Hosting environment: Development
+2023-10-23 10:10:21.092 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 10:10:22.020 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 10:10:22.094 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:10:22.131 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 10:10:22.148 -06:00 [INF] Executing ViewResult, running view Index.
+2023-10-23 10:10:22.351 -06:00 [INF] Executed ViewResult - view Index executed in 209.3325ms.
+2023-10-23 10:10:22.361 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 229.2277ms
+2023-10-23 10:10:22.363 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:10:22.417 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 401.2181ms
+2023-10-23 10:10:22.461 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - -
+2023-10-23 10:10:22.461 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-10-23 10:10:22.462 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:22.462 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:22.461 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-10-23 10:10:22.461 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - -
+2023-10-23 10:10:22.461 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/StyleSheet.css - -
+2023-10-23 10:10:22.462 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - -
+2023-10-23 10:10:22.474 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 12.3257ms
+2023-10-23 10:10:22.484 -06:00 [INF] Sending file. Request path: '/TasteBuddies.styles.css'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\obj\Debug\net6.0\scopedcss\bundle\TasteBuddies.styles.css'
+2023-10-23 10:10:22.484 -06:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\js\site.js'
+2023-10-23 10:10:22.492 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - - - 200 1129 text/css 31.2366ms
+2023-10-23 10:10:22.497 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 200 3 application/javascript 36.0580ms
+2023-10-23 10:10:22.484 -06:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\css\site.css'
+2023-10-23 10:10:22.503 -06:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\lib\jquery\dist\jquery.min.js'
+2023-10-23 10:10:22.503 -06:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2023-10-23 10:10:22.503 -06:00 [INF] Sending file. Request path: '/css/StyleSheet.css'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\css\StyleSheet.css'
+2023-10-23 10:10:22.503 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - - - 200 208 text/css 41.3884ms
+2023-10-23 10:10:22.504 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - - - 200 89478 application/javascript 43.1752ms
+2023-10-23 10:10:22.508 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/StyleSheet.css - - - 200 339982 text/css 46.8591ms
+2023-10-23 10:10:22.506 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 200 78474 application/javascript 44.8925ms
+2023-10-23 10:10:22.534 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 71.7745ms
+2023-10-23 10:10:22.873 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/favicon.ico - -
+2023-10-23 10:10:22.876 -06:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\wwwroot\favicon.ico'
+2023-10-23 10:10:22.877 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/favicon.ico - - - 200 5430 image/x-icon 3.4098ms
+2023-10-23 10:10:24.892 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/signup? - -
+2023-10-23 10:10:24.894 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 10:10:24.895 -06:00 [INF] Route matched with {action = "Signup", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Signup() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:25.061 -06:00 [INF] Executing ViewResult, running view Signup.
+2023-10-23 10:10:25.075 -06:00 [INF] Executed ViewResult - view Signup executed in 14.6175ms.
+2023-10-23 10:10:25.079 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Signup (TasteBuddies) in 182.2157ms
+2023-10-23 10:10:25.079 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 10:10:25.084 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/signup? - - - 200 - text/html;+charset=utf-8 192.1252ms
+2023-10-23 10:10:25.092 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:25.093 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:25.094 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 1.2725ms
+2023-10-23 10:10:25.121 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.6488ms
+2023-10-23 10:10:27.016 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:27.017 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.6840ms
+2023-10-23 10:10:28.147 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/login? - -
+2023-10-23 10:10:28.149 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Login (TasteBuddies)'
+2023-10-23 10:10:28.150 -06:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:28.158 -06:00 [INF] Executing ViewResult, running view Login.
+2023-10-23 10:10:28.164 -06:00 [INF] Executed ViewResult - view Login executed in 7.0814ms.
+2023-10-23 10:10:28.166 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Login (TasteBuddies) in 14.962ms
+2023-10-23 10:10:28.167 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Login (TasteBuddies)'
+2023-10-23 10:10:28.169 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/login? - - - 200 - text/html;+charset=utf-8 22.2638ms
+2023-10-23 10:10:28.180 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:28.180 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:28.182 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 1.5125ms
+2023-10-23 10:10:28.211 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.6044ms
+2023-10-23 10:10:32.708 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/users/login application/x-www-form-urlencoded 25
+2023-10-23 10:10:32.709 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.CheckPassword (TasteBuddies)'
+2023-10-23 10:10:32.719 -06:00 [INF] Route matched with {action = "CheckPassword", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckPassword(System.String, System.String) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:34.195 -06:00 [INF] Executed DbCommand (64ms) [Parameters=[@__username_0='?', @__EncodePassword_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.user_name = @__username_0 AND u.password = @__EncodePassword_1
+LIMIT 1
+2023-10-23 10:10:34.277 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 10:10:34.278 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.CheckPassword (TasteBuddies) in 1557.463ms
+2023-10-23 10:10:34.279 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.CheckPassword (TasteBuddies)'
+2023-10-23 10:10:34.281 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 10:10:34.282 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:10:34.283 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:34.290 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/users/login application/x-www-form-urlencoded 25 - 302 0 - 1582.2435ms
+2023-10-23 10:10:34.447 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 10:10:34.463 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:10:34.514 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:10:34.528 -06:00 [INF] Executed ViewResult - view Profile executed in 14.331ms.
+2023-10-23 10:10:34.528 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 244.0351ms
+2023-10-23 10:10:34.529 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:10:34.532 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 250.1681ms
+2023-10-23 10:10:34.541 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:34.541 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:34.542 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.7767ms
+2023-10-23 10:10:34.578 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.8680ms
+2023-10-23 10:10:42.934 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/5/edit - -
+2023-10-23 10:10:42.935 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:10:42.938 -06:00 [INF] Route matched with {action = "Edit", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:42.982 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:10:42.984 -06:00 [INF] Executing ViewResult, running view Edit.
+2023-10-23 10:10:42.990 -06:00 [INF] Executed ViewResult - view Edit executed in 6.1135ms.
+2023-10-23 10:10:42.991 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Edit (TasteBuddies) in 51.7379ms
+2023-10-23 10:10:42.991 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:10:42.993 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/5/edit - - - 200 - text/html;+charset=utf-8 59.3055ms
+2023-10-23 10:10:43.002 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:43.003 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:43.004 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 1.3510ms
+2023-10-23 10:10:43.032 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.7960ms
+2023-10-23 10:10:46.202 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:46.202 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.7373ms
+2023-10-23 10:10:47.789 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/5/resetpassword - -
+2023-10-23 10:10:47.790 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies)'
+2023-10-23 10:10:47.792 -06:00 [INF] Route matched with {action = "ResetPassword", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:47.796 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:10:47.798 -06:00 [INF] Executing ViewResult, running view ResetPassword.
+2023-10-23 10:10:47.803 -06:00 [INF] Executed ViewResult - view ResetPassword executed in 5.8921ms.
+2023-10-23 10:10:47.804 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies) in 11.2336ms
+2023-10-23 10:10:47.805 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies)'
+2023-10-23 10:10:47.807 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/5/resetpassword - - - 200 - text/html;+charset=utf-8 18.2135ms
+2023-10-23 10:10:47.816 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:47.816 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:47.817 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.8359ms
+2023-10-23 10:10:47.848 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.1861ms
+2023-10-23 10:10:55.505 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/users/updatepassword/5 application/x-www-form-urlencoded 37
+2023-10-23 10:10:55.506 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies)'
+2023-10-23 10:10:55.508 -06:00 [INF] Route matched with {action = "UpdatePassword", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdatePassword(System.Nullable`1[System.Int32], System.String) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:55.510 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:10:55.573 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET password = @p0
+WHERE id = @p1;
+2023-10-23 10:10:55.584 -06:00 [INF] A user's password has been changed.
+2023-10-23 10:10:55.586 -06:00 [INF] Executing RedirectResult, redirecting to /Users/Profile?userId=5.
+2023-10-23 10:10:55.586 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies) in 77.7959ms
+2023-10-23 10:10:55.587 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies)'
+2023-10-23 10:10:55.588 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/users/updatepassword/5 application/x-www-form-urlencoded 37 - 302 0 - 82.8347ms
+2023-10-23 10:10:55.590 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Users/Profile?userId=5 - -
+2023-10-23 10:10:55.590 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:10:55.591 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:10:55.593 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:10:55.595 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:10:55.601 -06:00 [INF] Executed ViewResult - view Profile executed in 5.9043ms.
+2023-10-23 10:10:55.602 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 9.3868ms
+2023-10-23 10:10:55.602 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:10:55.605 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Users/Profile?userId=5 - - - 200 - text/html;+charset=utf-8 15.6449ms
+2023-10-23 10:10:55.617 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:10:55.617 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:10:55.617 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.6196ms
+2023-10-23 10:10:55.648 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.8996ms
+2023-10-23 10:14:31.266 -06:00 [INF] Starting web application...
+2023-10-23 10:14:32.089 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 10:14:32.240 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 10:14:32.242 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 10:14:32.245 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 10:14:32.246 -06:00 [INF] Hosting environment: Development
+2023-10-23 10:14:32.247 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 10:14:32.792 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 10:14:32.889 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:14:32.919 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 10:14:32.924 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 10:14:32.929 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 5.2222ms
+2023-10-23 10:14:32.934 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:14:32.947 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 158.4053ms
+2023-10-23 10:14:32.949 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 10:14:32.954 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:14:32.964 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:14:34.403 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 10:14:34.730 -06:00 [INF] Executed DbCommand (64ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:14:34.895 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:14:35.034 -06:00 [INF] Executed ViewResult - view Profile executed in 144.9843ms.
+2023-10-23 10:14:35.038 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 2073.4802ms
+2023-10-23 10:14:35.040 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:14:35.080 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 2131.5248ms
+2023-10-23 10:14:35.101 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:14:35.101 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:14:35.105 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.0856ms
+2023-10-23 10:14:35.137 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.1527ms
+2023-10-23 10:14:38.741 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/5/resetpassword - -
+2023-10-23 10:14:38.743 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies)'
+2023-10-23 10:14:38.745 -06:00 [INF] Route matched with {action = "ResetPassword", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:14:38.756 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:14:38.758 -06:00 [INF] Executing ViewResult, running view ResetPassword.
+2023-10-23 10:14:38.767 -06:00 [INF] Executed ViewResult - view ResetPassword executed in 9.5593ms.
+2023-10-23 10:14:38.767 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies) in 21.2812ms
+2023-10-23 10:14:38.768 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.ResetPassword (TasteBuddies)'
+2023-10-23 10:14:38.771 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/5/resetpassword - - - 200 - text/html;+charset=utf-8 29.9401ms
+2023-10-23 10:14:38.781 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:14:38.781 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:14:38.785 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.2599ms
+2023-10-23 10:14:38.813 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.5835ms
+2023-10-23 10:14:44.625 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/users/updatepassword/5 application/x-www-form-urlencoded 35
+2023-10-23 10:14:44.626 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies)'
+2023-10-23 10:14:44.629 -06:00 [INF] Route matched with {action = "UpdatePassword", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdatePassword(System.Nullable`1[System.Int32], System.String) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:14:44.678 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:14:44.745 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET password = @p0
+WHERE id = @p1;
+2023-10-23 10:14:44.756 -06:00 [INF] A user's password has been changed.
+2023-10-23 10:14:44.758 -06:00 [INF] Executing RedirectResult, redirecting to /Users/Profile?userId=5&passwordChanged=True.
+2023-10-23 10:14:44.759 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies) in 128.9755ms
+2023-10-23 10:14:44.759 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.UpdatePassword (TasteBuddies)'
+2023-10-23 10:14:44.760 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/users/updatepassword/5 application/x-www-form-urlencoded 35 - 302 0 - 135.3612ms
+2023-10-23 10:14:44.762 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Users/Profile?userId=5&passwordChanged=True - -
+2023-10-23 10:14:44.763 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:14:44.764 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:14:44.770 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:14:44.772 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:14:44.778 -06:00 [INF] Executed ViewResult - view Profile executed in 6.1215ms.
+2023-10-23 10:14:44.779 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 14.0837ms
+2023-10-23 10:14:44.780 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:14:44.782 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Users/Profile?userId=5&passwordChanged=True - - - 200 - text/html;+charset=utf-8 19.9148ms
+2023-10-23 10:14:44.795 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:14:44.795 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:14:44.796 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.7614ms
+2023-10-23 10:14:44.825 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.6205ms
+2023-10-23 10:16:39.789 -06:00 [INF] Starting web application...
+2023-10-23 10:16:40.810 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 10:16:40.981 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 10:16:40.982 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 10:16:40.986 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 10:16:40.987 -06:00 [INF] Hosting environment: Development
+2023-10-23 10:16:40.988 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 10:16:41.582 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 10:16:41.647 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:16:41.675 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 10:16:41.683 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 10:16:41.691 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 8.3842ms
+2023-10-23 10:16:41.698 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:16:41.714 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 134.9953ms
+2023-10-23 10:16:41.715 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 10:16:41.725 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:16:41.737 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:16:43.263 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 10:16:43.599 -06:00 [INF] Executed DbCommand (65ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:16:43.767 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:16:43.917 -06:00 [INF] Executed ViewResult - view Profile executed in 155.1043ms.
+2023-10-23 10:16:43.923 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 2184.5034ms
+2023-10-23 10:16:43.925 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:16:43.966 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 2250.7603ms
+2023-10-23 10:16:43.979 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:16:43.979 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:16:43.987 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 8.5793ms
+2023-10-23 10:16:44.017 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.0528ms
+2023-10-23 10:21:14.217 -06:00 [INF] Starting web application...
+2023-10-23 10:21:15.027 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 10:21:15.169 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 10:21:15.170 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 10:21:15.173 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 10:21:15.174 -06:00 [INF] Hosting environment: Development
+2023-10-23 10:21:15.174 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 10:21:15.919 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 10:21:15.982 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:21:16.007 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 10:21:16.016 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 10:21:16.021 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 8.7401ms
+2023-10-23 10:21:16.026 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:21:16.042 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 126.4222ms
+2023-10-23 10:21:16.043 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 10:21:16.050 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:21:16.063 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:21:17.511 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 10:21:17.836 -06:00 [INF] Executed DbCommand (63ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:21:18.002 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:21:18.136 -06:00 [INF] Executed ViewResult - view Profile executed in 139.1674ms.
+2023-10-23 10:21:18.141 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 2076.1307ms
+2023-10-23 10:21:18.142 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:21:18.183 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 2139.5336ms
+2023-10-23 10:21:18.198 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:21:18.198 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:21:18.202 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.8744ms
+2023-10-23 10:21:18.231 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.6142ms
+2023-10-23 10:21:21.204 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/5/edit - -
+2023-10-23 10:21:21.207 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:21:21.209 -06:00 [INF] Route matched with {action = "Edit", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:21:21.220 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:21:21.222 -06:00 [INF] Executing ViewResult, running view Edit.
+2023-10-23 10:21:21.233 -06:00 [INF] Executed ViewResult - view Edit executed in 10.9745ms.
+2023-10-23 10:21:21.233 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Edit (TasteBuddies) in 23.2907ms
+2023-10-23 10:21:21.234 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:21:21.237 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/5/edit - - - 200 - text/html;+charset=utf-8 32.3556ms
+2023-10-23 10:21:21.247 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:21:21.247 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:21:21.250 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 2.1229ms
+2023-10-23 10:21:21.280 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.6147ms
+2023-10-23 10:21:28.148 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/Users/update/5 application/x-www-form-urlencoded 23
+2023-10-23 10:21:28.149 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:21:28.155 -06:00 [INF] Route matched with {action = "Update", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(System.Nullable`1[System.Int32], TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:21:28.179 -06:00 [INF] Executing StatusCodeResult, setting HTTP status code 404
+2023-10-23 10:21:28.180 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Update (TasteBuddies) in 23.7076ms
+2023-10-23 10:21:28.180 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:21:28.181 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:21:28.182 -06:00 [INF] Route matched with {action = "Update", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(System.Nullable`1[System.Int32], TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:21:28.183 -06:00 [INF] Executing StatusCodeResult, setting HTTP status code 404
+2023-10-23 10:21:28.183 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Update (TasteBuddies) in 0.741ms
+2023-10-23 10:21:28.184 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:21:28.185 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/Users/update/5 application/x-www-form-urlencoded 23 - 404 0 - 36.4330ms
+2023-10-23 10:24:52.621 -06:00 [INF] Starting web application...
+2023-10-23 10:24:53.374 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 10:24:53.528 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 10:24:53.529 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 10:24:53.532 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 10:24:53.533 -06:00 [INF] Hosting environment: Development
+2023-10-23 10:24:53.534 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 10:24:53.952 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 10:24:54.028 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:24:54.063 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 10:24:54.071 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 10:24:54.078 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 8.6523ms
+2023-10-23 10:24:54.084 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 10:24:54.102 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 157.6938ms
+2023-10-23 10:24:54.104 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 10:24:54.111 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:24:54.124 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:24:55.628 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 10:24:55.947 -06:00 [INF] Executed DbCommand (63ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 10:24:56.104 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 10:24:56.239 -06:00 [INF] Executed ViewResult - view Profile executed in 139.3133ms.
+2023-10-23 10:24:56.243 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 2117.3553ms
+2023-10-23 10:24:56.245 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 10:24:56.285 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 2181.3637ms
+2023-10-23 10:24:56.293 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:24:56.293 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:24:56.299 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 6.2078ms
+2023-10-23 10:24:56.326 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.5250ms
+2023-10-23 10:24:58.852 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/5/edit - -
+2023-10-23 10:24:58.854 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:24:58.855 -06:00 [INF] Route matched with {action = "Edit", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:24:58.874 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.user_name
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2023-10-23 10:24:58.876 -06:00 [INF] Executing ViewResult, running view Edit.
+2023-10-23 10:24:58.885 -06:00 [INF] Executed ViewResult - view Edit executed in 9.3435ms.
+2023-10-23 10:24:58.886 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Edit (TasteBuddies) in 29.6396ms
+2023-10-23 10:24:58.887 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Edit (TasteBuddies)'
+2023-10-23 10:24:58.893 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/5/edit - - - 200 - text/html;+charset=utf-8 41.1708ms
+2023-10-23 10:24:58.904 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 10:24:58.904 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 10:24:58.906 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 1.4796ms
+2023-10-23 10:24:58.935 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.5200ms
+2023-10-23 10:25:03.572 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/Users/update/5 application/x-www-form-urlencoded 23
+2023-10-23 10:25:03.573 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:25:03.581 -06:00 [INF] Route matched with {action = "Update", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(System.Nullable`1[System.Int32], TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:25:03.602 -06:00 [INF] Executing StatusCodeResult, setting HTTP status code 404
+2023-10-23 10:25:03.603 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Update (TasteBuddies) in 20.8274ms
+2023-10-23 10:25:03.604 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:25:03.604 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:25:03.605 -06:00 [INF] Route matched with {action = "Update", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(System.Nullable`1[System.Int32], TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 10:25:03.606 -06:00 [INF] Executing StatusCodeResult, setting HTTP status code 404
+2023-10-23 10:25:03.607 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Update (TasteBuddies) in 0.7524ms
+2023-10-23 10:25:03.607 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Update (TasteBuddies)'
+2023-10-23 10:25:03.608 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/Users/update/5 application/x-www-form-urlencoded 23 - 404 0 - 35.8908ms
