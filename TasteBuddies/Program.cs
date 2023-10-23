@@ -6,7 +6,6 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
-
 try
 {
     Log.Information("Starting web application...");
@@ -17,6 +16,7 @@ try
 
     // Add services to the container.
     builder.Services.AddControllersWithViews();
+
     builder.Services.AddDbContext<TasteBuddiesContext>(
         options =>
             options
@@ -26,6 +26,8 @@ try
                             "Connection string 'TasteBuddies' not found."
                         )
                 )
+                .EnableSensitiveDataLogging()
+
                 .UseSnakeCaseNamingConvention()
     );
 
@@ -68,7 +70,7 @@ try
 
     app.Run();
 }
-catch(Exception ex)
+catch (Exception ex)
 {
     Log.Fatal(ex, "Application terminated unexpectedly");
 }
