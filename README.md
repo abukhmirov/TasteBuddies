@@ -11,6 +11,9 @@
 - [Team](#team)
   
 ## ABOUT
+TasteBuddies is a social media app designed to help answer the age old question: "What's for dinner?". Our app simplifies meal planning by offering a community platform where you can effortlessly discover and decide on delicious recipes.
+
+In today's fast-paced world, the overwhelming task of figuring out what to eat every day can be paralyzing. TasteBuddies addresses this problem by offering a user-friendly platform where users can find new meal ideas that align with their favorite flavors. TasteBuddies seeks to create a community that supports and inspires each other to overcome the relentless cycle of daily meal indecision.TasteBuddies is unique because it understands the challenges of meal planning and decision fatigue. Unlike other apps, it provides a community-driven approach to helping users share and discover new meal ideas. 
 
 ## SET UP INSTRUCTIONS
 This project requires:
