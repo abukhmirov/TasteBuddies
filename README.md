@@ -45,9 +45,9 @@ In `appsettings.json` or User Secrets folder, add: <br>
 ## Team
 The TasteBuddies Team members are students in the Launch program at the Turing School of Software & Design. Launch is a 9-month program focused primarily on C#/.NET. Turing School is an accredited, non-profit, fully-remote computer programming school.
 - **Alex Bukhmirov** - [GitHub Profile](https://github.com/abukhmirov) - [LinkedIn](https://www.linkedin.com/in/alex-bukhmirov/)
-- **Isiah Worsham** - [GitHub Profile](https://github.com/iworsham) - [LinkedIn](https://www.linkedin.com/in/isiah-worsham/)
 - **Seth Grinstead** - [GitHub Profile](https://github.com/SGrinstead) - [LinkedIn](https://www.linkedin.com/in/seth-grinstead/)
 - **Skylar Sandler** - [GitHub Profile](https://github.com/skylarbsandler) - [LinkedIn](https://www.linkedin.com/in/skylarbsandler/)
+- **Isiah Worsham** - [GitHub Profile](https://github.com/iworsham) - [LinkedIn](https://www.linkedin.com/in/isiah-worsham/)
 
 *Special thanks to our additional contributors:*
 - **Joe Centeno** - [GitHub Profile](https://github.com/joe10111) - [LinkedIn](https://www.linkedin.com/in/joe-centeno/)
