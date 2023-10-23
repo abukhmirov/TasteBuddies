@@ -366,7 +366,7 @@ namespace TasteBuddies.Controllers
             }
             else
             {
-                return RedirectTo("/users/login");
+                return Redirect("/users/login");
             }
         }
 

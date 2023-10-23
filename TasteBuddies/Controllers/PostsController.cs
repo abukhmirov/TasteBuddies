@@ -164,7 +164,7 @@ namespace TasteBuddies.Controllers
             {
                 return NotFound();
             }
-            var post = _context.Posts.Find(id);
+            var post = _context.Posts.Include(p => p.User).FirstOrDefault(p => p.Id == id);
             if(post is null)
             {
                 return NotFound();
@@ -217,20 +217,22 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-            post.Upvotes = existingPost.Upvotes;
+            existingPost.Title = post.Title;
+
+            existingPost.Description = post.Description;
+
+            existingPost.ImageURL = post.ImageURL;
 
 
-            post.Id = (int)id;
 
+            existingPost.CreatedAt = DateTime.Now.ToUniversalTime();
 
-            post.CreatedAt = DateTime.Now.ToUniversalTime();
-
-            _context.Posts.Update(post);
+            _context.Posts.Update(existingPost);
             _context.SaveChanges();
             
-            Log.Information($"A [{post.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
+            Log.Information($"A [{existingPost.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
 
-            return RedirectToAction("Feed", new { id = post.Id, postUpdated = true });
+            return RedirectToAction("Feed", new { id = existingPost.Id, postUpdated = true });
         }
 
 
@@ -287,10 +289,10 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-             if(post.Upvotes > 1)
-            {
-                return RedirectToAction("Feed");
-            }
+            // if(post.Upvotes > 1)
+            //{
+            //    return RedirectToAction("Feed");
+            //}
         
             post.Upvote();
 
