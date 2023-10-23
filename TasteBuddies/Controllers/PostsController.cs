@@ -23,12 +23,15 @@ namespace TasteBuddies.Controllers
 
 
 
+
         //This action returns the Feed view
+
         public IActionResult Index()
         {
 
             return View();
         }
+
 
 
 
@@ -40,8 +43,14 @@ namespace TasteBuddies.Controllers
         // To display only the latest content, the action takes the last 5 posts (or all if there are fewer than 5).
         // Finally, it returns the posts to be displayed on the feed view.
         [HttpGet]
+
         public IActionResult Feed()
         {
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return Redirect("/users/login");
+            }
+
             //Checking the current user
             string id = Request.Cookies["CurrentUser"].ToString();
 
@@ -54,6 +63,11 @@ namespace TasteBuddies.Controllers
             int parseId = Int32.Parse(id);
 
             User user = _context.Users.Where(u => u.Id == parseId).FirstOrDefault();
+
+            if(user is null)
+            {
+                return NotFound();
+            }
 
             ViewBag.user = user;
 
@@ -82,6 +96,7 @@ namespace TasteBuddies.Controllers
 
 
 
+
         // This action handles the creation of a new post by the current user.
         // It first retrieves the "CurrentUser" cookie to identify the user.
         // If the cookie is valid, it fetches the associated user from the database along with their existing posts.
@@ -89,31 +104,46 @@ namespace TasteBuddies.Controllers
         // It adds the post to both the global list of posts and the specific user's list of posts.
         // Once saved, a log entry is generated indicating the post creation and the responsible user.
         // After the post creation, the user is redirected to the feed showing the latest posts.
+
         [HttpPost]
         public IActionResult Create(Post post)
         {
+            if(ModelState.IsValid)
+            {
+                if (!Request.Cookies.ContainsKey("CurrentUser"))
+                {
+                    return Redirect("/users/login");
+                }
+                string id = Request.Cookies["CurrentUser"].ToString();
 
+                if (int.TryParse(id, out int parseId))
+                {
+                    var user = GetUserWithPosts(parseId);
 
-            string id = Request.Cookies["CurrentUser"].ToString();
+                   post.CreatedAt = DateTime.Now.ToUniversalTime();
 
-            int parseId = Int32.Parse(id);
+                   _context.Posts.Add(post);
+                   user.Posts.Add(post);
 
+                   _context.SaveChanges();
+                   Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
 
-            var user = _context.Users.Where(u => u.Id == parseId).Include(u => u.Posts).FirstOrDefault();
+                   return Redirect("/Posts/Feed");
+                }
+                else
+                {
+                    Response.Cookies.Delete("CurrentUser");
+                    return Redirect("/");
+                }
+            }
+            else
+            { 
+                Log.Warning("Image URL is invalid.");
 
-            post.CreatedAt = DateTime.Now.ToUniversalTime();
-
-            _context.Posts.Add(post);
-
-            user.Posts.Add(post);
-
-            _context.SaveChanges();
-            Log.Information($"A post has been created by user: [{user.Id}]{user.UserName}");
-
-
-            return Redirect("/Posts/Feed");
-
+                return View("Index", post);
+            }
         }
+
 
 
 
@@ -123,16 +153,23 @@ namespace TasteBuddies.Controllers
         // The route specifies two parameters: the user's ID and the post's ID.
         // It first retrieves the specific post and user based on their respective IDs.
         // After fetching the post, it returns it to the edit view, where changes can be made.
+
         [Route("/Users/{userId:int}/posts/{id:int}/edit")]
-        public IActionResult Edit(int userId, int id)
+        public IActionResult Edit(int? id)
         {
-
+            if (id is null)
+            {
+                return NotFound();
+            }
             var post = _context.Posts.Find(id);
-
-            var user = _context.Users.Find(userId);
+            if(post is null)
+            {
+                return NotFound();
+            }
 
             return View(post);
         }
+
 
 
 
@@ -145,21 +182,41 @@ namespace TasteBuddies.Controllers
         // Otherwise, it updates the post details and saves them.
         // A log is generated indicating the post update and the responsible user.
         // Finally, the user is redirected to the feed with the updated post's ID.
+
         [HttpPost]
         [Route("/Users/{userId:int}/posts/{id:int}/update")]
-        public IActionResult Update(Post post, int id, int userId)
+        public IActionResult Update(Post post, int? id, int? userId)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            if (id is null || userId is null)
+            {
+                return NotFound();
+            }
+            if (!IsCurrentUser((int)userId))
+            {
+                return BadRequest();
+            }
+
             var user = _context.Users.Find(userId);
             var existingPost = _context.Posts.Find(id);
 
-            if (existingPost != null) 
+            if (user is null)
             {
-                return RedirectToAction("Feed");
+                return NotFound();
+            }
+            if (existingPost is null) 
+            {
+                return NotFound();
             }
 
             post.Upvotes = existingPost.Upvotes;
 
-            post.Id = id;
+
+            post.Id = (int)id;
+
 
             post.CreatedAt = DateTime.Now.ToUniversalTime();
 
@@ -168,10 +225,9 @@ namespace TasteBuddies.Controllers
             
             Log.Information($"A [{post.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
 
-            var newUpvotes = post.Upvotes;
-            
             return RedirectToAction("Feed", new { id = post.Id });
         }
+
 
 
 
@@ -180,23 +236,32 @@ namespace TasteBuddies.Controllers
         // It first fetches the post and user based on their respective IDs.
         // The post is then removed from the database, and a log is generated indicating its deletion and the responsible user.
         // After deletion, the user is redirected to the feed.
+
         [HttpPost]
         [Route("/Users/{userId:int}/posts/{id:int}/delete")]
-        public IActionResult Delete(int userId,int id)
+        public IActionResult Delete(int? userId,int? id)
         {
+            if (userId is null || id is null)
+            {
+                return NotFound();
+            }
             var user = _context.Users.Find(userId);
             var post = _context.Posts.Find(id);
-            
-            _context.Posts.Remove(post);
-            _context.SaveChanges();
-            
-            Log.Information($"A [{post.Id}]post has been deleted by user: [{user.Id}]{user.UserName}");
+            if (user is null || post is null)
+            {
+                return NotFound();
+            }
+            if (IsCurrentUser((int)userId))
+            {
+                _context.Posts.Remove(post);
+                _context.SaveChanges();
 
-            return RedirectToAction("Feed", new { id = post.Id });
+                Log.Information($"A [{post.Id}]post has been deleted by user: [{user.Id}]{user.UserName}");
+
+                return RedirectToAction("Feed", new { id = post.Id });
+            }
+            else return BadRequest();       
         }
-
-
-
 
         // This action facilitates the upvoting of a post.
         // It first finds the specific post based on the post ID provided.
@@ -204,10 +269,24 @@ namespace TasteBuddies.Controllers
         // A log entry is generated to record the upvote action.
         // The user is then redirected back to the feed, displaying the new upvote count for the post.
         [HttpPost]
-        public IActionResult Upvote(int postId)
+        public IActionResult Upvote(int? postId)
         {
+            if (postId is null)
+            {
+                return NotFound();
+            }
             var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
 
+            if (post is null)
+            {
+                return NotFound();
+            }
+
+             if(post.Upvotes > 1)
+            {
+                return RedirectToAction("Feed");
+            }
+        
             post.Upvote();
 
             _context.SaveChanges();
@@ -220,5 +299,32 @@ namespace TasteBuddies.Controllers
             
         }
 
+
+        // checks if user cookie matches userId provided
+        private bool IsCurrentUser(int userId)
+        {
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return false;
+            }
+            if (int.TryParse(Request.Cookies["CurrentUser"], out int parseId))
+            {
+                if (userId == parseId)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
+        }
+
+
+        private User GetUserWithPosts(int userId)
+        {
+            return _context.Users
+                .Where(user => user.Id == userId)
+                .Include(user => user.Posts)
+                .First();
+        }
     }
 }
