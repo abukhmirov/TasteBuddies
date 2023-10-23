@@ -3975,3 +3975,897 @@ ORDER BY p.created_at DESC
 2023-10-23 11:52:14.708 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 1.0416ms
 2023-10-23 11:52:14.739 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.8580ms
 >>>>>>> 451739fb54e54b8f18c71149c700b276a76be4c5
+2023-10-23 13:19:07.514 -06:00 [INF] Starting web application...
+2023-10-23 13:19:11.922 -06:00 [INF] User profile is available. Using 'C:\Users\rafiw\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 13:19:12.457 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 13:19:12.460 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 13:19:12.469 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 13:19:12.471 -06:00 [INF] Hosting environment: Development
+2023-10-23 13:19:12.473 -06:00 [INF] Content root path: C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 13:19:14.489 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 13:19:14.804 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:19:14.951 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:19:14.990 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 13:19:15.009 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 35.425ms
+2023-10-23 13:19:15.040 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:19:15.115 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 639.6392ms
+2023-10-23 13:19:15.188 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 13:19:15.208 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:19:15.257 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean, Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:20:15.220 -06:00 [INF] Starting web application...
+2023-10-23 13:20:15.667 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:21:31.327 -06:00 [INF] Starting web application...
+2023-10-23 13:21:31.705 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:22:06.621 -06:00 [INF] Starting web application...
+2023-10-23 13:22:07.114 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:27:10.605 -06:00 [INF] Starting web application...
+2023-10-23 13:27:10.962 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:27:37.300 -06:00 [INF] Starting web application...
+2023-10-23 13:27:37.694 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:29:36.681 -06:00 [INF] Starting web application...
+2023-10-23 13:29:37.123 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:29:47.768 -06:00 [INF] Starting web application...
+2023-10-23 13:29:48.580 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:30:16.101 -06:00 [INF] Starting web application...
+2023-10-23 13:30:16.505 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:30:21.431 -06:00 [INF] Starting web application...
+2023-10-23 13:30:21.833 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:30:32.572 -06:00 [INF] Starting web application...
+2023-10-23 13:30:32.947 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:32:37.969 -06:00 [INF] Starting web application...
+2023-10-23 13:32:38.322 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:32:51.818 -06:00 [INF] Starting web application...
+2023-10-23 13:32:52.273 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:34:33.716 -06:00 [INF] Starting web application...
+2023-10-23 13:34:34.125 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:36:18.055 -06:00 [INF] Starting web application...
+2023-10-23 13:36:18.449 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:36:31.666 -06:00 [INF] Starting web application...
+2023-10-23 13:36:32.056 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:36:52.104 -06:00 [INF] Starting web application...
+2023-10-23 13:36:52.542 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:36:57.829 -06:00 [INF] Starting web application...
+2023-10-23 13:36:58.222 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:37:05.820 -06:00 [INF] Starting web application...
+2023-10-23 13:37:06.223 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:37:52.834 -06:00 [INF] Starting web application...
+2023-10-23 13:37:53.208 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:38:07.557 -06:00 [INF] Starting web application...
+2023-10-23 13:38:07.945 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:38:11.490 -06:00 [INF] Starting web application...
+2023-10-23 13:38:11.870 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:38:20.553 -06:00 [INF] Starting web application...
+2023-10-23 13:38:20.973 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:38:31.319 -06:00 [INF] Starting web application...
+2023-10-23 13:38:31.652 -06:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Write[T](DiagnosticSource diagnosticSource, String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 34
+2023-10-23 13:38:42.984 -06:00 [INF] Starting web application...
+2023-10-23 13:38:47.847 -06:00 [INF] User profile is available. Using 'C:\Users\rafiw\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 13:38:48.525 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 13:38:48.533 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 13:38:48.545 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 13:38:48.548 -06:00 [INF] Hosting environment: Development
+2023-10-23 13:38:48.551 -06:00 [INF] Content root path: C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 13:38:50.338 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 13:38:50.672 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:38:50.828 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:38:50.849 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 13:38:50.879 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 18.7839ms
+2023-10-23 13:38:50.901 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:38:50.987 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 678.3169ms
+2023-10-23 13:38:51.032 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 13:38:51.043 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:38:51.113 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean, Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:38:54.817 -06:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-10-23 13:38:57.445 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 13:38:58.751 -06:00 [INF] Executed DbCommand (251ms) [Parameters=[@__parsedId_0='6'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 13:38:59.040 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 13:39:28.792 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 37670.9027ms
+2023-10-23 13:39:28.804 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:39:31.249 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCoreGeneratedDocument.Views_Users_Profile.ExecuteAsync() in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Views\Users\Profile.cshtml:line 23
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 52
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-10-23 13:39:31.439 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies)'
+2023-10-23 13:39:31.445 -06:00 [INF] Route matched with {action = "NotFound", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult NotFound() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:39:31.457 -06:00 [INF] Executing ViewResult, running view NotFound.
+2023-10-23 13:39:32.116 -06:00 [INF] Executed ViewResult - view NotFound executed in 662.4746ms.
+2023-10-23 13:39:32.136 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies) in 683.7174ms
+2023-10-23 13:39:32.146 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies)'
+2023-10-23 13:39:32.335 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 500 - text/html;+charset=utf-8 41303.3788ms
+2023-10-23 13:39:32.535 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - -
+2023-10-23 13:39:32.565 -06:00 [INF] The file /css/site.css was not modified
+2023-10-23 13:39:32.570 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - - - 304 - text/css 35.2051ms
+2023-10-23 13:39:32.594 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/StyleSheet.css - -
+2023-10-23 13:39:32.597 -06:00 [INF] The file /css/StyleSheet.css was not modified
+2023-10-23 13:39:32.605 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:39:32.618 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - -
+2023-10-23 13:39:32.606 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - -
+2023-10-23 13:39:32.653 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/StyleSheet.css - - - 304 - text/css 44.5527ms
+2023-10-23 13:39:32.709 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:39:32.657 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-10-23 13:39:32.731 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-10-23 13:39:32.780 -06:00 [INF] The file /TasteBuddies.styles.css was not modified
+2023-10-23 13:39:32.788 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 183.1165ms
+2023-10-23 13:39:32.799 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - - - 304 - text/css 183.5098ms
+2023-10-23 13:39:32.782 -06:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2023-10-23 13:39:32.790 -06:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2023-10-23 13:39:32.795 -06:00 [INF] The file /js/site.js was not modified
+2023-10-23 13:39:32.871 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 264.5553ms
+2023-10-23 13:39:32.874 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 220.9446ms
+2023-10-23 13:39:32.883 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 304 - application/javascript 152.2666ms
+2023-10-23 13:39:33.166 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 455.6782ms
+2023-10-23 13:39:35.286 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 13:39:35.296 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:39:35.301 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:39:35.310 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 13:39:35.313 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 3.1863ms
+2023-10-23 13:39:35.318 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:39:35.321 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 35.4660ms
+2023-10-23 13:39:35.331 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 13:39:35.338 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:39:35.342 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean, Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:39:35.369 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parsedId_0='6'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 13:39:35.376 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 13:39:38.907 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 3557.7834ms
+2023-10-23 13:39:38.910 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:39:39.910 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCoreGeneratedDocument.Views_Users_Profile.ExecuteAsync() in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Views\Users\Profile.cshtml:line 23
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\rafiw\Source\Repos\TasteBuddies\TasteBuddies\Program.cs:line 52
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-10-23 13:39:39.931 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies)'
+2023-10-23 13:39:39.933 -06:00 [INF] Route matched with {action = "NotFound", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult NotFound() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:39:39.936 -06:00 [INF] Executing ViewResult, running view NotFound.
+2023-10-23 13:39:39.964 -06:00 [INF] Executed ViewResult - view NotFound executed in 27.7339ms.
+2023-10-23 13:39:39.966 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies) in 30.4052ms
+2023-10-23 13:39:39.968 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.NotFound (TasteBuddies)'
+2023-10-23 13:39:39.972 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 500 - text/html;+charset=utf-8 4641.0925ms
+2023-10-23 13:39:40.073 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:39:40.075 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:39:40.077 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.9676ms
+2023-10-23 13:39:40.090 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.3457ms
+2023-10-23 13:39:42.034 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/logout - -
+2023-10-23 13:39:42.043 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Logout (TasteBuddies)'
+2023-10-23 13:39:42.050 -06:00 [INF] Route matched with {action = "Logout", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:39:42.068 -06:00 [INF] Executing RedirectResult, redirecting to /.
+2023-10-23 13:39:42.070 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Logout (TasteBuddies) in 16.3556ms
+2023-10-23 13:39:42.072 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Logout (TasteBuddies)'
+2023-10-23 13:39:42.074 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/logout - - - 302 0 - 39.9429ms
+2023-10-23 13:39:42.090 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 13:39:42.094 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:39:42.096 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:39:42.101 -06:00 [INF] Executing ViewResult, running view Index.
+2023-10-23 13:39:42.136 -06:00 [INF] Executed ViewResult - view Index executed in 37.7362ms.
+2023-10-23 13:39:42.138 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 40.087ms
+2023-10-23 13:39:42.140 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:39:42.145 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 55.0677ms
+2023-10-23 13:39:42.213 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:39:42.213 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:39:42.216 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.3104ms
+2023-10-23 13:39:42.234 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.1176ms
+2023-10-23 13:39:45.885 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/signup? - -
+2023-10-23 13:39:45.888 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 13:39:45.892 -06:00 [INF] Route matched with {action = "Signup", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Signup() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:39:45.899 -06:00 [INF] Executing ViewResult, running view Signup.
+2023-10-23 13:39:45.972 -06:00 [INF] Executed ViewResult - view Signup executed in 77.1171ms.
+2023-10-23 13:39:45.988 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Signup (TasteBuddies) in 94.0048ms
+2023-10-23 13:39:45.994 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 13:39:46.008 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/signup? - - - 200 - text/html;+charset=utf-8 122.9949ms
+2023-10-23 13:39:46.067 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:39:46.092 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:39:46.105 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 12.4209ms
+2023-10-23 13:39:46.109 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.1913ms
+2023-10-23 13:39:53.954 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/Users/ application/x-www-form-urlencoded 28
+2023-10-23 13:39:53.962 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Create (TasteBuddies)'
+2023-10-23 13:39:53.991 -06:00 [INF] Route matched with {action = "Create", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:39:54.266 -06:00 [INF] Executed DbCommand (15ms) [Parameters=[@__user_UserName_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.user_name = @__user_UserName_0
+LIMIT 1
+2023-10-23 13:39:54.893 -06:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='1' (Nullable = false), @p1='6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b' (Nullable = false), @p2={  } (Nullable = false) (DbType = Object), @p3='1' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (name, password, upvoted, user_name)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2023-10-23 13:39:55.025 -06:00 [INF] A user has been created
+2023-10-23 13:39:55.031 -06:00 [INF] Executing RedirectResult, redirecting to /Users/Profile?userId=1.
+2023-10-23 13:39:55.033 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Create (TasteBuddies) in 1034.4403ms
+2023-10-23 13:39:55.035 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Create (TasteBuddies)'
+2023-10-23 13:39:55.038 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/Users/ application/x-www-form-urlencoded 28 - 302 0 - 1083.8317ms
+2023-10-23 13:39:55.051 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Users/Profile?userId=1 - -
+2023-10-23 13:39:55.059 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:39:55.063 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean, Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:39:55.086 -06:00 [INF] Executed DbCommand (4ms) [Parameters=[@__parsedId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 13:39:55.164 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 13:39:55.182 -06:00 [INF] Executed ViewResult - view Profile executed in 18.0864ms.
+2023-10-23 13:39:55.184 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 118.6884ms
+2023-10-23 13:39:55.188 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:39:55.200 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Users/Profile?userId=1 - - - 200 - text/html;+charset=utf-8 148.5511ms
+2023-10-23 13:39:55.223 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:39:55.259 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:39:55.263 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 8.9233ms
+2023-10-23 13:39:55.269 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.1618ms
+2023-10-23 13:40:01.857 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts - -
+2023-10-23 13:40:01.864 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Index (TasteBuddies)'
+2023-10-23 13:40:01.871 -06:00 [INF] Route matched with {action = "Index", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:01.876 -06:00 [INF] Executing ViewResult, running view Index.
+2023-10-23 13:40:01.911 -06:00 [INF] Executed ViewResult - view Index executed in 35.8306ms.
+2023-10-23 13:40:01.916 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Index (TasteBuddies) in 41.9712ms
+2023-10-23 13:40:01.921 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Index (TasteBuddies)'
+2023-10-23 13:40:01.927 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts - - - 200 - text/html;+charset=utf-8 69.7517ms
+2023-10-23 13:40:01.983 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:01.983 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:01.986 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.7099ms
+2023-10-23 13:40:02.039 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.6866ms
+2023-10-23 13:40:07.613 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/create application/x-www-form-urlencoded 149
+2023-10-23 13:40:07.616 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Create (TasteBuddies)'
+2023-10-23 13:40:07.620 -06:00 [INF] Route matched with {action = "Create", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(TasteBuddies.Models.Post) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:07.681 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:07.867 -06:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='2023-10-23T19:40:07.6894609Z' (DbType = DateTime), @p1='1' (Nullable = false), @p2='https://marketingaccesspass.com/wp-content/uploads/2015/10/Podcast-Website-Design-Background-Image.jpg' (Nullable = false), @p3='1' (Nullable = false), @p4={  } (Nullable = false) (DbType = Object), @p5='1'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO posts (created_at, description, image_url, title, upvotes, user_id)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING id;
+2023-10-23 13:40:07.876 -06:00 [INF] A post has been created by user: [1]1
+2023-10-23 13:40:07.878 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed.
+2023-10-23 13:40:07.880 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Create (TasteBuddies) in 255.9715ms
+2023-10-23 13:40:07.884 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Create (TasteBuddies)'
+2023-10-23 13:40:07.889 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/create application/x-www-form-urlencoded 149 - 302 0 - 275.3912ms
+2023-10-23 13:40:07.899 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed - -
+2023-10-23 13:40:07.904 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:07.909 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:07.930 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parseId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:07.987 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:08.017 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:08.120 -06:00 [INF] Executed ViewResult - view Feed executed in 104.044ms.
+2023-10-23 13:40:08.124 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 210.0947ms
+2023-10-23 13:40:08.128 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:08.135 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed - - - 200 - text/html;+charset=utf-8 236.2114ms
+2023-10-23 13:40:08.195 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:08.195 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:08.198 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.3900ms
+2023-10-23 13:40:08.274 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 78.4989ms
+2023-10-23 13:40:10.378 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8
+2023-10-23 13:40:10.382 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:10.390 -06:00 [INF] Route matched with {action = "Upvote", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Upvote(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:10.424 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__postId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__postId_0
+LIMIT 1
+2023-10-23 13:40:10.432 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:10.534 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='1', @p0={ '1' } (Nullable = false) (DbType = Object), @p3='1', @p2={ '1' } (Nullable = false) (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+UPDATE posts SET upvotes = @p0
+WHERE id = @p1;
+UPDATE users SET upvoted = @p2
+WHERE id = @p3;
+2023-10-23 13:40:10.583 -06:00 [INF] A [1]post has been upvoted
+2023-10-23 13:40:10.585 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed?V=1.
+2023-10-23 13:40:10.588 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies) in 191.1493ms
+2023-10-23 13:40:10.590 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:10.594 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8 - 302 0 - 216.3733ms
+2023-10-23 13:40:10.599 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - -
+2023-10-23 13:40:10.608 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:10.614 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:10.624 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parseId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:10.646 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:10.653 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:10.683 -06:00 [INF] Executed ViewResult - view Feed executed in 29.9878ms.
+2023-10-23 13:40:10.692 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 72.1673ms
+2023-10-23 13:40:10.694 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:10.702 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - - - 200 - text/html;+charset=utf-8 102.4605ms
+2023-10-23 13:40:10.789 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:10.789 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:10.794 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.7303ms
+2023-10-23 13:40:10.812 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.7664ms
+2023-10-23 13:40:12.624 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8
+2023-10-23 13:40:12.628 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:12.630 -06:00 [INF] Route matched with {action = "Upvote", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Upvote(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:12.640 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__postId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__postId_0
+LIMIT 1
+2023-10-23 13:40:12.652 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:12.663 -06:00 [INF] A [1]post has been upvoted
+2023-10-23 13:40:12.666 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed?V=1.
+2023-10-23 13:40:12.670 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies) in 35.6125ms
+2023-10-23 13:40:12.674 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:12.678 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8 - 302 0 - 53.7905ms
+2023-10-23 13:40:12.694 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - -
+2023-10-23 13:40:12.701 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:12.705 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:12.716 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parseId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:12.724 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:12.730 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:12.750 -06:00 [INF] Executed ViewResult - view Feed executed in 20.427ms.
+2023-10-23 13:40:12.754 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 39.8662ms
+2023-10-23 13:40:12.757 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:12.769 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - - - 200 - text/html;+charset=utf-8 75.3170ms
+2023-10-23 13:40:12.830 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:12.833 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:12.839 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 6.1715ms
+2023-10-23 13:40:12.906 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.8878ms
+2023-10-23 13:40:15.192 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8
+2023-10-23 13:40:15.199 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:15.204 -06:00 [INF] Route matched with {action = "Upvote", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Upvote(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:15.214 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__postId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__postId_0
+LIMIT 1
+2023-10-23 13:40:15.230 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:15.238 -06:00 [INF] A [1]post has been upvoted
+2023-10-23 13:40:15.241 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed?V=1.
+2023-10-23 13:40:15.244 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies) in 34.2937ms
+2023-10-23 13:40:15.249 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:15.254 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8 - 302 0 - 62.5599ms
+2023-10-23 13:40:15.272 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - -
+2023-10-23 13:40:15.280 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:15.285 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:15.296 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parseId_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:15.303 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:15.308 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:15.339 -06:00 [INF] Executed ViewResult - view Feed executed in 30.7839ms.
+2023-10-23 13:40:15.343 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 48.8799ms
+2023-10-23 13:40:15.346 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:15.358 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed?V=1 - - - 200 - text/html;+charset=utf-8 86.1236ms
+2023-10-23 13:40:15.411 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:15.411 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:15.416 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.8221ms
+2023-10-23 13:40:15.518 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 106.2466ms
+2023-10-23 13:40:17.734 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/logout - -
+2023-10-23 13:40:17.739 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Logout (TasteBuddies)'
+2023-10-23 13:40:17.742 -06:00 [INF] Route matched with {action = "Logout", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:40:17.746 -06:00 [INF] Executing RedirectResult, redirecting to /.
+2023-10-23 13:40:17.748 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Logout (TasteBuddies) in 2.6263ms
+2023-10-23 13:40:17.751 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Logout (TasteBuddies)'
+2023-10-23 13:40:17.753 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/logout - - - 302 0 - 19.2955ms
+2023-10-23 13:40:17.801 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 13:40:17.805 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:40:17.808 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 13:40:17.812 -06:00 [INF] Executing ViewResult, running view Index.
+2023-10-23 13:40:17.826 -06:00 [INF] Executed ViewResult - view Index executed in 13.9716ms.
+2023-10-23 13:40:17.829 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 17.4209ms
+2023-10-23 13:40:17.835 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 13:40:17.852 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 51.0178ms
+2023-10-23 13:40:17.915 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:17.914 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:17.926 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 12.3007ms
+2023-10-23 13:40:17.945 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.1580ms
+2023-10-23 13:40:19.388 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/signup? - -
+2023-10-23 13:40:19.393 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 13:40:19.395 -06:00 [INF] Route matched with {action = "Signup", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Signup() on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:40:19.400 -06:00 [INF] Executing ViewResult, running view Signup.
+2023-10-23 13:40:19.432 -06:00 [INF] Executed ViewResult - view Signup executed in 31.6214ms.
+2023-10-23 13:40:19.437 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Signup (TasteBuddies) in 37.6731ms
+2023-10-23 13:40:19.442 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Signup (TasteBuddies)'
+2023-10-23 13:40:19.448 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/signup? - - - 200 - text/html;+charset=utf-8 59.2108ms
+2023-10-23 13:40:19.540 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:19.551 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:19.558 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 7.1502ms
+2023-10-23 13:40:19.587 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.6087ms
+2023-10-23 13:40:23.979 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/Users/ application/x-www-form-urlencoded 28
+2023-10-23 13:40:23.982 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Create (TasteBuddies)'
+2023-10-23 13:40:23.985 -06:00 [INF] Route matched with {action = "Create", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(TasteBuddies.Models.User) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:40:23.994 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_UserName_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.user_name = @__user_UserName_0
+LIMIT 1
+2023-10-23 13:40:24.006 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2' (Nullable = false), @p1='d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35' (Nullable = false), @p2={  } (Nullable = false) (DbType = Object), @p3='2' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (name, password, upvoted, user_name)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2023-10-23 13:40:24.011 -06:00 [INF] A user has been created
+2023-10-23 13:40:24.013 -06:00 [INF] Executing RedirectResult, redirecting to /Users/Profile?userId=2.
+2023-10-23 13:40:24.015 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Create (TasteBuddies) in 26.2627ms
+2023-10-23 13:40:24.018 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Create (TasteBuddies)'
+2023-10-23 13:40:24.021 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/Users/ application/x-www-form-urlencoded 28 - 302 0 - 42.5074ms
+2023-10-23 13:40:24.043 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Users/Profile?userId=2 - -
+2023-10-23 13:40:24.057 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:40:24.064 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean, Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 13:40:24.079 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parsedId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 13:40:24.088 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 13:40:24.113 -06:00 [INF] Executed ViewResult - view Profile executed in 24.7709ms.
+2023-10-23 13:40:24.124 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 48.8863ms
+2023-10-23 13:40:24.135 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 13:40:24.141 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Users/Profile?userId=2 - - - 200 - text/html;+charset=utf-8 98.4581ms
+2023-10-23 13:40:24.221 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:24.226 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:24.231 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 5.4272ms
+2023-10-23 13:40:24.279 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.2345ms
+2023-10-23 13:40:25.835 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed - -
+2023-10-23 13:40:25.843 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:25.846 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:25.854 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parseId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:25.865 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:25.876 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:25.909 -06:00 [INF] Executed ViewResult - view Feed executed in 32.6941ms.
+2023-10-23 13:40:25.912 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 60.8918ms
+2023-10-23 13:40:25.915 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:25.923 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed - - - 200 - text/html;+charset=utf-8 88.1644ms
+2023-10-23 13:40:25.990 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:25.991 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:26.011 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 20.5816ms
+2023-10-23 13:40:26.099 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 111.1784ms
+2023-10-23 13:40:27.933 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8
+2023-10-23 13:40:27.938 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:27.941 -06:00 [INF] Route matched with {action = "Upvote", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Upvote(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:27.948 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__postId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__postId_0
+LIMIT 1
+2023-10-23 13:40:27.954 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:27.964 -06:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='1', @p0={ '1', '2' } (Nullable = false) (DbType = Object), @p3='2', @p2={ '1' } (Nullable = false) (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+UPDATE posts SET upvotes = @p0
+WHERE id = @p1;
+UPDATE users SET upvoted = @p2
+WHERE id = @p3;
+2023-10-23 13:40:27.972 -06:00 [INF] A [1]post has been upvoted
+2023-10-23 13:40:27.975 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed?V=1&V=2.
+2023-10-23 13:40:27.979 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies) in 34.2033ms
+2023-10-23 13:40:27.983 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:27.988 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8 - 302 0 - 55.2840ms
+2023-10-23 13:40:28.002 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed?V=1&V=2 - -
+2023-10-23 13:40:28.011 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:28.018 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:28.036 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parseId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:28.046 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:28.057 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:28.080 -06:00 [INF] Executed ViewResult - view Feed executed in 23.1859ms.
+2023-10-23 13:40:28.084 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 55.4569ms
+2023-10-23 13:40:28.088 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:28.098 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed?V=1&V=2 - - - 200 - text/html;+charset=utf-8 95.0054ms
+2023-10-23 13:40:28.158 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:28.158 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:28.161 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.3431ms
+2023-10-23 13:40:28.227 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 69.4453ms
+2023-10-23 13:40:30.304 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8
+2023-10-23 13:40:30.311 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:30.318 -06:00 [INF] Route matched with {action = "Upvote", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Upvote(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:30.335 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__postId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__postId_0
+LIMIT 1
+2023-10-23 13:40:30.342 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.upvoted, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM (
+    SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+    FROM users AS u
+    WHERE u.id = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+ORDER BY t.id
+2023-10-23 13:40:30.348 -06:00 [INF] A [1]post has been upvoted
+2023-10-23 13:40:30.351 -06:00 [INF] Executing RedirectResult, redirecting to /Posts/Feed?V=1&V=2.
+2023-10-23 13:40:30.355 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies) in 26.2464ms
+2023-10-23 13:40:30.358 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Upvote (TasteBuddies)'
+2023-10-23 13:40:30.363 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7053/posts/Upvote application/x-www-form-urlencoded 8 - 302 0 - 59.2360ms
+2023-10-23 13:40:30.385 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Posts/Feed?V=1&V=2 - -
+2023-10-23 13:40:30.390 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:30.394 -06:00 [INF] Route matched with {action = "Feed", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Feed(Boolean, Boolean) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 13:40:30.413 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parseId_0='2'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.name, u.password, u.upvoted, u.user_name
+FROM users AS u
+WHERE u.id = @__parseId_0
+LIMIT 1
+2023-10-23 13:40:30.423 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, u.id, u.name, u.password, u.upvoted, u.user_name
+FROM posts AS p
+INNER JOIN users AS u ON p.user_id = u.id
+ORDER BY p.created_at DESC
+2023-10-23 13:40:30.429 -06:00 [INF] Executing ViewResult, running view Feed.
+2023-10-23 13:40:30.446 -06:00 [INF] Executed ViewResult - view Feed executed in 17.644ms.
+2023-10-23 13:40:30.450 -06:00 [INF] Executed action TasteBuddies.Controllers.PostsController.Feed (TasteBuddies) in 46.066ms
+2023-10-23 13:40:30.454 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.PostsController.Feed (TasteBuddies)'
+2023-10-23 13:40:30.466 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/Posts/Feed?V=1&V=2 - - - 200 - text/html;+charset=utf-8 80.2601ms
+2023-10-23 13:40:30.513 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 13:40:30.514 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 13:40:30.524 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 9.9473ms
+2023-10-23 13:40:30.535 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.8742ms

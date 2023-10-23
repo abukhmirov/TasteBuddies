@@ -22,12 +22,16 @@ namespace TasteBuddies.Models
 
         [ValidateNever]
         public User User { get; set; }
-        public int Upvotes { get; set; }
+        public List<int> Upvotes { get; set; } = new List<int>();
 
 
-        public void Upvote()
+        public void Upvote(User user)
         {
-            Upvotes++;
+            if (!Upvotes.Contains(user.Id))
+            {
+                Upvotes.Add(user.Id);
+                user.Upvoted.Add(Id);
+            }
         }
     }
 }

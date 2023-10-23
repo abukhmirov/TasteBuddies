@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TasteBuddies.DataAccess;
@@ -12,9 +13,11 @@ using TasteBuddies.DataAccess;
 namespace TasteBuddies.Migrations
 {
     [DbContext(typeof(TasteBuddiesContext))]
-    partial class TasteBuddiesContextModelSnapshot : ModelSnapshot
+    [Migration("20231023193620_upvotesAsListOfUsers")]
+    partial class upvotesAsListOfUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
