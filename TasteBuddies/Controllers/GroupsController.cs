@@ -23,6 +23,10 @@ namespace TasteBuddies.Controllers
 
 
 
+
+        // This action returns a list of all groups.
+        // If the user has a valid "CurrentUser" cookie, it retrieves the user from the database and sets it to the ViewBag.
+        // If the user does not have a valid "CurrentUser" cookie, it redirects them to the Home controller's Index action.
         public IActionResult Index()
         {
 
@@ -34,7 +38,7 @@ namespace TasteBuddies.Controllers
             if (string.IsNullOrEmpty(id) || !int.TryParse(id, out int userId))
             {
                 // Handle the case where the cookie is missing or invalid
-                return RedirectToAction("Index", "Home"); // Redirect to login page 
+                return RedirectToAction("Index", "Home"); // Redirect to Index page 
             }
 
 
@@ -67,7 +71,7 @@ namespace TasteBuddies.Controllers
 
 
 
-
+        // This action returns the view for creating a new group.
         [Route("/Groups/New")]
         public IActionResult New()
         {
@@ -76,7 +80,11 @@ namespace TasteBuddies.Controllers
 
 
 
-
+        // This action handles the creation of a new group.
+        // It first checks for a valid "CurrentUser" cookie.
+        // If the cookie is valid, it associates the current user with the group being created and then saves it.
+        // It also logs the creation of the group.
+        // After creation, it sets a "CurrentGroup" cookie and redirects the user back to the list of groups.
         [HttpPost]
         [Route("/Groups")]
         public IActionResult Create(Group group)
@@ -112,6 +120,11 @@ namespace TasteBuddies.Controllers
 
 
 
+        // This action handles a user joining a group.
+        // It first checks for a valid "CurrentUser" cookie.
+        // If the cookie is valid, it associates the current user with the group they want to join and then saves the changes.
+        // It also logs the action.
+        // After joining, it redirects the user to their profile page.
         [HttpPost]
         public IActionResult Join()
         {
