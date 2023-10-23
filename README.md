@@ -17,8 +17,8 @@ TasteBuddies was designed and built over the course of eight days by in a team o
 
 ## Getting Started
 Ensure you have the following installed prior to installing the TasteBuddies App:
-- Visual Studio
-- pgAdmin
+- [Visual Studio](https://visualstudio.microsoft.com/)
+- [pgAdmin](https://www.pgadmin.org/)
 
 <h3>Installation</h3>
 
@@ -29,6 +29,9 @@ Ensure you have the following installed prior to installing the TasteBuddies App
 To run the migration and create the database, open your Package Manage Console and run: <br>
 `update-database`
 
+3. **Add DBConnections String** <br>
+In `appsettings.json` or User Secrets folder, add: <br>
+`{"TASTEBUDDIES_DBCONNECTIONSTRING": "Server=localhost;Database=TasteBuddies;Port=5432;Username=YOURPGADMINUSERNAME;Password=YOURPGADMINPASSWORD"}`
 ## Learning Goals
 - Create a successful, full-stack web application from a student-led project idea to solve a real world problem
 - Practice agile development in a group environment
@@ -37,7 +40,7 @@ To run the migration and create the database, open your Package Manage Console a
 
 ## Tech Stack
 - **Software:** C#, HTML, CSS, Bootstrap, SQL, Javascript
-- **Frameworks/Packages:** Microsoft ASP .NET Core, Microsoft Entity Framework Core, PostgreSQL, Serilog
+- **Frameworks/Packages:** Microsoft ASP .NET Core, Microsoft Entity Framework Core, PostgreSQL, XUnit Testing, Serilog
 
 ## Team
 The TasteBuddies Team members are students in the Launch program at the Turing School of Software & Design. Launch is a 9-month program focused primarily on C#/.NET. Turing School is an accredited, non-profit, fully-remote computer programming school.
