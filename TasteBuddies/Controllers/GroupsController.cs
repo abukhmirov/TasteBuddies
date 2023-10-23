@@ -27,7 +27,7 @@ namespace TasteBuddies.Controllers
         // If the user has a valid "CurrentUser" cookie, it retrieves the user from the database and sets it to the ViewBag.
         // If the user does not have a valid "CurrentUser" cookie, it redirects them to the Home controller's Index action.
 
-        public IActionResult Index()
+        public IActionResult Index( bool groupCreated = false)
         {
 
             var groups = _context.Groups;
@@ -65,6 +65,7 @@ namespace TasteBuddies.Controllers
             }
 
             ViewBag.user = user;
+            ViewBag.GroupCreated = groupCreated;
 
             return View(groups);
         }
@@ -123,7 +124,7 @@ namespace TasteBuddies.Controllers
 
                 Response.Cookies.Append("CurrentGroup", group.Id.ToString());
 
-                return Redirect("/Groups");
+                return RedirectToPage("/Groups", new {  groupCreated = true });
             }
             else
             {

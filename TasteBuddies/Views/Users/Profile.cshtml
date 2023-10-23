@@ -1,6 +1,25 @@
 ﻿@model TasteBuddies.Models.User
 
 
+@if (ViewBag.PasswordChanged)
+{
+    <script>
+        window.onload = function () {
+            alert('Your password has been changed successfully.');
+        }
+    </script>
+}
+
+@if (ViewBag.UserUpdated)
+{
+    <script>
+        window.onload = function () {
+            alert('User informnation has been updated successfully.');
+        }
+    </script>
+}
+
+
 <h1>@Model.Name's User Details</h1>
 
 <br />
