@@ -20,6 +20,8 @@ namespace TasteBuddies.Models
         public string Password { get; set; }
         public List<Post> Posts { get; set; } = new List<Post>();
 
+        public List<int> Upvoted { get; set; } = new List<int>();
+
         public List<Group>? Groups { get; set; } = new List<Group>();
 
 
