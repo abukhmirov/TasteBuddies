@@ -306,8 +306,18 @@ namespace TasteBuddies.Controllers
             //{
             //    return RedirectToAction("Feed");
             //}
-        
-            post.Upvote();
+            if (!Request.Cookies.ContainsKey("CurrentUser"))
+            {
+                return Redirect("/users/login");
+            }
+            string id = Request.Cookies["CurrentUser"].ToString();
+
+            if (int.TryParse(id, out int parseId))
+            {
+                var user = GetUserWithPosts(parseId);
+                post.Upvote(user);
+            }
+                
 
             _context.SaveChanges();
 

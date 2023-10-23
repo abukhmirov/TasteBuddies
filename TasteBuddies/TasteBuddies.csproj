@@ -8,6 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20230919200150_CreateUserAndPostTables.cs" />
+    <Compile Remove="Migrations\20230919200150_CreateUserAndPostTables.Designer.cs" />
+    <Compile Remove="Migrations\20230920193716_postcontrollerCRUD.cs" />
+    <Compile Remove="Migrations\20230920193716_postcontrollerCRUD.Designer.cs" />
+    <Compile Remove="Migrations\20230925172753_Groups.cs" />
+    <Compile Remove="Migrations\20230925172753_Groups.Designer.cs" />
+    <Compile Remove="Migrations\20230925173041_Changed.cs" />
+    <Compile Remove="Migrations\20230925173041_Changed.Designer.cs" />
+    <Compile Remove="Migrations\20230925191414_ManyToMany.cs" />
+    <Compile Remove="Migrations\20230925191414_ManyToMany.Designer.cs" />
+    <Compile Remove="Migrations\20230925210234_AddImageURLtoPostTable.cs" />
+    <Compile Remove="Migrations\20230925210234_AddImageURLtoPostTable.Designer.cs" />
+    <Compile Remove="Migrations\20230925214238_AddedUpvotesFunc.cs" />
+    <Compile Remove="Migrations\20230925214238_AddedUpvotesFunc.Designer.cs" />
+    <Compile Remove="Migrations\20230926164818_GroupFixes.cs" />
+    <Compile Remove="Migrations\20230926164818_GroupFixes.Designer.cs" />
+    <Compile Remove="Migrations\20230927155807_UpdateAll.cs" />
+    <Compile Remove="Migrations\20230927155807_UpdateAll.Designer.cs" />
+    <Compile Remove="Migrations\20231023193620_upvotesAsListOfUsers.cs" />
+    <Compile Remove="Migrations\20231023193620_upvotesAsListOfUsers.Designer.cs" />
+    <Compile Remove="Migrations\TasteBuddiesContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.22" />
@@ -33,6 +57,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
