@@ -1,5 +1,16 @@
 ﻿@model IEnumerable<Group>
 
+
+@if (ViewBag.GroupCreated)
+{
+    <script>
+        window.onload = function () {
+            alert('Your new Group has been created successfully.');
+        }
+    </script>
+}
+
+
 <div class="col-md-6 offset-lg-3 align-middle" style="margin-top: 25px">
 
     <h1 class="text-center">Active TasteBuddies Groups</h1>
