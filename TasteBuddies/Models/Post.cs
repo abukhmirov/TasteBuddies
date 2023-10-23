@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace TasteBuddies.Models
 {
@@ -18,6 +19,8 @@ namespace TasteBuddies.Models
         [Url(ErrorMessage = "Image URL is not valid.")]
         public string ImageURL { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        [ValidateNever]
         public User User { get; set; }
         public int Upvotes { get; set; }
 
