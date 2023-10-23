@@ -1,5 +1,14 @@
 ﻿@model List<Post>
 
+@if (ViewBag.PostUpdated)
+{
+    <script>
+        window.onload = function () {
+            alert('Your post has been changed successfully.');
+        }
+    </script>
+}
+
 <style>
 
     .button-container {

@@ -44,7 +44,7 @@ namespace TasteBuddies.Controllers
         // Finally, it returns the posts to be displayed on the feed view.
         [HttpGet]
 
-        public IActionResult Feed()
+        public IActionResult Feed(bool postUpdated = false)
         {
             if (!Request.Cookies.ContainsKey("CurrentUser"))
             {
@@ -70,6 +70,7 @@ namespace TasteBuddies.Controllers
             }
 
             ViewBag.user = user;
+            ViewBag.PostUpdated = postUpdated;
 
             //Checking the current user
 
@@ -167,6 +168,8 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
+            
+
             return View(post);
         }
 
@@ -225,7 +228,7 @@ namespace TasteBuddies.Controllers
             
             Log.Information($"A [{post.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
 
-            return RedirectToAction("Feed", new { id = post.Id });
+            return RedirectToAction("Feed", new { id = post.Id, postUpdated = true });
         }
 
 
