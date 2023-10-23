@@ -266,36 +266,36 @@ namespace TasteBuddies.Controllers
         // If successful, redirects to the user's updated profile.
 
         [HttpPost]
-        [Route("/Users/update/{userId:int}")]
-        public IActionResult Update(int? userId, User user)
+        [Route("/Users/{id:int}")]
+        public IActionResult Update(int id, string UserName, string Name)
         {
-            if(userId is null)
-            {
-                return NotFound();
-            }
+            //if(id is null)
+            //{
+            //    return NotFound();
+            //}
 
-            if (!ModelState.IsValid)
-            {
-                return NotFound();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return NotFound();
+            //}
 
-            if (!IsCurrentUser((int)userId))
+            if (!IsCurrentUser((int)id))
             {
                 return BadRequest();
             }
 
-            var existingUser = _context.Users.Find(userId);
+            var existingUser = _context.Users.FirstOrDefault(u => u.UserName == UserName);
+
 
             if (existingUser != null)
             {
                 ModelState.AddModelError("Username", "Username is already taken. Please choose a different one.");
-                return View("Edit", user);
+                return View("Edit", new User {Id = id, Name = Name, UserName = UserName});
             }
-
-            existingUser.Name = user.Name;
-
-            existingUser.UserName = user.UserName;
-
+            var user = _context.Users.Find(id);
+            user.Name = Name;
+            user.UserName = UserName;
+            _context.Users.Update(user);
             _context.SaveChanges();
             Log.Information("A user's information has been updated.");
 

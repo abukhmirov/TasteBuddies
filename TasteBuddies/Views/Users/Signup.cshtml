@@ -17,7 +17,7 @@
 
             <label class="form-label" for="Name" class="form-label mt-2">Name:</label>
 
-            <input class="form-control" type="text" id="Name" placeholder="Enter name" required name="Name">
+            <input class="form-control" asp-for="Name" type="text" id="Name" placeholder="Enter name" required name="Name">
 
             <span asp-validation-for="Name" class="text-danger"></span>
 
@@ -30,7 +30,7 @@
 
             <label class="form-label" for="Username" class="form-label mt-2">Username:</label>
 
-            <input class="form-control" type="text" id="Username" placeholder="Enter username" required name="Username" />
+            <input class="form-control" asp-for="UserName" type="text" id="Username" placeholder="Enter username" required name="Username" />
 
             <span asp-validation-for="UserName" class="text-danger"></span>
 
@@ -47,7 +47,7 @@
 
             <label class="form-label" for="Password" class="form-label mt-2">Password:</label>
 
-            <input class="form-control" type="password" id="Password" placeholder="Enter password" required name="Password" />
+            <input class="form-control" asp-for="Password" type="password" id="Password" placeholder="Enter password" required name="Password" />
 
             <span asp-validation-for="Password" class="text-danger"></span>
 

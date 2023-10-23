@@ -6,14 +6,14 @@
 
     <h1 class=" justify-content-center">Edit User</h1>
 
-    <form method="post" action="/Users/update/@Model.Id">
+    <form method="post" action="/Users/@Model.Id">
 
 
         <div class="form-group">
 
             <label class="form-label" for="Name">Name:</label>
 
-            <input class="form-control" type="text" id="Name" name="Name" value="@Model.Name" />
+            <input class="form-control" asp-for="Name" type="text" id="Name" name="Name" value="@Model.Name" />
 
         </div>
 
@@ -25,7 +25,7 @@
 
             <label class="form-label" for="UserName">UserName:</label>
 
-            <input class="form-control" type="text" id="UserName" name="UserName" value="@Model.UserName" />
+            <input class="form-control" asp-for="UserName" type="text" id="UserName" name="UserName" value="@Model.UserName" />
 
             @if (ViewData.ModelState.ContainsKey("Username"))
             {
