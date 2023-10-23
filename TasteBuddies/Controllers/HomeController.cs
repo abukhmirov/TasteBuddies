@@ -16,6 +16,10 @@ namespace TasteBuddies.Controllers
 
 
 
+
+        // This action returns the home page view.
+        // If a user has a "CurrentUser" cookie, it redirects them to their user profile.
+        // If no such cookie exists, it returns the default home view.
         public IActionResult Index()
         {
 
@@ -33,7 +37,7 @@ namespace TasteBuddies.Controllers
 
 
 
-
+        // This action returns the privacy policy page view.
         public IActionResult Privacy()
         {
             return View();
@@ -41,7 +45,8 @@ namespace TasteBuddies.Controllers
 
 
 
-
+        // This action returns a not-found page view to use for 404 error. 
+        
         public IActionResult NotFound()
         {
             return View();

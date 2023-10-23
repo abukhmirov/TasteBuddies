@@ -21,11 +21,18 @@ namespace TasteBuddies.Controllers
             _context = context;
         }
 
+
+
         public IActionResult Index()
         {
             return View();
         }
 
+
+
+
+
+        // View the login page.
 
         [Route("/users/login")]
         public IActionResult Login()
@@ -36,7 +43,13 @@ namespace TasteBuddies.Controllers
         }
 
 
-        //Login verification
+
+
+        // Verifies the provided username and password during login.
+        // If valid, sets a cookie for the current user and redirects to the user's profile.
+        // Otherwise, returns an error and asks the user to try logging in again.
+
+
         [HttpPost]
         [Route("/users/login")]
         public IActionResult CheckPassword(string password, string username)
@@ -81,7 +94,12 @@ namespace TasteBuddies.Controllers
             }
         }
 
-        
+
+
+
+        // Logs out the current user by removing the "CurrentUser" cookie.
+        // Then, redirects the user to the root (home) page.
+
         [Route("/users/logout")]
         public IActionResult Logout()
         {
@@ -95,7 +113,12 @@ namespace TasteBuddies.Controllers
         }
 
 
-        // GET: /signup
+
+
+
+
+        //View the signup page
+
         [Route("/Users/Signup")]
         public IActionResult Signup()
         {
@@ -104,7 +127,15 @@ namespace TasteBuddies.Controllers
         }
 
 
-        // POST: 
+
+
+
+
+        // Handles the user registration process.
+        // Checks if the username is already taken.
+        // If not, hashes the password, creates a new user in the database, 
+        // logs the action, sets a "CurrentUser" cookie, and redirects to the user's profile.
+
         [HttpPost]
         [Route("/Users/")]
         public IActionResult Create(User user)
@@ -141,6 +172,12 @@ namespace TasteBuddies.Controllers
         }
 
 
+
+
+
+        // View the profile page for the current logged-in user.
+        // Retrieves user's details along with related posts and groups.
+
         [Route("/Users/Profile")]
         public IActionResult Profile()
         {
@@ -168,6 +205,11 @@ namespace TasteBuddies.Controllers
         }
 
 
+
+
+
+        // View a page that displays details of a specific user based on the provided ID.
+
         [Route("/Users/{userId:int}")]
         public IActionResult Show(int? userId)
         {
@@ -186,6 +228,11 @@ namespace TasteBuddies.Controllers
             return View(user);
         }
 
+
+
+
+
+        // View the edit page for the current user's details
 
         [Route("/Users/{id:int}/Edit")]
         public IActionResult Edit(int? id)
@@ -211,6 +258,12 @@ namespace TasteBuddies.Controllers
 
         }
 
+
+
+
+
+        // Handles the process of updating the current user's details.
+        // If successful, redirects to the user's updated profile.
 
         [HttpPost]
         [Route("/Users/update/{userId:int}")]
@@ -250,6 +303,13 @@ namespace TasteBuddies.Controllers
 
         }
 
+
+
+
+
+
+        // Deletes the current user's account along with related posts.
+        // Afterwards, logs out the user and redirects to the root page.
 
         [Route("/users/delete/{userId:int}")]
         public IActionResult Delete(int? userId)
@@ -307,7 +367,14 @@ namespace TasteBuddies.Controllers
         }
 
 
-        // Updates password
+
+
+
+
+        // Handles the process of updating the user's password.
+        // Encrypts the new password and saves the changes.
+        // Then, redirects the user to their profile.
+
         [Route("/Users/updatepassword/{id}")]
         public IActionResult UpdatePassword(int? id, string newPassword)
         {
@@ -332,6 +399,11 @@ namespace TasteBuddies.Controllers
 
         }
 
+
+
+
+
+        //Encoding passwords method
 
         private string EncodePassword(string password)
         {
