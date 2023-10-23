@@ -44,7 +44,7 @@ namespace TasteBuddies.Controllers
         // Finally, it returns the posts to be displayed on the feed view.
         [HttpGet]
 
-        public IActionResult Feed()
+        public IActionResult Feed(bool postUpdated = false, bool postDeleted = false)
         {
             if (!Request.Cookies.ContainsKey("CurrentUser"))
             {
@@ -70,6 +70,9 @@ namespace TasteBuddies.Controllers
             }
 
             ViewBag.user = user;
+            ViewBag.PostUpdated = postUpdated;
+            ViewBag.PostDeleted = postDeleted;
+
 
             //Checking the current user
 
@@ -161,11 +164,13 @@ namespace TasteBuddies.Controllers
             {
                 return NotFound();
             }
-            var post = _context.Posts.Find(id);
+            var post = _context.Posts.Include(p => p.User).FirstOrDefault(p => p.Id == id);
             if(post is null)
             {
                 return NotFound();
             }
+
+            
 
             return View(post);
         }
@@ -212,20 +217,22 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-            post.Upvotes = existingPost.Upvotes;
+            existingPost.Title = post.Title;
+
+            existingPost.Description = post.Description;
+
+            existingPost.ImageURL = post.ImageURL;
 
 
-            post.Id = (int)id;
 
+            existingPost.CreatedAt = DateTime.Now.ToUniversalTime();
 
-            post.CreatedAt = DateTime.Now.ToUniversalTime();
-
-            _context.Posts.Update(post);
+            _context.Posts.Update(existingPost);
             _context.SaveChanges();
             
-            Log.Information($"A [{post.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
+            Log.Information($"A [{existingPost.Id}]post has been updated by user: [{user.Id}]{user.UserName}");
 
-            return RedirectToAction("Feed", new { id = post.Id });
+            return RedirectToAction("Feed", new { id = existingPost.Id, postUpdated = true });
         }
 
 
@@ -258,7 +265,7 @@ namespace TasteBuddies.Controllers
 
                 Log.Information($"A [{post.Id}]post has been deleted by user: [{user.Id}]{user.UserName}");
 
-                return RedirectToAction("Feed", new { id = post.Id });
+                return RedirectToAction("Feed", new { id = post.Id, postDeleted = true });
             }
             else return BadRequest();       
         }
@@ -282,10 +289,10 @@ namespace TasteBuddies.Controllers
                 return NotFound();
             }
 
-             if(post.Upvotes > 1)
-            {
-                return RedirectToAction("Feed");
-            }
+            // if(post.Upvotes > 1)
+            //{
+            //    return RedirectToAction("Feed");
+            //}
         
             post.Upvote();
 
