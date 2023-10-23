@@ -13,7 +13,7 @@ TasteBuddies is a ASP.NET web app designed to help answer the age old question: 
 
 In today's fast-paced world, the overwhelming task of figuring out what to eat every day can be paralyzing. TasteBuddies addresses this problem by offering a user-friendly platform where users can find new meal ideas that align with their favorite flavors. TasteBuddies seeks to create a community that supports and inspires each other to overcome the relentless cycle of daily meal indecision.TasteBuddies is unique because it understands the challenges of meal planning and decision fatigue. Unlike other apps, it provides a community-driven approach to helping users share and discover new meal ideas. 
 
-TasteBuddies was built over the course of two weeks by in a team of four using agile development including working in sprints, daily stand ups, story grooming, code reviews, and team retros.
+TasteBuddies was designed and built over the course of eight days by in a team of four using agile development including working in sprints, daily stand ups, story grooming, code reviews, and team retros.
 
 ## Getting Started
 Ensure you have the following installed prior to installing the TasteBuddies App:
