@@ -1878,3 +1878,54 @@ FROM groups AS g
 2023-10-23 10:44:53.703 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
 2023-10-23 10:44:53.707 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.0782ms
 2023-10-23 10:44:53.731 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.5666ms
+2023-10-23 11:12:21.801 -06:00 [INF] Starting web application...
+2023-10-23 11:12:22.600 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-23 11:12:22.737 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-23 11:12:22.738 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-23 11:12:22.742 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-23 11:12:22.743 -06:00 [INF] Hosting environment: Development
+2023-10-23 11:12:22.744 -06:00 [INF] Content root path: C:\Users\alexb\Source\Repos\TasteBuddies\TasteBuddies\
+2023-10-23 11:12:23.313 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-23 11:12:23.366 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 11:12:23.392 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-23 11:12:23.397 -06:00 [INF] Executing RedirectResult, redirecting to /users/profile.
+2023-10-23 11:12:23.402 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 5.2526ms
+2023-10-23 11:12:23.407 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-23 11:12:23.420 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 302 0 - 110.2061ms
+2023-10-23 11:12:23.421 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/users/profile - -
+2023-10-23 11:12:23.462 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 11:12:23.471 -06:00 [INF] Route matched with {action = "Profile", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Profile(Boolean) on controller TasteBuddies.Controllers.UsersController (TasteBuddies).
+2023-10-23 11:12:24.863 -06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-23 11:12:25.183 -06:00 [INF] Executed DbCommand (62ms) [Parameters=[@__parsedId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id, t.name, t.password, t.user_name, p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id, t0.groups_id, t0.users_id, t0.id, t0.description, t0.name
+FROM (
+    SELECT u.id, u.name, u.password, u.user_name
+    FROM users AS u
+    WHERE u.id = @__parsedId_0
+    LIMIT 1
+) AS t
+LEFT JOIN posts AS p ON t.id = p.user_id
+LEFT JOIN (
+    SELECT g.groups_id, g.users_id, g0.id, g0.description, g0.name
+    FROM group_user AS g
+    INNER JOIN groups AS g0 ON g.groups_id = g0.id
+) AS t0 ON t.id = t0.users_id
+ORDER BY t.id, p.id, t0.groups_id, t0.users_id
+2023-10-23 11:12:25.338 -06:00 [INF] Executing ViewResult, running view Profile.
+2023-10-23 11:12:25.470 -06:00 [INF] Executed ViewResult - view Profile executed in 136.5944ms.
+2023-10-23 11:12:25.474 -06:00 [INF] Executed action TasteBuddies.Controllers.UsersController.Profile (TasteBuddies) in 2002.6164ms
+2023-10-23 11:12:25.476 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.UsersController.Profile (TasteBuddies)'
+2023-10-23 11:12:25.514 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/users/profile - - - 200 - text/html;+charset=utf-8 2092.7201ms
+2023-10-23 11:12:25.528 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-23 11:12:25.528 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-23 11:12:25.535 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 6.8756ms
+2023-10-23 11:12:25.561 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.0844ms
+2023-10-23 11:12:28.248 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/Users/5/Posts/5/Edit - -
+2023-10-23 11:12:28.250 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.PostsController.Edit (TasteBuddies)'
+2023-10-23 11:12:28.252 -06:00 [INF] Route matched with {action = "Edit", controller = "Posts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(System.Nullable`1[System.Int32]) on controller TasteBuddies.Controllers.PostsController (TasteBuddies).
+2023-10-23 11:12:28.266 -06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.created_at, p.description, p.image_url, p.title, p.upvotes, p.user_id
+FROM posts AS p
+WHERE p.id = @__p_0
+LIMIT 1
+2023-10-23 11:12:28.268 -06:00 [INF] Executing ViewResult, running view Edit.

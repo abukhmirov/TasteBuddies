@@ -179,7 +179,7 @@ namespace TasteBuddies.Controllers
         // Retrieves user's details along with related posts and groups.
 
         [Route("/Users/Profile")]
-        public IActionResult Profile(bool passwordChanged = false)
+        public IActionResult Profile(bool passwordChanged = false, bool userUpdated = false)
         {
             if (!Request.Cookies.ContainsKey("CurrentUser"))
             {
@@ -196,6 +196,8 @@ namespace TasteBuddies.Controllers
               .FirstOrDefault();
 
                 ViewBag.PasswordChanged = passwordChanged;
+                ViewBag.UserUpdated = userUpdated;
+
 
                 return View(user1);
             }
@@ -301,7 +303,7 @@ namespace TasteBuddies.Controllers
             _context.SaveChanges();
             Log.Information("A user's information has been updated.");
 
-            return RedirectToAction("profile", new { userId = user.Id });
+            return RedirectToAction("profile", new { userId = user.Id, userUpdated = true });
 
         }
 
@@ -364,7 +366,7 @@ namespace TasteBuddies.Controllers
             }
             else
             {
-                return Redirect("/users/login");
+                return RedirectTo("/users/login");
             }
         }
 

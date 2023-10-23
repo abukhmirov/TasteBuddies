@@ -44,7 +44,7 @@ namespace TasteBuddies.Controllers
         // Finally, it returns the posts to be displayed on the feed view.
         [HttpGet]
 
-        public IActionResult Feed(bool postUpdated = false)
+        public IActionResult Feed(bool postUpdated = false, bool postDeleted = false)
         {
             if (!Request.Cookies.ContainsKey("CurrentUser"))
             {
@@ -71,6 +71,8 @@ namespace TasteBuddies.Controllers
 
             ViewBag.user = user;
             ViewBag.PostUpdated = postUpdated;
+            ViewBag.PostDeleted = postDeleted;
+
 
             //Checking the current user
 
@@ -261,7 +263,7 @@ namespace TasteBuddies.Controllers
 
                 Log.Information($"A [{post.Id}]post has been deleted by user: [{user.Id}]{user.UserName}");
 
-                return RedirectToAction("Feed", new { id = post.Id });
+                return RedirectToAction("Feed", new { id = post.Id, postDeleted = true });
             }
             else return BadRequest();       
         }

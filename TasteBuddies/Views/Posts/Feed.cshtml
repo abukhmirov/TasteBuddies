@@ -9,6 +9,15 @@
     </script>
 }
 
+@if (ViewBag.PostDeleted)
+{
+    <script>
+        window.onload = function () {
+            alert('Your post has been deleted successfully.');
+        }
+    </script>
+}
+
 <style>
 
     .button-container {
