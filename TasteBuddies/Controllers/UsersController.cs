@@ -25,6 +25,19 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Index()
         {
+            int zero = 0;
+            int ten = 10;
+            int temp = 0;
+
+            try
+            {
+                temp = ten / zero;
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex.Message);
+            }
+
             return View();
         }
 

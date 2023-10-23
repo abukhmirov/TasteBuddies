@@ -46,6 +46,19 @@ namespace TasteBuddies.Controllers
 
         public IActionResult Feed(bool postUpdated = false, bool postDeleted = false)
         {
+            int zero = 0;
+            int ten = 10;
+            int temp = 0;
+
+            try
+            {
+                temp = ten / zero;
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex.Message);
+            }
+
             if (!Request.Cookies.ContainsKey("CurrentUser"))
             {
                 return Redirect("/users/login");
