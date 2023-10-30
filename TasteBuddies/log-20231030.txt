@@ -1,0 +1,140 @@
+2023-10-30 13:48:32.183 -06:00 [INF] Starting web application...
+2023-10-30 13:48:33.195 -06:00 [INF] User profile is available. Using 'C:\Users\alexb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-30 13:48:33.355 -06:00 [INF] Now listening on: https://localhost:7053
+2023-10-30 13:48:33.356 -06:00 [INF] Now listening on: http://localhost:5113
+2023-10-30 13:48:33.359 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-30 13:48:33.360 -06:00 [INF] Hosting environment: Development
+2023-10-30 13:48:33.361 -06:00 [INF] Content root path: C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\
+2023-10-30 13:48:33.972 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/ - -
+2023-10-30 13:48:34.039 -06:00 [INF] Executing endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-30 13:48:34.069 -06:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller TasteBuddies.Controllers.HomeController (TasteBuddies).
+2023-10-30 13:48:34.090 -06:00 [INF] Executing ViewResult, running view Index.
+2023-10-30 13:48:34.324 -06:00 [INF] Executed ViewResult - view Index executed in 240.7191ms.
+2023-10-30 13:48:34.337 -06:00 [INF] Executed action TasteBuddies.Controllers.HomeController.Index (TasteBuddies) in 265.8705ms
+2023-10-30 13:48:34.339 -06:00 [INF] Executed endpoint 'TasteBuddies.Controllers.HomeController.Index (TasteBuddies)'
+2023-10-30 13:48:34.398 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/ - - - 200 - text/html;+charset=utf-8 428.6077ms
+2023-10-30 13:48:34.429 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - -
+2023-10-30 13:48:34.429 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - -
+2023-10-30 13:48:34.429 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/StyleSheet.css - -
+2023-10-30 13:48:34.429 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - -
+2023-10-30 13:48:34.448 -06:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\css\site.css'
+2023-10-30 13:48:34.448 -06:00 [INF] Sending file. Request path: '/TasteBuddies.styles.css'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\obj\Debug\net6.0\scopedcss\bundle\TasteBuddies.styles.css'
+2023-10-30 13:48:34.453 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/site.css?v=61HCJLAcWiKcMGASgPpoYPt5Tat7KYAHGsU7ORWW7rE - - - 200 208 text/css 23.7894ms
+2023-10-30 13:48:34.458 -06:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\lib\jquery\dist\jquery.min.js'
+2023-10-30 13:48:34.458 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/TasteBuddies.styles.css?v=sx5KuNNc4UMZCJnkk5UJt0n16WK4DLWVHKZJd3ed13c - - - 200 1129 text/css 29.0084ms
+2023-10-30 13:48:34.459 -06:00 [INF] Sending file. Request path: '/css/StyleSheet.css'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\css\StyleSheet.css'
+2023-10-30 13:48:34.462 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-10-30 13:48:34.470 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/jquery/dist/jquery.min.js - - - 200 89478 application/javascript 41.3090ms
+2023-10-30 13:48:34.477 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/css/StyleSheet.css - - - 200 339982 text/css 48.5260ms
+2023-10-30 13:48:34.482 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - -
+2023-10-30 13:48:34.482 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-10-30 13:48:34.482 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/_vs/browserLink - -
+2023-10-30 13:48:34.484 -06:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\js\site.js'
+2023-10-30 13:48:34.485 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 200 3 application/javascript 3.5404ms
+2023-10-30 13:48:34.486 -06:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2023-10-30 13:48:34.487 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 5.1360ms
+2023-10-30 13:48:34.492 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 200 78474 application/javascript 30.4969ms
+2023-10-30 13:48:34.573 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.1765ms
+2023-10-30 13:48:36.661 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7053/favicon.ico - -
+2023-10-30 13:48:36.668 -06:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\wwwroot\favicon.ico'
+2023-10-30 13:48:36.669 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7053/favicon.ico - - - 200 5430 image/x-icon 8.2153ms
+2023-10-30 14:11:56.428 -06:00 [INF] Starting web application...
+2023-10-30 14:11:57.299 -06:00 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\Program.cs:line 38
+2023-10-30 14:12:09.197 -06:00 [INF] Starting web application...
+2023-10-30 14:12:09.849 -06:00 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\Program.cs:line 38
+2023-10-30 14:12:17.731 -06:00 [INF] Starting web application...
+2023-10-30 14:12:18.447 -06:00 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\Program.cs:line 38
+2023-10-30 14:12:22.288 -06:00 [INF] Starting web application...
+2023-10-30 14:12:22.928 -06:00 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\Program.cs:line 38
+2023-10-30 14:12:29.625 -06:00 [INF] Starting web application...
+2023-10-30 14:12:30.307 -06:00 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: TasteBuddies.Interfaces.IGitHubService Lifetime: Singleton ImplementationType: TasteBuddies.Services.GitHubService': Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'TasteBuddies.Services.GitHubService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\alexb\source\repos\TasteBuddies\TasteBuddies\Program.cs:line 38

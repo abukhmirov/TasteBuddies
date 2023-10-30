@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TasteBuddies.DataAccess;
+using TasteBuddies.Services;
+using TasteBuddies.Interfaces;
+
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -16,6 +19,7 @@ try
 
     // Add services to the container.
     builder.Services.AddControllersWithViews();
+    builder.Services.AddSingleton<IGitHubService, GitHubService>(); 
 
     builder.Services.AddDbContext<TasteBuddiesContext>(
         options =>

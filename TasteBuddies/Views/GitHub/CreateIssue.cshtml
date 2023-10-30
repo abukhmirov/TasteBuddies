@@ -1,0 +1,13 @@
+﻿@model GitHubIssue
+
+<form method="post" asp-controller="GitHub" asp-action="CreateIssue" enctype="application/json">
+    <div class="form-group">
+        <label for="title">Issue Title</label>
+        <input type="text" class="form-control" id="title" name="Title" required>
+    </div>
+    <div class="form-group">
+        <label for="body">Issue Description</label>
+        <textarea class="form-control" id="body" name="Body" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Issue</button>
+</form>
